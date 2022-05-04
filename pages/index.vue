@@ -1,74 +1,10 @@
 <template>
   <div>
-    <div id="head" class="flex flex-row w-screen align-center bg-gray-800">
-      <div id="menu-left" class="px-6">
-        <NuxtLink to="/index"><img src="/mmlogo.png" class="h-[150px] w-[150px] p-5" alt="logo" /></NuxtLink>
-      </div>
-      <div id="menu" class="font-['open_sans'] font-bold text-lg text-gray-100 uppercase flex flex-row gap-x-20 py-5">
-        <button>
-          <NuxtLink to="/browse">
-            Browse Our Library
-          </NuxtLink>
-        </button>
-        <button>
-          <NuxtLink to="/artist">
-            Artist
-          </NuxtLink>
-        </button>
-        <button>
-          <NuxtLink to="/corporateInformation">
-            Corporate Information
-          </NuxtLink>
-        </button>
-        <button>
-          <NuxtLink to="/support">
-            Support
-          </NuxtLink>
-        </button>
-        <button>
-          <p> More </p>
-        </button>
-      </div>
-    </div>
-    <div id="quick links" class="bg-blue-300 bg-opacity-20 backdrop-blur-lg rounded-full border border-white border-opacity-30 text-white p-10 absolute top-0 right-0 m-5">
-      <button
-          type="button"
-          class="text-xl font-extrabold font-roboto text-gray-500 text-opacity-100 text-center align-center mx-auto py-2 flex flex-col relative z-10"
-      >
-          Quick<br>Links
-          <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6 mx-auto"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-      </button>
-      <button class="fixed inset-0 h-full w-full text-transparent cursor-default tabindex=-1 z-0">text</button>
-      <div class="flex flex-col relative z-10">
-          <button class="rounded-full bg-transparent  h-24 w-24 p-2 my-2 mx-1 drop-shadow-lg">
-              <NuxtLink to="/account"><img src="/quaverheart.png" alt="account"></NuxtLink>
-          </button>
-          <button class="rounded-full bg-transparent  h-24 w-24 p-2 my-2 mx-1 drop-shadow-lg">
-              <NuxtLink to="/playlist"><img src="/musichead.png" alt="playlist"></NuxtLink>
-          </button>
-          <button class="rounded-full bg-transparent h-24 w-24 p-2 my-2 mx-1 drop-shadow-lg">
-              <NuxtLink to="/cart"><img src="/semiquaver.png" alt="cart"></NuxtLink>
-          </button>
-      </div>
-    </div>
-    <div id="mood bot" class="w-[150px] h-[150px] rounded-full absolute right-0 bottom-0 m-10 text-center">
-      <button>
-      <img src="/moodbot.png" class="p-5 animate-bounce" alt="moodbot" />
-      </button>
-      <p class="font-lola text-xl text-amber-500 font-italic text-center uppercase drop-shadow-lg">
-        Chat with Moodbot
-      </p>
-    </div>
-    <div id="body" class="bg-slate-300">
-      <div id="hero" class="flex  h-screen w-screen bg-center bg-[url('/testbg.png')] bg-cover align-middle text-white text-center">
+    <Header />
+    <QuickLinks />
+    <MoodBot />
+    <div id="body" class="bg-slate-300 snap-y">
+      <div id="hero" class="snap-center flex  h-screen w-screen bg-center bg-[url('/testbg.png')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
           <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
             <h1 class="font-['open_sans'] font-bold text-5xl pt-20 z-10 text-white opacity-100">Mood Music</h1>
@@ -77,12 +13,14 @@
           <canvas>
             <img src="" alt="" />
           </canvas>
-          <button>
-            Try 1 Month Free
-          </button>
+          <div class="relative">
+            <img src="/blobbybutton.png" class="absolute h-[300px]" alt="" />
+            <p class="absolute text-3xl font-['open_sans'] ">Try 1 Month Free</p>
+          </div>
         </div>
       </div>
-      <div id="library" class="flex h-screen w-screen bg-center bg-[url('/3dbg1.jpg')] bg-cover align-middle text-white text-center">
+      <v-parallax src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">text</v-parallax>
+      <div id="library" class="snap-center flex h-screen w-screen bg-center bg-[url('/3dbg1.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
           <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
             <h1 class="text-5xl pt-20 z-10 text-white opacity-100">Unbeatable Music Library</h1>
@@ -123,7 +61,7 @@
           </div>
         </div>
       </div>
-      <div id="mooddetection" class="flex h-screen w-screen bg-center bg-[url('/3dbg2.jpg')] bg-cover align-middle text-white text-center">
+      <div id="mooddetection" class="snap-center flex h-screen w-screen bg-center bg-[url('/3dbg2.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
           <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
             <h1 class="text-5xl pt-20 z-10 text-white opacity-100">The music app that understands you</h1>
@@ -132,17 +70,22 @@
           </div>
         </div>
       </div>
-      <div id="spatialaudio" class="flex h-screen w-screen bg-center bg-[url('/3dbg5.jpg')] bg-cover align-middle text-white text-center">
+      <div id="spatialaudio" class="snap-center flex h-screen w-screen bg-center bg-[url('/3dbg5.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
-          <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
-            <h1 class="text-5xl pt-20 z-10 text-white opacity-100"> Hear sound all around </h1>
-            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100"> Spatial audio with dynamic head tracking for sound that surrounds you with Dolby Atmos technology. </p>
+          <div class="m-auto h-250 w-250 px-20">
+            <h1 class="text-6xl pt-20 z-10 text-white opacity-100 font-['nunito_sans'] font-bold"> Hear sound all around </h1>
+            <p class="text-3xl mt-5 px-10 py-20 z-10 text-white opacity-100 font-lora"> Spatial audio with dynamic head tracking for sound that surrounds you with Dolby Atmos technology. </p>
+            <iframe
+              class="m-10 mx-auto min-height-[315px] min-width-[560px] md:h-[315px] md:w-[560px] xl:h-[630px] xl:w-[1120px] 2xl:h-[1000px] 2xl:w-[2350px]"
+              src="https://www.youtube.com/embed/3TOlN9dLpi8"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen />
+            </div>
           </div>
-          <p> video </p>
-          <iframe />
-        </div>
       </div>
-      <div id="3daudiovisual" class="flex h-screen w-screen bg-center bg-[url('/orbsblack.jpg')] bg-cover align-middle text-white text-center">
+      <div id="3daudiovisual" class="snap-center flex h-screen w-screen bg-center bg-[url('/orbsblack.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
           <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
             <h1 class="text-5xl pt-20 z-10 text-white opacity-100">3D customizable audio visualization</h1>
@@ -155,96 +98,218 @@
             </div>
         </div>
       </div>
-      <div id="logos" class="flex h-screen w-screen bg-center bg-[url('/geotunnelblack.jpg')] bg-cover align-middle text-white text-center">
+      <div id="logos" class="snap-center flex h-screen w-screen bg-center bg-[url('/geotunnelblack.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
-          <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
-            <h1 class="text-5xl pt-20 z-10 text-white opacity-100">Section </h1>
-            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100"> logos </p>
-            <div class="grid grid-cols-12 gap-x-12 gap-y-12">
-              <img src="/logo1.png" alt="" />
-              <img src="/logo2.png" alt="" />
-              <img src="/logo3.png" alt="" />
-              <img src="/logo4.png" alt="" />
-              <img src="/logo5.png" alt="" />
-              <img src="/logo6.png" alt="" />
-              <img src="/logo7.png" alt="" />
-              <img src="/logo8.png" alt="" />
-              <img src="/logo9.png" alt="" />
-              <img src="/logo10.png" alt="" />
-              <img src="/logo11.png" alt="" />
-              <img src="/logo12.png" alt="" />
-              <img src="/logo13.png" alt="" />
-              <img src="/logo14.png" alt="" />
-              <img src="/logo15.png" alt="" />
-              <img src="/logo16.png" alt="" />
-              <img src="/logo17.png" alt="" />
-              <img src="/logo18.png" alt="" />
-              <img src="/logo19.png" alt="" />
-              <img src="/logo20.png" alt="" />
-              <img src="/logo21.png" alt="" />
-              <img src="/logo22.png" alt="" />
-              <img src="/logo23.png" alt="" />
-              <img src="/logo24.png" alt="" />
-              <img src="/logo25.png" alt="" />
-              <img src="/logo26.png" alt="" />
-              <img src="/logo27.png" alt="" />
-              <img src="/logo28.png" alt="" />
-              <img src="/logo29.png" alt="" />
-              <img src="/logo30.png" alt="" />
-              <img src="/logo31.png" alt="" />
-              <img src="/logo32.png" alt="" />
-              <img src="/logo33.png" alt="" />
-              <img src="/logo34.png" alt="" />
-              <img src="/logo35.png" alt="" />
-              <img src="/logo36.png" alt="" />
+          <div id="our-partners" class="m-auto h-250 w-250 px-20 py-24">
+            <h1 class="text-5xl pt-20 z-10 font-lora font-italic text-[#645215] opacity-100 shadow-white">Our Partners </h1>
+          </div>
+          <div id="company-logos" class="flex pb-36 px-36">
+            <div class="grid lg:grid-cols-3 xl:grid-cols-6 gap-x-12 gap-y-12">
+              <a href="https://mood-music-syk.netlify.app/"><img src="/logo1.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href="https://music.apple.com/"><img src="/logo2.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href="https://www.spotify.com/us/"><img src="/logo3.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href="https://www.spotify.com/us/"><img src="/logo4.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href="https://aes2.org/"><img src="/logo5.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href="https://womensaudiomission.org/"><img src="/logo6.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href="https://welcome.online.berklee.edu/"><img src="/logo7.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href="https://www.avid.com/"><img src="/logo8.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href="https://www.sweetwater.com/"><img src="/logo9.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href="https://www.pioneerdj.com/en-gb/"><img src="/logo10.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href="https://www.bose.com/"><img src="/logo11.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href="https://www.steinway.com/"><img src="/logo12.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href=""><img src="/logo13.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href=""><img src="/logo14.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href=""><img src="/logo15.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href=""><img src="/logo16.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href=""><img src="/logo17.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href=""><img src="/logo18.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href=""><img src="/logo19.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href=""><img src="/logo20.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href=""><img src="/logo21.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href=""><img src="/logo22.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href=""><img src="/logo23.png" class="h-48 w-48 sepia" alt="" /></a>
+              <a href="https://www.masterclass.com/"><img src="/logo24.png" class="h-48 w-48 sepia" alt="" /></a>
             </div>
+            <v-sheet class="mx-auto" max-width="700">
+              <v-slide-group multiple show-arrows>
+                <v-slide-item v-for="n in 25" :key="n" v-slot="{ active, toggle }">
+                  <v-btn
+                    class="mx-2"
+                    :input-value="active"
+                    active-class="purple white--text"
+                    depressed
+                    rounded
+                    @click="toggle"
+                  >
+                    Options {{ n }}
+                </v-btn>
+              </v-slide-item>
+            </v-slide-group>
+          </v-sheet>
           </div>
         </div>
       </div>
-      <div id="3dcarousel" class="flex h-screen w-screen bg-center bg-[url('/smokering.jpg')] bg-cover align-middle text-white text-center">
+      <div id="3dcarousel" class="snap-center flex h-screen w-screen bg-center bg-[url('/smokering.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
-          <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
-            <h1 class="text-5xl pt-20 z-10 text-white opacity-100">3D carousel</h1>
-            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">featured music</p>
+          <div class="m-auto h-250 w-250 rounded-md px-20">
+            <h1 class="text-5xl font-lora font-italic pt-20 py-24 z-10 text-[#BCAC80] opacity-100 shadow-white drop-shadow-lg">Music for Every Shade of Emotion</h1>
+            <div id="select-category" class="text-white text-2xl grid grid-cols-3 gap-10 py-5 my-5 border-b-2 border-white">
+              <button class="active:text-red-500">Featured</button>
+              <button class="active:text-red-500">Top Hits</button>
+              <button class="active:text-red-500">New Releases</button>
+            </div>
+            <carousel-3d id="featured" class="mx-auto my-5 flex flex-row gap-x-12">
+              <slide :index="0">
+                <div class="relative m-auto flex flex-col text-center font-['nunito_sans']">
+                  <div id="image">
+                    <img src="/player1.jpg" class="absolute mx-auto h-96 w-72 z-0" alt="" />
+                    <div class="absolute bg-gray-600 bg-cover bg-opacity-30 z-10">
+                      <button class="text-xl px-8 py-3 rounded-full bg-slate-500 my-5 z-10 active: "><NuxtLink to="/player">Listen now</NuxtLink></button>
+                    </div>
+                  </div>
+                  <h5 class="text-2xl font-['nunito_sans'] font-bold py-1">Song Title</h5>
+                  <p class="text-lg font-lora py-1">Artist</p>
+                </div>
+              </slide>
+              <slide :index="1">
+                <div class="m-auto text-center font-['nunito_sans']">
+                  <img src="/player1.jpg" class="mx-auto h-96 w-72 z-0" alt="" />
+                  <button class="text-xl px-8 py-3 rounded-full bg-slate-500 my-5 z-10"><NuxtLink to="/player">Listen now</NuxtLink></button>
+                  <h5 class="text-2xl font-['nunito_sans'] font-bold py-1">Song Title</h5>
+                  <p class="text-lg font-lora py-1">Artist</p>
+                </div>
+              </slide>
+              <slide :index="2">
+                <div class="m-auto text-center font-['nunito_sans']">
+                  <img src="/player1.jpg" class="mx-auto h-96 w-72 z-0" alt="" />
+                  <button class="text-xl px-8 py-3 rounded-full bg-slate-500 my-5 z-10"><NuxtLink to="/player">Listen now</NuxtLink></button>
+                  <h5 class="text-2xl font-['nunito_sans'] font-bold py-1">Song Title</h5>
+                  <p class="text-lg font-lora py-1">Artist</p>
+                </div>
+              </slide>
+              <slide :index="3">
+                <div class="m-auto text-center font-['nunito_sans']">
+                  <img src="/player1.jpg" class="mx-auto h-96 w-72 z-0" alt="" />
+                  <button class="text-xl px-8 py-3 rounded-full bg-slate-500 my-5 z-10"><NuxtLink to="/player">Listen now</NuxtLink></button>
+                  <h5 class="text-2xl font-['nunito_sans'] font-bold py-1">Song Title</h5>
+                  <p class="text-lg font-lora py-1">Artist</p>
+                </div>
+              </slide>
+              <slide :index="4">
+                <div class="relative m-auto flex flex-col text-center font-['nunito_sans']">
+                  <div id="image">
+                    <img src="/player1.jpg" class="absolute mx-auto h-96 w-72 z-0" alt="" />
+                    <div class="absolute bg-gray-600 bg-cover bg-opacity-30 z-10">
+                      <button class="text-xl px-8 py-3 rounded-full bg-slate-500 my-5 z-10 active: "><NuxtLink to="/player">Listen now</NuxtLink></button>
+                    </div>
+                  </div>
+                  <h5 class="text-2xl font-['nunito_sans'] font-bold py-1">Song Title</h5>
+                  <p class="text-lg font-lora py-1">Artist</p>
+                </div>
+              </slide>
+            </carousel-3d>
+            <carousel-3d class="top-hits">
+              <slide :index="0">
+                <img src="" alt="" />
+              </slide>
+              <slide :index="1">
+                <img src="" alt="" />
+              </slide>
+              <slide :index="2">
+                <img src="" alt="" />
+              </slide>
+              <slide :index="3">
+                <img src="" alt="" />
+              </slide>
+              <slide :index="4">
+                <img src="" alt="" />
+              </slide>
+              <slide :index="5">
+                <img src="" alt="" />
+              </slide>
+              <slide :index="6">
+                <img src="" alt="" />
+              </slide>
+              <slide :index="7">
+                <img src="" alt="" />
+              </slide>
+              <slide :index="8">
+                <img src="" alt="" />
+              </slide>
+              <slide :index="9">
+                <img src="" alt="" />
+              </slide>
+            </carousel-3d>
+            <carousel-3d class="new-releases">
+              <slide :index="0">
+                <img src="" alt="" />
+              </slide>
+              <slide :index="1">
+                <img src="" alt="" />
+              </slide>
+              <slide :index="2">
+                <img src="" alt="" />
+              </slide>
+              <slide :index="3">
+                <img src="" alt="" />
+              </slide>
+              <slide :index="4">
+                <img src="" alt="" />
+              </slide>
+              <slide :index="5">
+                <img src="" alt="" />
+              </slide>
+              <slide :index="6">
+                <img src="" alt="" />
+              </slide>
+              <slide :index="7">
+                <img src="" alt="" />
+              </slide>
+              <slide :index="8">
+                <img src="" alt="" />
+              </slide>
+              <slide :index="9">
+                <img src="" alt="" />
+              </slide>
+            </carousel-3d>
           </div>
         </div>
       </div>
-      <div id="subcription" class="flex h-screen w-screen bg-center bg-[url('/goldmarble.jpg')] bg-cover align-middle text-white text-center">
+      <div id="subcription" class="snap-center flex h-screen w-screen bg-center bg-[url('/goldmarble.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
-          <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
-            <h1 class="text-5xl pt-20 z-10 text-white opacity-100">Subscription plans</h1>
-            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">Choose the plan that's right for you</p>
-            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">No commitment. Cancel at any time.</p>
+          <div id="subscription-title" class="m-auto h-250 w-250 px-20">
+            <h1 class="text-5xl pt-12 z-10 text-white opacity-100">Choose the plan that's right for you</h1>
+            <p class="text-3xl my-5 py-5 z-10 text-white opacity-100">No commitment. Cancel at any time.</p>
           </div>
-          <div class="grid grid-cols-3">
-            <div>
-              <p>Student</p>
-              <p>RM6.90/month</p>
-              <button>
+          <div id="plans" class="grid grid-cols-3 gap-x-5 my-5">
+            <div class="border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-lg rounded-full">
+              <p class="text-xl font-bold py-5 uppercase">Student</p>
+              <p class="text-xl font-bold">RM6.90/month</p>
+              <button class="text-xl font-bold bg-white text-red-500 border-none rounded-full px-8 py-3 my-5 uppercase">
                 <NuxtLink to="/subscription">Try it free</NuxtLink>
               </button>
             </div>
-            <div>
-              <p>Individual</p>
-              <p>RM14.90/month</p>
-              <button>
+            <div class="border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-lg rounded-full">
+              <p class="text-xl font-bold py-5 uppercase">Individual</p>
+              <p class="text-xl font-bold">RM14.90/month</p>
+              <button class="text-xl font-bold bg-white text-black border-none rounded-full px-8 py-3 my-5 uppercase">
                 <NuxtLink to="/subscription">Try it free</NuxtLink>
               </button>
             </div>
-            <div>
-              <p>Family</p>
-              <p>RM22.90/month</p>
-              <button>
+            <div class="border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-lg rounded-full">
+              <p class="text-xl font-bold py-5 uppercase">Family</p>
+              <p class="text-xl font-bold">RM22.90/month</p>
+              <button class="text-xl font-bold bg-black text-red-500 border-none rounded-full px-8 py-3 my-5 uppercase">
                 <NuxtLink to="/subscription">Try it free</NuxtLink>
               </button>
             </div>
           </div>
-          <table>
-            <th>
-              <td>text</td>
-              <td>Student/Individual<sup>3</sup></td>
-              <td>Family</td>
-            </th>
+          <table id="information-table" class="text-lg font-['nunito_sans'] pb-10">
+            <tr>
+              <th class="invisible text-left">text</th>
+              <th class="px-5 uppercase py-5">Student/Individual<sup>3</sup></th>
+              <th class="px-5 uppercase">Family</th>
+            </tr>
             <tr>
               <td>90 million songs</td>
               <td>✔️</td>
@@ -321,11 +386,6 @@
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Lyrics view</td>
-              <td>✔️</td>
-              <td>✔️</td>
-            </tr>
-            <tr>
               <td>Download 100,000 songs to your library</td>
               <td>✔️</td>
               <td>✔️</td>
@@ -342,170 +402,169 @@
             </tr>
             <tr>
               <td>Unlimited access for up to six people</td>
-              <td>text</td>
+              <td class="invisible">text</td>
               <td>✔️</td>
             </tr>
             <tr>
               <td>Personal music library for each family member</td>
-              <td>text</td>
+              <td class="invisible">text</td>
               <td>✔️</td>
             </tr>
             <tr>
               <td>Personalized music recommendations for each family member</td>
-              <td>text</td>
+              <td class="invisible">text</td>
               <td>✔️</td>
             </tr>
           </table>
         </div>
       </div>
-      <div id="promotions" class="flex h-screen w-screen bg-center bg-[url('/goldblueswirl.jpg')] bg-cover align-middle text-white text-center">
+      <div id="promotions" class="snap-center flex h-screen w-screen bg-center bg-[url('/goldblueswirl.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
-          <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
-            <h1 class="text-5xl pt-20 z-10 text-white opacity-100">Promotions</h1>
-            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">promotions</p>
+          <div id="promotions-title">
+            <h1 class="m-auto text-7xl pt-20 z-10 text-gray-900 opacity-100 drop-shadow-lg shadow-[#BCAC80]">Promotions</h1>
           </div>
-          <div>
-            <div class="flex flex-row">
-              <img src="" alt="" />
-              <h5>Title</h5>
+          <div id="promotion-panels" class="2xl:flex">
+            <div class="flex xl:flex-row md:flex-col m-10 ">
+              <div id="free-6-months" class="m-auto bg-black bg-opacity-30 backdrop-blur-lg h-full border-gray-900 border-opacity-10 rounded-xlur-lg rounded-lg">
+                <div class="m-auto p-10">
+                  <img src="/freetrial.png" class="py-12" alt="" />
+                  <h5 class="uppercase text-gray-900 drop-shadow-lg text-5xl font-bold font-['nunito_sans']">6-month free trial</h5>
+                  <p class="px-12 py-5 text-2xl text-gray-200 font-lora">
+                    Get 6 months of Mood Music free with eligible audio devices.
+                  </p>
+                      <div class="grid grid-cols-2 font-['nunito_sans'] text-blue-500 font-bold text-2xl">
+                        <button>
+                            <NuxtLink to="/subscription"> > Try it free</NuxtLink>
+                        </button>
+                        <button>
+                          > Learn more
+                        </button>
+                      </div>
+                </div>
+              </div>
+              <div class="flex flex-col">
+                <div id="student-plan" class="flex lg:flex-row sm:flex-col m-10 bg-black bg-opacity-30 backdrop-blur-lg border-gray-900 border-opacity-10 rounded-xl">
+                  <div class="flex flex-col m-auto p-10">
+                    <h5 class="uppercase text-gray-900 drop-shadow-lg text-5xl font-bold font-['nunito_sans']">Free for Students</h5>
+                    <p class="px-12 py-5 text-2xl text-gray-200 font-lora">
+                      Mood Music's student plan comes with Apple TV+ for free.
+                    </p>
+                    <div class="grid grid-cols-2 font-['nunito_sans'] text-blue-500 font-bold text-2xl">
+                      <button>
+                          <NuxtLink to="/subscription"> > Try it free</NuxtLink>
+                      </button>
+                      <button>
+                        > Learn more
+                      </button>
+                    </div>
+                  </div>
+                  <div>
+                    <img src="/studentpromotion.png" class="drop-shadow-lg" alt="" />
+                  </div>
+                </div>
+                <div id="subscription-bundle" class="flex lg:flex-row sm:flex-col m-10 bg-black bg-opacity-30 backdrop-blur-lg border-gray-900 border-opacity-10 rounded-xl">
+                  <div>
+                    <img src="/bundlepromotion.png" class="drop-shadow-lg" alt="" />
+                  </div>
+                  <div class="flex flex-col m-auto p-10">
+                    <h5 class="uppercase text-gray-900 drop-shadow-lg text-5xl font-bold font-['nunito_sans']">All In One</h5>
+                    <p class="px-12 py-5 text-2xl text-gray-200 font-lora">
+                      Bundle up to 5 services and enjoy more for less.
+                    </p>
+                    <div class="grid grid-cols-2 px-12 font-['nunito_sans'] text-blue-500 font-bold text-2xl">
+                      <button>
+                          <NuxtLink to="/subscription"> > Try it free</NuxtLink>
+                      </button>
+                      <button>
+                        > Learn more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <p>
-              Get 6 months of Mood Music free with eligible audio devices.
-            </p>
-            <button>
-              Learn more
-            </button>
-          </div>
-          <div>
-            <div class="flex flex-row">
-              <img src="" alt="" />
-              <h5>Title</h5>
-            </div>
-            <p>
-              Get 6 months of Mood Music free with eligible audio devices.
-            </p>
-            <button>
-              Learn more
-            </button>
-            <img src="" alt="" />
-          </div>
-          <div>
-            <div class="flex flex-row">
-              <img src="" alt="" />
-              <h5>Title</h5>
-            </div>
-            <p>
-              Mood Music's student plan comes with Apple TV+ for free.
-            </p>
-            <button>
-                <NuxtLink to="/subscription">Try it free</NuxtLink>
-            </button>
-            <button>
-              Learn more
-            </button>
-            <img src="" alt="" />
-          </div>
-          <div>
-            <div class="flex flex-row">
-              <img src="" alt="" />
-              <h5>Title</h5>
-            </div>
-            <p>
-              Bundle up to 5 services and enjoy more for less.
-            </p>
-            <button>
-              <NuxtLink to="/subscription">Try it free</NuxtLink>
-            </button>
-            <button>
-              Learn more
-            </button>
-            <img src="" alt="" />
           </div>
         </div>
       </div>
-      <div id="mobileapps" class="flex h-screen w-screen bg-center bg-[url('/goldcubes.jpg')] bg-cover align-middle text-white text-center">
+      <div id="mobileapps" class="snap-center flex h-screen w-screen bg-center bg-[url('/goldcubes.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
           <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
             <h1 class="text-5xl pt-20 z-10 text-white opacity-100">Mobile apps</h1>
-            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">promotions</p>
+            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">Download</p>
+            <div class="h-[150px] grid grid-cols-2 gap-x-12">
+            <button id="android-store" class="h-[50px]"><img src="/android-app.png" alt="" /></button>
+            <button id="apple-app-store" class="h-[50px]"><img src="/apple-app.png" alt="" /></button>
+            <button id="google-play" class="h-[50px]"><img src="/google-play.png" alt="" /></button>
+            <button id="microsoft-store" class="h-[50px]"><img src="/microsoft-store.png" alt="" /></button>
+            </div>
           </div>
-          <p> links and buttons </p>
         </div>
       </div>
-      <div id="faqs" class="flex h-screen w-screen bg-center bg-[url('/faqsbg.jpg')] bg-cover align-middle text-white text-center">
+      <div id="faqs" class="snap-center flex h-screen w-screen bg-center bg-[url('/faqsbg.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
           <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
             <h1 class="text-5xl pt-20 z-10 text-white opacity-100">Questions? Answers.</h1>
-            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">What is Mood Music?</p>
-            <p>
-              Mood Music is a streaming service that allows you to listen to over 90 million songs. Its great features include the ability to download your favourite tracks and play them offline, lyrics in real time, listening across all your favourite devices, new music personalised just for you, curated playlists from our editors and many more. All this in addition to exclusive and original content.
-            </p>
-            <div>
-              <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">How can I listen to Mood Music?</p>
-              <p>
-                Apple Music is already on your iPhone, iPad, Apple Watch, Apple TV and Mac — and you can listen with CarPlay or online at music.apple.com/my. Apple Music is also available on Windows, Android and other devices.
-              </p>
-            </div>
-            <div>
-              <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">What does it cost?</p>
-              <p>
-                That all depends on which offer you choose. (1) Students can choose the Apple Music Student Plan at RM 6.90 per month. (2) An individual monthly subscription is just RM 14.90 per month after your free trial. (3) The Apple Music Family Plan, which allows you to share your account with up to five people and gives each member a personal account, is just RM 22.90 per month. (4) The Apple Music Individual Plan and the Apple Music Family Plan are also included in Apple One, which bundles up to four other Apple services into a single monthly subscription. Apple One plans start at RM 19.90 per month.
-              </p>
-            </div>
-            <div>
-              <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">What is Dolby Atmos music?</p>
-              <p>
-                Dolby Atmos is an innovative audio technology that envelops you in an immersive listening experience. While music mixed in stereo is limited to left and right channels, music created in Dolby Atmos is freed from channels, allowing artists to place individual sounds all around you. Artists can also decide the volume, size and vibrancy of each instrument to reveal nuanced details in the music.
-              </p>
-            </div>
-            <div>
-              <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">How can I listen to Dolby Atmos music?</p>
-              <p>
-                Apple Music subscribers using the latest version of Apple Music on iPhone, iPad, Mac and Apple TV can listen to thousands of Dolby Atmos music tracks using any headphones. When you listen with compatible Apple or Beats headphones, Dolby Atmos music plays back automatically when available for a song. For other headphones, go to Settings > Music > Audio and set Dolby Atmos to Always On. You can also hear Dolby Atmos music using the built-in speakers on a compatible iPhone, iPad, MacBook Pro, MacBook Air or iMac, or by connecting your Apple TV 4K to one of the following: a Dolby Atmos–compatible sound bar, a Dolby Atmos–enabled AV receiver or a television that supports Dolby Atmos audio. For the full list of compatible devices, please see https://support.apple.com/en-my/HT212182.
-              </p>
-            </div>
-            <div>
-              <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">What is lossless audio?</p>
-              <p>
-                Lossless audio compression reduces the original file size of a song while preserving all of the data perfectly. Apple Music is making its entire catalogue of more than 90 million songs available in lossless audio at different resolutions. In Apple Music, “Lossless” refers to lossless audio up to 48kHz and “Hi-Res Lossless” refers to lossless audio from 48kHz to 192kHz. Lossless and Hi-Res Lossless files are very large and use much more bandwidth and storage space than standard AAC files.
-              </p>
-            </div>
-            <div>
-              <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">How can I listen to lossless?</p>
-              <p>
-                You can listen to lossless audio using the latest Apple Music app on an iPhone, iPad, Mac or Apple TV. Turn on lossless audio in Settings > Music > Audio Quality. You can choose between Lossless and Hi-Res Lossless for mobile network or Wi-Fi connections. Note that Hi-Res Lossless requires external equipment such as a USB digital to analog converter.
-              </p>
-            </div>
-            <div>
-              <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">Can I share with my family?</p>
-              <p>
-                Yes. With an Apple Music Family Plan, up to six people in the family can enjoy all the features and the full catalogue of Apple Music. To get started, just set up Family Sharing on your iOS or iPadOS device, Android phone or Mac and invite family members to join.
-              </p>
-            </div>
-            <div>
-              <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">Is there a student subscription?</p>
-              <p>
-                Students get the same Apple Music features and benefits as individual members. Once your student status with your university is verified, you get student membership pricing for up to four years, as long as you remain a student. After four years, your membership will continue at the individual member price.
-              </p>
-            </div>
-            <div>
-              <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">Are there commercials?</p>
-              <p>
-                Apple Music has zero ads.
-              </p>
-            </div>
-            <div>
-              <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">Am I eligible for a six-month free Mood Music offer? How do I redeem it?</p>
-              <p>
-                New subscribers can get six months of Apple Music free with an eligible audio device. Make sure your iPhone or iPad is running the latest version of iOS or iPadOS. Then you can activate your Apple Music trial after you pair your audio device to your iPhone or iPad. You’ll have three months to redeem the offer after the first activation of the eligible device.◊
-              </p>
-            </div>
+            <!--
+              <v-row class="mx-auto my-10">
+                <v-expansion-panels accordion>
+                  <v-expansion-panel class="bg-black">
+                    <v-expansion-panel-header>What is Mood Music?</v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                      Mood Music is a streaming service that allows you to listen to over 90 million songs. Its great features include the ability to download your favourite tracks and play them offline, lyrics in real time, listening across all your favourite devices, new music personalised just for you, curated playlists from our editors and many more. All this in addition to exclusive and original content.
+                    </v-expansion-panel-content>
+                    <v-expansion-panel-header>How can I listen to Mood Music?</v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                      Apple Music is already on your iPhone, iPad, Apple Watch, Apple TV and Mac — and you can listen with CarPlay or online at music.apple.com/my. Apple Music is also available on Windows, Android and other devices.
+                    </v-expansion-panel-content>
+                    <v-expansion-panel-header>What does it cost?</v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                      That all depends on which offer you choose. (1) Students can choose the Apple Music Student Plan at RM 6.90 per month. (2) An individual monthly subscription is just RM 14.90 per month after your free trial. (3) The Apple Music Family Plan, which allows you to share your account with up to five people and gives each member a personal account, is just RM 22.90 per month. (4) The Apple Music Individual Plan and the Apple Music Family Plan are also included in Apple One, which bundles up to four other Apple services into a single monthly subscription. Apple One plans start at RM 19.90 per month.
+                    </v-expansion-panel-content>
+                    <v-expansion-panel-header>What is Dolby Atmos music?</v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                      Dolby Atmos is an innovative audio technology that envelops you in an immersive listening experience. While music mixed in stereo is limited to left and right channels, music created in Dolby Atmos is freed from channels, allowing artists to place individual sounds all around you. Artists can also decide the volume, size and vibrancy of each instrument to reveal nuanced details in the music.
+                    </v-expansion-panel-content>
+                   <v-expansion-panel-header>What does it cost?</v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                      That all depends on which offer you choose. (1) Students can choose the Apple Music Student Plan at RM 6.90 per month. (2) An individual monthly subscription is just RM 14.90 per month after your free trial. (3) The Apple Music Family Plan, which allows you to share your account with up to five people and gives each member a personal account, is just RM 22.90 per month. (4) The Apple Music Individual Plan and the Apple Music Family Plan are also included in Apple One, which bundles up to four other Apple services into a single monthly subscription. Apple One plans start at RM 19.90 per month.
+                    </v-expansion-panel-content>
+                    <v-expansion-panel-header>How can I listen to Dolby Atmos music?</v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                      Apple Music subscribers using the latest version of Apple Music on iPhone, iPad, Mac and Apple TV can listen to thousands of Dolby Atmos music tracks using any headphones. When you listen with compatible Apple or Beats headphones, Dolby Atmos music plays back automatically when available for a song. For other headphones, go to Settings > Music > Audio and set Dolby Atmos to Always On. You can also hear Dolby Atmos music using the built-in speakers on a compatible iPhone, iPad, MacBook Pro, MacBook Air or iMac, or by connecting your Apple TV 4K to one of the following: a Dolby Atmos–compatible sound bar, a Dolby Atmos–enabled AV receiver or a television that supports Dolby Atmos audio. For the full list of compatible devices, please see https://support.apple.com/en-my/HT212182.
+                    </v-expansion-panel-content>
+                    <v-expansion-panel-header>What is lossless audio?</v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                      Lossless audio compression reduces the original file size of a song while preserving all of the data perfectly. Apple Music is making its entire catalogue of more than 90 million songs available in lossless audio at different resolutions. In Apple Music, “Lossless” refers to lossless audio up to 48kHz and “Hi-Res Lossless” refers to lossless audio from 48kHz to 192kHz. Lossless and Hi-Res Lossless files are very large and use much more bandwidth and storage space than standard AAC files.
+                    </v-expansion-panel-content>
+                    <v-expansion-panel-header>How can I listen to lossless?</v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                      You can listen to lossless audio using the latest Apple Music app on an iPhone, iPad, Mac or Apple TV. Turn on lossless audio in Settings > Music > Audio Quality. You can choose between Lossless and Hi-Res Lossless for mobile network or Wi-Fi connections. Note that Hi-Res Lossless requires external equipment such as a USB digital to analog converter.
+                    </v-expansion-panel-content>
+                    <v-expansion-panel-header>Can I share with my family?</v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                      Yes. With an Apple Music Family Plan, up to six people in the family can enjoy all the features and the full catalogue of Apple Music. To get started, just set up Family Sharing on your iOS or iPadOS device, Android phone or Mac and invite family members to join.
+                    </v-expansion-panel-content>
+                    <v-expansion-panel-header>Is there a student subscription?</v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                      Students get the same Apple Music features and benefits as individual members. Once your student status with your university is verified, you get student membership pricing for up to four years, as long as you remain a student. After four years, your membership will continue at the individual member price.
+                    </v-expansion-panel-content>
+                    <v-expansion-panel-header>Are there commercials?</v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                      Apple Music has zero ads.
+                    </v-expansion-panel-content>
+                    <v-expansion-panel-header>Am I eligible for a six-month free Mood Music offer? How do I redeem it?</v-expansion-panel-header>
+                    <v-expansion-panel-content>
+                      New subscribers can get six months of Apple Music free with an eligible audio device. Make sure your iPhone or iPad is running the latest version of iOS or iPadOS. Then you can activate your Apple Music trial after you pair your audio device to your iPhone or iPad. You’ll have three months to redeem the offer after the first activation of the eligible device.◊
+                    </v-expansion-panel-content>
+                  </v-expansion-panel>
+                </v-expansion-panels>
+              </v-row>
+            -->
           </div>
-          <p> dropdown menu </p>
           <p> search full FAQs page </p>
         </div>
       </div>
-      <div id="philanthropy" class="flex h-screen w-screen bg-center bg-[url('/paperhearts.jpg')] bg-cover align-middle text-white text-center">
+      <div id="philanthropy" class="snap-center flex h-screen w-screen bg-center bg-[url('/paperhearts.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
           <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
             <h1 class="text-5xl pt-20 z-10 text-white opacity-100">Donate Now</h1>
@@ -527,14 +586,51 @@
           </div>
         </div>
       </div>
-      <div id="artists" class="flex h-screen w-screen bg-center bg-[url('/3dbg7.jpg')] bg-cover align-middle text-white text-center">
+      <div id="artists" class="snap-center flex h-screen w-screen bg-center bg-[url('/3dbg7.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
           <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
             <h1 class="text-5xl pt-20 z-10 text-white opacity-100">Artists</h1>
-            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">Mood Music supports artists with tools to create, release and measure music across a global stage. Discover all the ways to showcase content on Apple Music — including MusicKit, RSS feeds, widgets, brand guidelines, badge art and more.</p>
+            <p class="text-2xl mt-5 mx-24 max-width- py-20 z-10 text-white opacity-100">Mood Music supports artists with tools to create, release and measure music across a global stage. Discover all the ways to showcase content on Apple Music — including MusicKit, RSS feeds, widgets, brand guidelines, badge art and more.</p>
           </div>
-          <p><NuxtLink to="/artists">Mood Music for Artists</NuxtLink></p>
-          <p>Mood Music Performance Partners Programme</p>
+          <div>
+            <v-carousel class="w-2/3">
+              <v-carousel-item>
+              <!--
+                v-for="(item,i) in items"
+                :key="i"
+                :src="/saxophone.jpg"
+                reverse-transition="fade-transition"
+                transition="fade-transition"
+              ></v-carousel-item>
+              <v-carousel-item
+                v-for="(item,i) in items"
+                :key="i"
+                :src="/singing.jpg"
+                reverse-transition="fade-transition"
+                transition="fade-transition"
+              ></v-carousel-item>
+              <v-carousel-item
+                v-for="(item,i) in items"
+                :key="i"
+                :src="/band.src"
+                reverse-transition="fade-transition"
+                transition="fade-transition"
+              ></v-carousel-item>
+            </v-carousel>
+              <v-carousel-item
+                v-for="(item,i) in items"
+                :key="i"
+                :src="/singer.src"
+                reverse-transition="fade-transition"
+                transition="fade-transition"
+              -->
+              </v-carousel-item>
+            </v-carousel>
+          </div>
+          <div class="grid grid-cols-2">
+            <p class="font-['nunito_sans'] text-blue-500 font-bold text-2xl"><NuxtLink to="/artists">Mood Music for Artists</NuxtLink></p>
+            <p class="font-['nunito_sans'] text-blue-500 font-bold text-2xl">Mood Music Performance Partners Programme</p>
+          </div>
         </div>
       </div>
     </div>
@@ -554,57 +650,42 @@
         </div>
       </div>
     </div>
-    <div id="information" class="font-['nunito_sans'] bg-gray-900 px-28 py-10 grid grid-cols-4 gap-x-14 text-center text-gray-100">
-        <div id="information">
-          <h5 class="text-2xl text-bold p-2">
-              <strong>Information</strong>
-          </h5>
-          <div class="font-alegreya text-light text-lg">
-              <p>FAQ</p>
-              <p>Corporate information</p>
-              <p>Investor relations</p>
-              <p>Media</p>
-              <p>Jobs</p>
-              <p>Contact</p>
-          </div>
-        </div>
-        <div id="info-phone">
-          <h5 class="text-2xl text-semibold p-2">
-              <strong>Support</strong>
-          </h5>
-          <div class="font-alegreya text-lg">
-            <p>Privacy</p>
-            <p>Cookies</p>
-            <p>Support</p>
-            <p>Legal notice</p>
-            <p>Feedback</p>
-          </div>
-        </div>
-        <div id="info-follow">
-          <h5 class="text-2xl text-semibold  p-2">
-              <strong>Account</strong>
-          </h5>
-          <div id="social-media-icons" class=" font-alegreya text-lg justify-items-center p-3">
-              <p>Manage account</p>
-              <p>Gift cards</p>
-              <p>Newsletter</p>
-          </div>
-        </div>
-        <div id="info-follow">
-          <h5 class="text-2xl text-semibold p-2">
-              <strong>Follow Us</strong>
-          </h5>
-          <div id="social-media-icons" class="font-alegreya grid grid-cols-3 justify-items-center p-3">
-              <a href=""><img src="facebook.png" alt="" class="h-5 w-5" /></a>
-              <a href=""><img src="instagram.png" alt="" class="h-5 w-5" /></a>
-              <a href=""><img src="youtube.png" alt="" class="h-5 w-5" /></a>
-          </div>
-        </div>
-    </div>
-    <div id="footer" class="font-['nunito_sans'] text-center text-gray-100 text-bold text-lg p-10 border-t-2 border-opacity-10 border-color-gray-200 bg-gray-900">
-      <p>
-        @ 2022 Mood Music All Rights Reserved | <NuxtLink to="/about">About Us</NuxtLink> | <NuxtLink to="/giftCards">Gift Cards</NuxtLink> | <NuxtLink to="/termsOfUse">Terms Of Use</NuxtLink> | <NuxtLink to="/privacyPolicy">Privacy Policy</NuxtLink>
-      </p>
-    </div>
+    <Footer />
   </div>
 </template>
+
+<script>
+/*
+import Vue from 'vue';
+import Vuetify from 'vuetify/lib'
+import Carousel3d from 'vue-carousel-3d';
+
+Vue.use(Vuetify)
+Vue.use(Carousel3d);
+
+const ops = {}
+
+export default
+
+  new Vuetify(opts)
+
+  components: {
+    Carousel3d,
+    Slide
+  }
+}
+*/
+
+// You still need to register Vuetify itself
+// src/plugins/vuetify.js
+
+// import Vue from 'vue'
+// import Vuetify from 'vuetify/lib'
+
+// Vue.use(Vuetify)
+
+// const opts = {}
+
+// export default new Vuetify(opts)
+
+</script>

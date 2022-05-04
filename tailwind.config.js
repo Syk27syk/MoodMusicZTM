@@ -11,7 +11,21 @@ module.exports = {
       lilita: ['Lilita One', 'sans-serif'],
       roboto: ['Roboto', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        wiggle: {
+          '0%, 100%': {
+            transform: 'rotate(-3deg)'
+          },
+          '50%': {
+            transform: 'rotate(3deg)'
+          },
+          animation: {
+            wiggle: 'wiggle ls ease-in-out infinite',
+          }
+        }
+      },
+    },
   },
   plugins: [],
 }
