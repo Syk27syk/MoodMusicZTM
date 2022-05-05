@@ -1,0 +1,40 @@
+{
+  "subscriptionPackages": [
+    {
+      "name": "Individual",
+      "price": "19.90",
+      "share": null,
+      "benefits": [{
+        "benefit1": "70 million songs, all ad free",
+        "benefit2": "real-time music curation based on emotional state",
+        "benefit3": "customizable audio visualization",
+        "benefit4": "access to artist interviews and radio stations",
+        "benefit5": "real time music composition based on emotional state and context, limited to 24 hours per month"
+      }]
+    },
+    {
+      "name": "Family",
+      "price": "33.90",
+      "share": null,
+      "benefits": [{
+        "benefit1": "70 million songs, all ad free",
+        "benefit2": "real-time music curation based on emotional state",
+        "benefit3": "customizable audio visualization",
+        "benefit4": "access to artist interviews and radio stations",
+        "benefit5": "real time music composition based on emotional state and context, limited to 24 hours per month"
+      }]
+    },
+    {
+      "name": "Individual",
+      "price": "69.90",
+      "share": null,
+      "benefits": [{
+        "benefit1": "70 million songs, all ad free",
+        "benefit2": "real-time music curation based on emotional state",
+        "benefit3": "customizable audio visualization",
+        "benefit4": "access to artist interviews and radio stations",
+        "benefit5": "unlimited real time music composition based on emotional state and context"
+      }]
+    }
+  ]
+}
