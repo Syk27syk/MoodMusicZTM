@@ -98,6 +98,12 @@
           </div>
           <div id="company-logos" class="flex pb-36 px-36">
             <div class="grid sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 lg:gap-12 md:gap-5 sm:gap-3">
+              <Logo
+                v-for="l in logos"
+                :key="l.name"
+                :logo="l"
+              />
+            <!--
               <a href="https://mood-music-syk.netlify.app/"><img src="/logo1.png" class="md:h-12 md:w-12 lg:h-24 lg:w-24 xl:h-48 xl:w-48 sepia" alt="" /></a>
               <a href="https://music.apple.com/"><img src="/logo2.png" class="md:h-12 md:w-12 lg:h-24 lg:w-24 xl:h-48 xl:w-48 sepia" alt="" /></a>
               <a href="https://www.spotify.com/us/"><img src="/logo3.png" class="md:h-12 md:w-12 lg:h-24 lg:w-24 xl:h-48 xl:w-48 sepia" alt="" /></a>
@@ -122,6 +128,7 @@
               <a href=""><img src="/logo22.png" class="md:h-12 md:w-12 lg:h-24 lg:w-24 xl:h-48 xl:w-48 sepia" alt="" /></a>
               <a href=""><img src="/logo23.png" class="md:h-12 md:w-12 lg:h-24 lg:w-24 xl:h-48 xl:w-48 sepia" alt="" /></a>
               <a href="https://www.masterclass.com/"><img src="/logo24.png" class="md:h-12 md:w-12 lg:h-24 lg:w-24 xl:h-48 xl:w-48 sepia" alt="" /></a>
+              -->
             </div>
             <!--
             <v-sheet class="mx-auto" max-width="700">
@@ -722,6 +729,18 @@
 
 <script>
 export default {
+  data() {
+    return {
+      logos: [],
+    };
+  },
+
+  mounted() {
+    this.$axios.get('logos.json').then(
+      (response) => {
+        this.logos = response.data.logos;
+      });
+  },
 
   methods: {
     goto(refName) {

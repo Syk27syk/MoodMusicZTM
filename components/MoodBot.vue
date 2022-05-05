@@ -1,5 +1,5 @@
 <template>
-    <div id="mood bot" class="absolute bottom-0 right-0 w-[150px] h-[150px] rounded-full m-10 text-center">
+    <div id="mood bot" class="absolute bottom-0 right-0 z-10 w-[150px] h-[150px] rounded-full m-10 text-center">
       <button>
         <img src="/moodbot.png" class="p-5 animate-bounce" alt="moodbot" />
       </button>
