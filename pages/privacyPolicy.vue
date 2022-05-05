@@ -1,4 +1,7 @@
 <template>
+  <div>
+    <Header />
+    <MoodBot />
     <div class="mx-12 my-5 text-lg text-gray-900">
         <h3 class="text-2xl text-bold border-b-gray-800 m-auto py-10">MoodMusic and Privacy</h3>
         <p class="my-3"> Mood Music is designed to protect your information and enable you to choose what you share.</p>
@@ -63,5 +66,6 @@
         <p class="my-3">For information about Apple Music Web Player and Privacy, visit www.apple.com/legal/privacy/data/en/apple-music-web.</p>
 
         <p class="text-sm my-10">Published Date: February 15, 2022</p>
+    </div>
   </div>
 </template>

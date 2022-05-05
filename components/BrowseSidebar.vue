@@ -7,15 +7,15 @@
                 <div id="input fields" class="flex flex-col gap-y-3 py-5 border border-l-0 border-r-0 border-t-gray-500 border-b-gray-500 text-xl">
                     <legend class="text-xl font-bold uppercase">Text Input Fields</legend>
                     <div>
-                        <label for="input1" class="font-bold">Input Field 1:</label>
+                        <label for="input1" class="font-bold max-w-full">Input Field 1:</label>
                         <input type="text" value="input here" placeholder="input here" class="border border-gray-500 rounded-lg" />
                     </div>
                     <div>
-                        <label for="input2" class="font-bold">Input Field 2:</label>
+                        <label for="input2" class="font-bold max-w-full">Input Field 2:</label>
                         <input type="text" value="input here" placeholder="input here" class="border border-gray-500 rounded-lg" />
                     </div>
                     <div>
-                        <label for="input3" class="font-bold">Input Field 3:</label>
+                        <label for="input3" class="font-bold max-w-full">Input Field 3:</label>
                         <input type="text" value="input here" placeholder="input here" class="border border-gray-500 rounded-lg" />
                     </div>
                 </div>

@@ -1,8 +1,7 @@
 <template>
     <div>
-        <div id="header">
-            <p>header</p>
-        </div>
+        <Header />
+        <MoodBot />
         <!--
         <div v-if="user === null" id="login" class="text-center mt-20">
             <p> This page is limited to authorized users only. </p>
@@ -59,6 +58,7 @@
                 </tfoot>
             </table>
         </div>
+        <Footer />
     </div>
 </template>
 

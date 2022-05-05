@@ -1,8 +1,7 @@
 <template>
     <div>
-        <div id="header">
-            <p> header </p>
-        </div>
+        <Header />
+        <MoodBot />
         <div>
            <table class="table-auto w-2/3 mt-20 mx-auto">
                 <thead class="text-3xl font-oswald text-black uppercase">
@@ -51,6 +50,7 @@
                 </tfoot>
             </table>
         </div>
+        <Footer />
     </div>
 </template>
 

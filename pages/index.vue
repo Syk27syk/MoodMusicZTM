@@ -7,8 +7,8 @@
         <!--<canvas class="invisible"><img src="" alt="" /></canvas>-->
         <div class="m-auto flex-col">
           <div class="m-auto w-3/4 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
-            <h1 class="font-['open_sans'] font-bold text-5xl pt-20 z-10 light:text-gray-100 dark:text-gray-900 drop-shadow-lg opacity-100">Mood Music</h1>
-            <p class="font-alegreya text-3xl mt-5 pt-10 pb-20 z-10 light:text-gray-200 dark:text-gray-800 font-bold opacity-100">The music app that responds to your state of mind</p>
+            <h1 class="font-['open_sans'] font-bold text-5xl pt-20 z-10 text-gray-900 drop-shadow-lg opacity-100">Mood Music</h1>
+            <p class="font-alegreya text-3xl mt-5 pt-10 pb-20 z-10 text-gray-800 font-bold opacity-100">The music app that responds to your state of mind</p>
             <button class="text-2xl m-auto font-['open_sans'] font-bold bg-[url('/blobbybutton.png')] bg-blue-500 py-5 px-8 mb-10 text-white rounded-full border-2 border-t-white border-l-white border-b-black border-r-black border-opacity-30" @click="goto('subscriptions')">Try 1 Month Free</button>
           </div>
         </div>
