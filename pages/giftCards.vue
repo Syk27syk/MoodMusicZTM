@@ -1,14 +1,13 @@
 <template>
     <div>
         <Header />
-        <QuickLinks />
         <MoodBot />
         <div id="background" class="flex h-screen w-screen bg-center bg-[url('/balloongift.jpg')] bg-cover align-middle text-white text-center">
             <div id="body" class="m-auto flex-col">
                 <div id="login" class="text-black h-250 w-250">
                     <div id="top-section">
                         <h1 class="text-5xl pt-20 pb-12 z-10 text-gray-800 drop-shadow-xl shadow-black opacity-100">Gift Cards</h1>
-                        <button class="font-['open_sans'] bg-blue-500 text-white text-bold uppercase rounded-full border-red-500 px-8 py-3 mx-10 mt-5 mb-10 drop-shadow-xl shadow-black">
+                        <button class="font-['open_sans'] bg-blue-500 text-white text-bold uppercase rounded-full border-red-500 px-8 py-3 mx-10 mt-5 mb-10 drop-shadow-xl shadow-black" @click="goto('division')">
                             Buy
                         </button>
                     </div>
@@ -44,38 +43,44 @@
             <p class="text-sm py-2 px-5">Issued by Apple Value Services, LLC (AVS). ©2020 Apple Inc. All rights reserved.</p>
             <p class="text-sm py-2 px-5">We approximate your location from your internet IP address by matching it to a geographic region or from the location entered during your previous visit to Apple.</p>
         </div>
-        <div id="gift-card-form" class="bg-white px-10 py-10">
+        <div id="gift-card-form" ref="division" class="bg-white px-10 py-10">
             <h3 class="text-5xl text-gray-800 font-bold font['open_sans'] py-10 px-10 m-auto"> Buy Mood Music Gift Card </h3>
             <div id="delivery" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
                 <h5 class="text-2xl text-gray-800 font-bold my-2 p-2 px-5"> How would you like to send it? </h5>
                 <p class="text-lg text-gray-800 my-2 px-5"> Choose to send by mail and get a collectible sticker </p>
                 <div class="grid grid-cols-2 gap-x-5 m-auto py-5 px-10 ">
-                    <p class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl"> Email </p>
-                    <p class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl"> Mail </p>
+                    <div class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
+                        <input id="email" type="radio">
+                        <label for="email"> Email </label>
+                    </div>
+                        <div class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
+                        <input id="mail" type="radio" class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
+                        <label for="mail"> Mail </label>
+                    </div>
                 </div>
             </div>
             <div id="design" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
                 <h5 class="text-2xl text-gray-800 font-bold my-2 p-2"> Choose a design </h5>
-                <div class="grid grid-cols-2">
-                    <p class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl"><img src="/mmlogo.png" class="h-48 w-48" alt="" /></p>
-                    <p class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl"><img src="/quaverheart.png" class="h-48 w-48" alt="" /></p>
-                    <p class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl"><img src="/brainplug.png" class="h-48 w-48" alt="" /></p>
-                    <p class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl"><img src="/moodbot.png" class="h-48 w-48" alt="" /></p>
-                </div>
+                <select v-model="giftCardDesign" class="grid grid-cols-2">
+                    <option class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl"><img src="/mmlogo.png" class="h-48 w-48" alt="" />logo</option>
+                    <option class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl"><img src="/quaverheart.png" class="h-48 w-48" alt="" /></option>
+                    <option class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl"><img src="/brainplug.png" class="h-48 w-48" alt="" /></option>
+                    <option class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl"><img src="/moodbot.png" class="h-48 w-48" alt="" />moodbot</option>
+                </select>
             </div>
-            <div id="amount" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
+            <select id="amount" v-model="giftCardAmount" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
                 <h5 class="text-2xl text-gray-800 font-bold my-2 p-2"> Choose an amount </h5>
-                    <p class="m-auto text-center font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">$15</p>
-                    <p class="m-auto text-center font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">$30</p>
-                    <p class="m-auto text-center font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">$60</p>
+                    <option class="m-auto text-center font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">$15</option>
+                    <option class="m-auto text-center font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">$30</option>
+                    <option class="m-auto text-center font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">$60</option>
                     <p class="m-auto text-center font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
                         Other Amount
-                        <input class="flex w-full h-auto bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2"></input>
+                        <input class="flex w-full h-auto bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Amount in US dollars"></input>
                     </p>
-            </div>
+            </select>
             <div id="personalized-message" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
                 <h5 class="text-2xl text-gray-800 font-bold my-2 p-2"> Want to add a personalized message?</h5>
-                <input class="flex w-full h-auto text-left bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2"></input>
+                <input class="flex w-full h-auto text-left text-xl bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Your message here"></input>
             </div>
             <div id="total" class="text-gray-800 font-bold my-2 p-2 py-5">
                  <h5 class="text-3xl">Total: </h5>
@@ -103,5 +108,14 @@
 </template>
 
 <script>
+export default {
+  methods: {
+    goto(refName) {
+      const element = this.$refs[refName];
+      const top = element.offsetTop;
 
+      window.scrollTo(0, top);
+    }
+  }
+};
 </script>

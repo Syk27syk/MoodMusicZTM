@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div id="information" class="font-['nunito_sans'] bg-gray-900 px-28 py-10 grid grid-cols-4 gap-x-14 text-center text-gray-100">
+        <div id="information" class="font-['nunito_sans'] bg-gray-900 px-3 md:px-16 lg:px-28 py-10 grid md:grid-cols-4 gap-x-5 gap-y-5 lg:gap-x-14 text-center text-gray-100">
             <div id="information">
             <h5 class="text-2xl text-bold p-2">
                 <strong>Information</strong>
@@ -40,10 +40,11 @@
             <h5 class="text-2xl text-semibold p-2">
                 <strong>Follow Us</strong>
             </h5>
-            <div id="social-media-icons" class="font-alegreya grid grid-cols-3 justify-items-center p-3">
-                <a href=""><img src="facebook.png" alt="" class="h-5 w-5" /></a>
-                <a href=""><img src="instagram.png" alt="" class="h-5 w-5" /></a>
-                <a href=""><img src="youtube.png" alt="" class="h-5 w-5" /></a>
+            <div id="social-media-icons" class="font-alegreya grid grid-cols-2 gap-5 justify-items-center p-3">
+                <a href=""><img src="facebook.png" alt="" class="h-16 w-16" /></a>
+                <a href=""><img src="instagram.png" alt="" class="h-16 w-16" /></a>
+                <a href=""><img src="twitter.png" alt="" class="h-16 w-16" /></a>
+                <a href=""><img src="youtube.png" alt="" class="h-16 w-16" /></a>
             </div>
             </div>
         </div>

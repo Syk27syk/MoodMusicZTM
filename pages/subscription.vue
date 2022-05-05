@@ -8,45 +8,47 @@
       <p>
         Enjoy millions of songs. text text text.
       </p>
-      <div id="individual">
-        <div id="title block" class="border-bottom">
-            <h5 class="text-3xl"> Individual </h5>
-            <p>1 month free, then RM19.90/month</p>
-            <p>Your existing subscriptions are not eligible for trial</p>
-            <p>⭐ Recommended</p>
+      <div id="subscription-plans" class="flex flex-row gap-5">
+        <div id="individual" class="m-auto py-5 px-8 my-10 bg-white bg-opacity-20 border-white border-opacity10 rounded-3xl">
+          <div id="title block" class="border-bottom">
+              <h5 class="pt-5 text-3xl font-bold font['nunito_sans']"> Individual </h5>
+              <p class="py-2 text-xl font-bold font-lola">1 month free, then RM19.90/month</p>
+              <p class="py-2 text-xl">Your existing subscriptions are not eligible for trial</p>
+              <p class="py-2 text-xl ">⭐ Recommended</p>
+          </div>
+          <div class="pb-5 text-xl">
+              <p>70+ million songs, all ad free</p>
+              <p>70+ million songs, all ad free</p>
+              <p>70+ million songs, all ad free</p>
+              <p>70+ million songs, all ad free</p>
+          </div>
         </div>
-        <div>
-            <p>70+ million songs, all ad free</p>
-            <p>70+ million songs, all ad free</p>
-            <p>70+ million songs, all ad free</p>
-            <p>70+ million songs, all ad free</p>
+        <div id="family" class="m-auto py-5 px-8 my-10 bg-white bg-opacity-20 border-white border-opacity10 rounded-3xl">
+          <div id="title block" class="border-bottom">
+              <h5 class="pt-5 text-3xl font-bold font['nunito_sans']"> Family </h5>
+              <p class="py-2 text-xl font-bold font-lola">1 month free, then RM33.90month</p>
+              <p class="py-2 text-xl">Share with up to 5 people. Your existing subscriptions are not eligible for trial</p>
+          </div>
+          <div class="pb-5 text-xl">
+              <p>70+ million songs, all ad free</p>
+              <p>70+ million songs, all ad free</p>
+              <p>70+ million songs, all ad free</p>
+              <p>70+ million songs, all ad free</p>
+          </div>
         </div>
-      </div>
-      <div id="family">
-        <div id="title block" class="border-bottom">
-            <h5 class="text-3xl"> Family </h5>
-            <p>1 month free, then RM33.90month</p>
-            <p>Share with up to 5 people. Your existing subscriptions are not eligible for triall</p>
-        </div>
-        <div>
-            <p>70+ million songs, all ad free</p>
-            <p>70+ million songs, all ad free</p>
-            <p>70+ million songs, all ad free</p>
-            <p>70+ million songs, all ad free</p>
-        </div>
-      </div>
-            <div id="premier">
-        <div id="title block" class="border-bottom">
-            <h5 class="text-3xl"> Premier </h5>
-            <p>1 month free, then RM69.90/month</p>
-            <p>Share with up to 5 people. Your existing subscriptions are not eligible for trial</p>
-        </div>
-        <div>
-            <p>70+ million songs, all ad free</p>
-            <p>70+ million songs, all ad free</p>
-            <p>70+ million songs, all ad free</p>
-            <p>70+ million songs, all ad free</p>
-            <p>70+ million songs, all ad free</p>
+        <div id="premier" class="m-auto my-10 py-5 px-8 bg-white bg-opacity-20 border-white border-opacity10 rounded-3xl">
+          <div id="title block" class="border-bottom">
+              <h5 class="pt-5 text-3xl font-bold font['nunito_sans']"> Premier </h5>
+              <p class="py-2 text-xl font-bold font-lola">1 month free, then RM69.90/month</p>
+              <p class="py-2 text-xl">Share with up to 5 people. Your existing subscriptions are not eligible for trial</p>
+          </div>
+          <div class="pb-5 text-xl">
+              <p>70+ million songs, all ad free</p>
+              <p>70+ million songs, all ad free</p>
+              <p>70+ million songs, all ad free</p>
+              <p>70+ million songs, all ad free</p>
+              <p>70+ million songs, all ad free</p>
+          </div>
         </div>
       </div>
       <div id="summary">

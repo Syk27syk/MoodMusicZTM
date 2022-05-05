@@ -1,159 +1,97 @@
 <template>
   <div>
-    <div id="head" class="flex flex-row w-screen align-center bg-gray-800">
-      <div id="menu-left" class="px-6">
-        <NuxtLink to="/index"><img src="/mmlogo.png" class="h-[150px] w-[150px] p-5" alt="logo" /></NuxtLink>
-      </div>
-      <div id="menu" class="font-['open_sans'] font-bold text-lg text-gray-100 uppercase flex flex-row gap-x-20 py-5">
-        <button>
-          <NuxtLink to="/browse">
-            Browse Our Library
-          </NuxtLink>
-        </button>
-        <button>
-          <NuxtLink to="/artist">
-            Artist
-          </NuxtLink>
-        </button>
-        <button>
-          <NuxtLink to="/corporateInformation">
-            Corporate Information
-          </NuxtLink>
-        </button>
-        <button>
-          <NuxtLink to="/support">
-            Support
-          </NuxtLink>
-        </button>
-        <button>
-          <p> More </p>
-        </button>
-      </div>
-    </div>
-    <div id="quick links" class="bg-blue-300 bg-opacity-20 backdrop-blur-lg rounded-full border border-white border-opacity-30 text-white p-10 absolute top-0 right-0 m-5">
-      <button
-          type="button"
-          class="text-xl font-extrabold font-roboto text-gray-500 text-opacity-100 text-center align-center mx-auto py-2 flex flex-col relative z-10"
-      >
-          Quick<br>Links
-          <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6 mx-auto"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-      </button>
-      <button class="fixed inset-0 h-full w-full text-transparent cursor-default tabindex=-1 z-0">text</button>
-      <div class="flex flex-col relative z-10">
-          <button class="rounded-full bg-transparent  h-24 w-24 p-2 my-2 mx-1 drop-shadow-lg">
-              <NuxtLink to="/account"><img src="/quaverheart.png" alt="account"></NuxtLink>
-          </button>
-          <button class="rounded-full bg-transparent  h-24 w-24 p-2 my-2 mx-1 drop-shadow-lg">
-              <NuxtLink to="/playlist"><img src="/musichead.png" alt="playlist"></NuxtLink>
-          </button>
-          <button class="rounded-full bg-transparent h-24 w-24 p-2 my-2 mx-1 drop-shadow-lg">
-              <NuxtLink to="/cart"><img src="/semiquaver.png" alt="cart"></NuxtLink>
-          </button>
-      </div>
-    </div>
-    <div id="mood bot" class="w-[150px] h-[150px] rounded-full absolute right-0 bottom-0 m-10 text-center">
-      <button>
-      <img src="/moodbot.png" class="p-5 animate-bounce" alt="moodbot" />
-      </button>
-      <p class="font-lola text-xl text-amber-500 font-italic text-center uppercase drop-shadow-lg">
-        Chat with Moodbot
-      </p>
-    </div>
+    <Header />
+    <MoodBot />
     <div id="body" class="bg-slate-300">
-      <div id="hero" class="flex  h-screen w-screen bg-center bg-[url('/testbg.png')] bg-cover align-middle text-white text-center">
+      <div id="new-dimensions" class="flex h-screen w-screen bg-center bg-[url('/smokehole.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
-          <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
-            <h1 class="font-['open_sans'] font-bold text-5xl pt-20 z-10 text-white opacity-100">Make Your Music</h1>
-            <p class="font-alegreya text-2xl mt-5 py-20 z-10 text-white opacity-100">Get your songs out of your head and into the world. Now anyone can record studio-quality sound, release new tracks, and connect with fans.</p>
+          <div class="m-auto h-250 w-250 flex flex-col gap-y-20 text-6xl pt-20 mx-10 z-10 text-white font-alegreya font-bold opacity-100">
+            <h1>Enter</h1>
+            <h1>a new dimension</h1>
+            <h1>of</h1>
+            <h1>creativity</h1>
           </div>
-          <canvas>
-            <img src="" alt="" />
-          </canvas>
         </div>
       </div>
-      <div id="library" class="flex h-screen w-screen bg-center bg-[url('/3dbg1.jpg')] bg-cover align-middle text-white text-center">
-        <div class="m-auto flex-col">
-          <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
-            <h1 class="text-5xl pt-20 z-10 text-white opacity-100">Enter a new dimension of creativity</h1>
-            <div class="flex flex-row">
-              <img src="/goldpearl.png" class="w-[96px] h-[96px]" alt="" />
-              <img src="/greenpearl.png" class="w-[96px] h-[96px]" alt="" />
-              <img src="/pinkpearl.png" class="w-[96px] h-[96px]" alt="" />
-              <img src="/graypearl.png" class="w-[96px] h-[96px]" alt="" />
+      <!-- the font isn't right here. Experiment until you get it right. Also the hero section has potential to be a lot more than this. -->
+      <div class="grid md:grid-cols-1 lg:grid-cols-2">
+        <div id="make-music" class="relative flex  h-screen w-screen bg-center bg-[url('/colorbg.png')] bg-cover align-middle text-white text-center">
+          <div class="m-auto flex-col">
+            <div class="m-auto h-250 w-250">
+              <h1 class="font-['open_sans'] font-bold text-5xl pt-20 z-10 text-white opacity-100">Make Your Music</h1>
+              <p class="font-alegreya text-3xl mx-16 mt-5 py-20 z-10 text-white font-bold opacity-100">Get your songs out of your head and into the world. Now anyone can record studio-quality sound, release new tracks, and connect with fans.</p>
+              <img src="/singing.png" class="absolute left-0 bottom-0 w-screen z-0" alt="" />
             </div>
-            <div>
-              <h5 class="text-2xl mt-5 py-20 z-10 text-white opacity-100">Spatial Audio </h5>
+            <canvas>
               <img src="" alt="" />
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
+            </canvas>
+          </div>
+        </div>
+        <div id="tools" class="relative flex h-screen w-screen bg-center bg-[url('/wavesaudio.jpg')] bg-cover align-middle text-white text-center">
+          <div class="m-auto flex-col">
+            <div class="m-auto h-250 w-250">
+              <h1 class="text-5xl pt-20  px-24 z-10 text-white font-bold opacity-100">Capture your sound with tools for writing, recording, mixing, and mastering.</h1>
+              <p class="text-2xl mt-5 py-20 z-10 text-blue-500 font-bold opacity-100">Explore new ways to create.</p>
+              <!--<p> Play with ideas in real time with Live Loops on Logic Pro.</p>-->
+            </div>
+            <img src="/createmusic.png" class="absolute left-0 bottom-0 w-screen z-0" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-1 lg:grid-cols-2">
+        <div id="release" class="flex h-screen w-screen bg-center bg-[url('/goldstars.jpg')] bg-cover align-middle text-white text-center">
+          <div class="m-auto flex-col">
+            <div class="m-auto h-250 w-250">
+              <h1 class="text-5xl pt-20 my-10 z-10 text-white opacity-100"> Release your songs across the globe. </h1>
+            <img src="/globeheadphones.png" class="m-auto h-96 py-8" alt="" />
+              <p class="text-2xl mt-5 py-20 z-10 text-blue-500 font-bold opacity-100">Learn more about preparing your release.</p>
+            </div>
+          </div>
+        </div>
+        <div id="share" class="flex h-screen w-screen bg-center bg-[url('/whitegoldmarble.jpg')] bg-cover align-middle text-white text-center">
+          <div class="m-auto flex-col">
+            <div class="m-auto h-250 w-250 px-10">
+              <h1 class="text-5xl pt-20 z-10 text-red-500 font-bold">Share the excitement</h1>
+              <h1 class="text-5xl pt-20 z-10 text-gray-900 font-bold">with milestones you can post on your social channels</h1>
+              <p class="text-2xl mt-5 py-20 z-10 text-blue-500 font-bold"> View all promotion tools </p>
+              <p class="text-2xl mt-5 py-20 z-10 text-gray-900 opacity-100"> Celebrate Milestones with your fans by sharing song plays, Shazams, and playlists your songs have been added to. </p>
             </div>
           </div>
         </div>
       </div>
-      <div id="mooddetection" class="flex h-screen w-screen bg-center bg-[url('/3dbg2.jpg')] bg-cover align-middle text-white text-center">
+      <div id="connect" class="flex h-screen w-screen bg-center bg-[url('/network.png')] bg-cover align-middle text-gray-800 text-center">
         <div class="m-auto flex-col">
-          <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
-            <h1 class="text-5xl pt-20 z-10 text-white opacity-100">Capture yur sound with tools for writing, recording, mixing, and mastering.</h1>
-            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">Explore new ways to create.</p>
-            <p> Play with ideas in real time with Live Loops on Logic Pro.</p>
+          <div class="m-auto h-250 w-250">
+            <h1 class="text-5xl pt-12 mx-10 z-10 text-red font-bold">Stay connected to fans </h1>
+            <h1 class="text-5xl pt-20 mx-10 z-10 text-gray-500">And see how they listen around the world. </h1>
+            <p class="text-2xl mt-5 py-20 z-10 text-blue-500 font-bold"> See how to measure your music. </p>
+            <div class="mx-12 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
+              <img src="/musicdata.png" class="m-auto p-5 h-96" alt="" />
+              <p class="text-2xl mt-5 mx-10 py-20 z-10 text-gray-900"> Insights can help you understand what your audience is looking for, and how they're reacting to your music. </p>
+            </div>
           </div>
         </div>
       </div>
-      <div id="spatialaudio" class="flex h-screen w-screen bg-center bg-[url('/3dbg5.jpg')] bg-cover align-middle text-white text-center">
+      <div id="latest-news" class="flex h-screen w-screen bg-center bg-[url('/bluegold.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
-          <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
-            <h1 class="text-5xl pt-20 z-10 text-white opacity-100"> Release your songs across the globe. </h1>
-            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">Learn more about preparing your release.</p>
+          <div class="m-auto px-16 h-250 w-250">
+            <h1 class="text-5xl pt-20 z-10 font-bold text-gray-100">Get the latest news for artists.</h1>
+            <div class="text-left">
+              <p class="text-3xl mt-5 pt-20 z-10 text-gray-200">Fans can now find concert information and tickets to your shows with Shazam.</p>
+              <p class="text-2xl mt-5 pt-10 z-10 text-blue-500"> > Learn more about publishing your concerts to Shazam.</p>
+              <p class="text-4xl mt-5 pt-20 z-10 text-gray-200">Celebrating the 2021 Mood Music Awards.</p>
+              <p class="text-2xl mt-5 pt-10 z-10 text-blue-500"> > Find out more about the winners, including The Weeknd, H.E.R., and Olivia Rodrigo.</p>
+              <p class="text-4xl mt-5 pt-20 z-10 text-gray-200">Artists featured in DJ mixes can now get paid.</p>
+              <p class="text-2xl mt-5 pt-10 pb-20 z-10 text-blue-500">> Mood Music is using Shazam technology to identify and pay rights holders who appear in thousands of DJ mixes.</p>
+            </div>
           </div>
         </div>
       </div>
-      <div id="3daudiovisual" class="flex h-screen w-screen bg-center bg-[url('/orbsblack.jpg')] bg-cover align-middle text-white text-center">
+      <div id="subcription" class="flex h-screen w-screen bg-center bg-[url('/white1.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
-          <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
-            <h1 class="text-5xl pt-20 z-10 text-white opacity-100">Share the excitement</h1>
-            <h1 class="text-5xl pt-20 z-10 text-white opacity-100">With milestones you can post on your social channels</h1>
-            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100"> View all promotion tools </p>
-            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100"> Celebrate Milestones with your fans by sharing song plays, Shazams, and playlists your songs have been added to. </p>
-          </div>
-        </div>
-      </div>
-      <div id="logos" class="flex h-screen w-screen bg-center bg-[url('/geotunnelblack.jpg')] bg-cover align-middle text-white text-center">
-        <div class="m-auto flex-col">
-          <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
-            <h1 class="text-5xl pt-20 z-10 text-white opacity-100">Stay connected to fans </h1>
-            <h1 class="text-5xl pt-20 z-10 text-white opacity-100">And see how they listen around the world. </h1>
-            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100"> See how to measure your music. </p>
-            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100"> Insights can help you understand what your audience is looking for, and how they're reacting to your music. </p>
-          </div>
-        </div>
-      </div>
-      <div id="3dcarousel" class="flex h-screen w-screen bg-center bg-[url('/smokering.jpg')] bg-cover align-middle text-white text-center">
-        <div class="m-auto flex-col">
-          <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
-            <h1 class="text-5xl pt-20 z-10 text-white opacity-100">Get the latest news for artists.</h1>
-            <p class="text-4xl mt-5 py-20 z-10 text-white opacity-100">Fans can now find concert information and tickets to your shows with Shazam.</p>
-            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">Learn more about publishing your concerts to Shazam.</p>
-            <p class="text-4xl mt-5 py-20 z-10 text-white opacity-100">Celebrating the 2021 Mood Music Awards.</p>
-            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">Find out more about the winners, including The Weeknd, H.E.R., and Olivia Rodrigo.</p>
-            <p class="text-4xl mt-5 py-20 z-10 text-white opacity-100">Artists featured in DJ mixes can now get paid.</p>
-            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">Mood Music is using Shazam technology to identify and pay rights holders who appear in thousands of DJ mixes.</p>
-          </div>
-        </div>
-      </div>
-      <div id="subcription" class="flex h-screen w-screen bg-center bg-[url('/goldmarble.jpg')] bg-cover align-middle text-white text-center">
-        <div class="m-auto flex-col">
-          <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
-            <h1 class="text-5xl pt-20 z-10 text-white opacity-100">Have a question?</h1>
-            <p class="text-2xl mt-5 py-20 z-10 text-white opacity-100">Contact our support team.</p>
+          <div class="m-auto h-250 w-250 px-20">
+            <h1 class="text-5xl pt-20 z-10 text-gray-900 font-bold opacity-100">Have a question?</h1>
+            <p class="text-2xl mt-24 py-4 px-5 z-10 text-gray-200 font-bold opacity-100 bg-gray-800 rounded-full"><NuxtLink to="/support">Contact our support team.</NuxtLink></p>
           </div>
         </div>
       </div>

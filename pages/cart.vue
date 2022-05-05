@@ -7,7 +7,7 @@
            <table class="table-auto w-2/3 mt-20 mx-auto">
                 <thead class="text-3xl font-oswald text-black uppercase">
                     <tr>
-                        <th class="text-left">Name</th>
+                        <th class="text-left">Item</th>
                         <th class="text-center">Price</th>
                         <th class="text-center">Quantity</th>
                         <th class="text-center">Total</th>
