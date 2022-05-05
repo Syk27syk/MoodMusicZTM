@@ -1,0 +1,124 @@
+{
+  "logos": [
+    {
+      "name": "mood music",
+      "image": "/logo1.png",
+      "link": "https://mood-music-syk.netlify.app/"
+    },
+    {
+      "name": "apple music",
+      "image": "/logo2.png",
+      "link": "https://music.apple.com/"
+    },
+    {
+      "name": "spotify",
+      "image": "/logo3.png",
+      "link": "https://www.spotify.com/us/"
+    },
+    {
+      "name": "audioengineering societ",
+      "image": "/logo4.png",
+      "link": "https://aes2.org/"
+    },
+    {
+      "name": "womens audio mission",
+      "image": "/logo5.png",
+      "link": "https://womensaudiomission.org/"
+    },
+    {
+      "name": "berklee college of music",
+      "image": "/logo6.png",
+      "link": "https://welcome.online.berklee.edu/"
+    },
+    {
+      "name": "avid",
+      "image": "logo7.png",
+      "link": "https://www.avid.com/"
+    },
+    {
+      "name": "sweetwater",
+      "image": "/logo8.png",
+      "link": "https://www.sweetwater.com"
+    },
+    {
+      "name": "pioneerdj",
+      "image": "/logo9.png",
+      "link": "https://www.pioneerdj.com/en-gb/"
+    },
+    {
+      "name": "steinway",
+      "image": "/logo10.png",
+      "link": "https://www.steinway.com/"
+    },
+    {
+      "name": "numark",
+      "image": "/logo11.png",
+      "link": "https://www.numark.com"
+    },
+    {
+      "name": "native instruments",
+      "image": "/logo12.png",
+      "link": "https://www.nativeinstruments.com"
+    },
+    {
+      "name": "universal audio",
+      "image": "/logo13.png",
+      "link": "https://www.uaudio.com"
+    },
+    {
+      "name": "bose",
+      "image": "/logo14.png",
+      "link": "https://www.bose.com"
+    },
+    {
+      "name": "yamaha",
+      "image": "/logo15.png",
+      "link": "https://www.yamaha.com"
+    },
+    {
+      "name": "presonus",
+      "image": "/logo16.png",
+      "link": "https://www.presonus.com"
+    },
+    {
+      "name": "sound on sound",
+      "image": "/logo17.png",
+      "link": "https://www.soundonsound.com"
+    },
+    {
+      "name": "petronas concert hall",
+      "image": "/logo18.png",
+      "link": "https://www.dfp.com.my"
+    },
+    {
+      "name": "steinberg",
+      "image": "/logo19.png",
+      "link": "https://www.steinberg.net"
+    },
+    {
+      "name": "soundcloud",
+      "image": "/logo20.png",
+      "link": "https://www.soundcloud.com"
+    },
+    {
+      "name": "youtube",
+      "image": "/logo21.png",
+      "link": "https://music.youtube.com"
+    },
+    {
+      "name": "bluemic",
+      "image": "/logo22.png",
+      "link": "https://www.bluemic.com"
+    },
+    {
+      "name": "shure",
+      "image": "/logo23.png",
+      "link": "https://www.shure.com"
+    },
+    {
+      "name": "masterclass",
+      "image": "/logo24.png",
+      "link": "https://www.masterclass.com/"
+    }
+  ]
+}

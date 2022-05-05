@@ -3,19 +3,20 @@
     <Header />
     <MoodBot />
     <div id="background" class="flex h-screen w-screen bg-center bg-[url('/bluering.jpg')] bg-cover align-middle text-white text-center">
-      <div class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
-        <p class="text-5xl font-['nunito_sans']">Mood Music</p>
+      <div class="m-auto h-250 w-250 border border-gray-300 border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
+        <p class="text-5xl text-gray-900 font-bold font-['nunito_sans'] py-10">Mood Music</p>
         <div id="visualizer" class="width height border rounded-md ">
             <img src="" alt="" />
         </div>
-        <p>
-          Enjoy millions of songs. text text text.
-        </p>
+        <ul class="flex-col gap-3 my-5 md:mx-12 text-xl font-bold text-gray-200">
+          <li>Enjoy millions of new hits and old favourites of any genre.</li>
+          <li>Have real-time music composed just for you, based on the emotions of the moment.</li>
+        </ul>
         <div id="subscription-plans" class="flex flex-row gap-5">
           <div id="individual" class="m-auto py-5 px-8 my-10 bg-white bg-opacity-20 border-white border-opacity10 rounded-3xl">
             <div id="title block" class="border-bottom">
-                <h5 class="pt-5 text-3xl font-bold font['nunito_sans']"> Individual </h5>
-                <p class="py-2 text-xl font-bold font-lola">1 month free, then RM19.90/month</p>
+                <h5 class="pt-5 text-3xl font-bold text-gray-900 font['nunito_sans']"> Individual </h5>
+                <p class="py-2 text-xl font-bold font-lola text-gray-700">1 month free, then RM19.90/month</p>
                 <p class="py-2 text-xl">Your existing subscriptions are not eligible for trial</p>
                 <p class="py-2 text-xl ">⭐ Recommended</p>
             </div>
@@ -28,8 +29,8 @@
           </div>
           <div id="family" class="m-auto py-5 px-8 my-10 bg-white bg-opacity-20 border-white border-opacity10 rounded-3xl">
             <div id="title block" class="border-bottom">
-                <h5 class="pt-5 text-3xl font-bold font['nunito_sans']"> Family </h5>
-                <p class="py-2 text-xl font-bold font-lola">1 month free, then RM33.90month</p>
+                <h5 class="pt-5 text-3xl font-bold text-gray-900 font['nunito_sans']"> Family </h5>
+                <p class="py-2 text-xl font-bold font-lola text-gray-700">1 month free, then RM33.90month</p>
                 <p class="py-2 text-xl">Share with up to 5 people. Your existing subscriptions are not eligible for trial</p>
             </div>
             <div class="pb-5 text-xl">
