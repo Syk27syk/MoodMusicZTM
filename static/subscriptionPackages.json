@@ -15,7 +15,7 @@
     {
       "name": "Family",
       "price": "33.90",
-      "share": null,
+      "share": "Share with up to 5 people.",
       "benefits": [{
         "benefit1": "70 million songs, all ad free",
         "benefit2": "real-time music curation based on emotional state",
@@ -27,7 +27,7 @@
     {
       "name": "Individual",
       "price": "69.90",
-      "share": null,
+      "share": "Share with up to 5 people.",
       "benefits": [{
         "benefit1": "70 million songs, all ad free",
         "benefit2": "real-time music curation based on emotional state",

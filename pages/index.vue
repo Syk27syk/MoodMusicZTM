@@ -8,7 +8,7 @@
         <div class="m-auto flex-col">
           <div class="m-auto w-3/4 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
             <h1 class="font-['open_sans'] font-bold text-5xl pt-20 z-10 text-gray-900 drop-shadow-lg opacity-100">Mood Music</h1>
-            <p class="font-alegreya text-3xl mt-5 pt-10 pb-20 z-10 text-gray-800 font-bold opacity-100">The music app that responds to your state of mind</p>
+            <p class="font-alegreya font-bold text-3xl mt-5 pt-10 pb-20 z-10 text-gray-800 drop-shadow-lg opacity-100">The music app that responds to your state of mind</p>
             <button class="text-2xl m-auto font-['open_sans'] font-bold bg-[url('/blobbybutton.png')] bg-blue-500 py-5 px-8 mb-10 text-white rounded-full border-2 border-t-white border-l-white border-b-black border-r-black border-opacity-30" @click="goto('subscriptions')">Try 1 Month Free</button>
           </div>
         </div>
@@ -18,26 +18,26 @@
           <div class="m-auto">
             <h1 class="text-5xl pt-20 z-10 text-gray-900 font-['open_sans'] font-bold opacity-100">Unbeatable Music Library</h1>
             <div class="mx-auto py-16">
-              <button><img src="/goldpearl.png" class="w-[48px] h-[48px]" alt="" @click="isShow = !isShow" /></button>
-              <button><img src="/pinkpearl.png" class="w-[48px] h-[48px]" alt="" @click="isShow = !isShow" /></button>
-              <button><img src="/graypearl.png" class="w-[48px] h-[48px]" alt="" @click="isShow = !isShow" /></button>
+              <button><img src="/goldpearl.png" class="w-[48px] h-[48px]" alt="" @click="selectTab" /></button>
+              <button><img src="/pinkpearl.png" class="w-[48px] h-[48px]" alt="" @click="selectTab" /></button>
+              <button><img src="/graypearl.png" class="w-[48px] h-[48px]" alt="" @click="selectTab" /></button>
               <!--<button><img src="/greenpearl.png" class="w-[48px] h-[48px]" alt="" @click="isShow = !isShow" /></button>-->
             </div>
-            <div class="mx-auto my-5 py-10 px-20">
+            <div v-if="tabSelected===goldpearl" class="mx-auto my-5 py-10 px-20">
               <h5 class="text-2xl mt-5 py-5 z-10 text-gray-900 font-bold opacity-100">Play over 90 million songs and 30,000 playlists. </h5>
               <img src="" alt="" />
               <p class="text-lg text-left mx-20">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
             </div>
-            <div class="mx-auto my-5 p-10">
+            <div v-if="tabSelected===pinkpearl" class="mx-auto my-5 p-10">
               <h5 class="text-2xl mt-5 py-5 z-10 text-gray-900 font-bold opacity-100">Download your favourite tracks, play them offline.</h5>
               <img src="" alt="" />
               <p class="text-lg text-left mx-20">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
             </div>
-            <div class="mx-auto my-5 p-10">
+            <div v-if="tabSelected===graypearl" class="mx-auto my-5 p-10">
               <h5 class="text-2xl mt-5 py-5 z-10 text-gray-900 font-bold opacity-100">Get curated playlists and live radio.</h5>
               <img src="" alt="" />
               <p class="text-lg text-left mx-20">>
@@ -743,6 +743,9 @@ export default {
   },
 
   methods: {
+    selectTab () {
+
+    },
     goto(refName) {
       const element = this.$refs[refName];
       const top = element.offsetTop;

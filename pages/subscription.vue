@@ -12,51 +12,52 @@
           <li>Enjoy millions of new hits and old favourites of any genre.</li>
           <li>Have real-time music composed just for you, based on the emotions of the moment.</li>
         </ul>
-        <div id="subscription-plans" class="flex flex-row gap-5">
-          <div id="individual" class="m-auto py-5 px-8 my-10 bg-white bg-opacity-20 border-white border-opacity10 rounded-3xl">
+        <div id="subscription-plans" class="grid grid-cols-3 gap-5">
+          <button id="individual" class="m-auto py-5 px-8 my-10 bg-white bg-opacity-30 hover:bg-opacity-100 border-white border-opacity10 rounded-3xl" @click="select">
             <div id="title block" class="border-bottom">
                 <h5 class="pt-5 text-3xl font-bold text-gray-900 font['nunito_sans']"> Individual </h5>
                 <p class="py-2 text-xl font-bold font-lola text-gray-700">1 month free, then RM19.90/month</p>
-                <p class="py-2 text-xl">Your existing subscriptions are not eligible for trial</p>
-                <p class="py-2 text-xl ">⭐ Recommended</p>
+                <p class="py-2 text-xl text-black">Your existing subscriptions are not eligible for trial</p>
+                <p class="py-2 text-xl text-black">⭐ Recommended</p>
             </div>
-            <div class="pb-5 text-xl">
+            <div class="pb-5 text-xl text-black">
                 <p>70+ million songs, all ad free</p>
                 <p>70+ million songs, all ad free</p>
                 <p>70+ million songs, all ad free</p>
                 <p>70+ million songs, all ad free</p>
             </div>
-          </div>
-          <div id="family" class="m-auto py-5 px-8 my-10 bg-white bg-opacity-20 border-white border-opacity10 rounded-3xl">
+          </button>
+          <button id="family" class="m-auto py-5 px-8 my-10 bg-white bg-opacity-30 hover:bg-opacity-100 border-white border-opacity10 rounded-3xl" @click="select">
             <div id="title block" class="border-bottom">
                 <h5 class="pt-5 text-3xl font-bold text-gray-900 font['nunito_sans']"> Family </h5>
                 <p class="py-2 text-xl font-bold font-lola text-gray-700">1 month free, then RM33.90month</p>
-                <p class="py-2 text-xl">Share with up to 5 people. Your existing subscriptions are not eligible for trial</p>
+                <p class="py-2 text-xl text-gray-700">Share with up to 5 people. Your existing subscriptions are not eligible for trial</p>
             </div>
-            <div class="pb-5 text-xl">
+            <div class="pb-5 text-xl text-gray-700">
                 <p>70+ million songs, all ad free</p>
                 <p>70+ million songs, all ad free</p>
                 <p>70+ million songs, all ad free</p>
                 <p>70+ million songs, all ad free</p>
             </div>
-          </div>
-          <div id="premier" class="m-auto my-10 py-5 px-8 bg-white bg-opacity-20 border-white border-opacity10 rounded-3xl">
+          </button>
+          <button id="premier" class="m-auto my-10 py-5 px-8 bg-white bg-opacity-30 hover:bg-opacity-100 border-white border-opacity10 rounded-3xl" @click="selectComponent">
             <div id="title block" class="border-bottom">
-                <h5 class="pt-5 text-3xl font-bold font['nunito_sans']"> Premier </h5>
-                <p class="py-2 text-xl font-bold font-lola">1 month free, then RM69.90/month</p>
-                <p class="py-2 text-xl">Share with up to 5 people. Your existing subscriptions are not eligible for trial</p>
+                <h5 class="pt-5 text-3xl font-bold text-gray-900 font['nunito_sans']"> Premier </h5>
+                <p class="py-2 text-xl font-bold font-lola text-gray-700">1 month free, then RM69.90/month</p>
+                <p class="py-2 text-xl text-gray-700">Share with up to 5 people. Your existing subscriptions are not eligible for trial</p>
             </div>
-            <div class="pb-5 text-xl">
+            <div class="pb-5 text-xl text-gray-700">
                 <p>70+ million songs, all ad free</p>
                 <p>70+ million songs, all ad free</p>
                 <p>70+ million songs, all ad free</p>
                 <p>70+ million songs, all ad free</p>
                 <p>70+ million songs, all ad free</p>
             </div>
-          </div>
+          </button>
         </div>
         <div id="summary">
-          <p>1 month free, then RM PRICE per month</p>
+          <p v-bind="selectedSubscription">You selected: {{ selectedSubscription }} subscription.</p>
+          <!--<p v-bind="selectedSubscription.price">1 month free, then RM {{ }} per month</p>-->
           <button>
             <NuxtLink to="/login">Start Free Trial</NuxtLink>
           </button>
@@ -79,5 +80,25 @@
 </template>
 
 <script>
+export default {
+  selectedSubscription: 'individual',
+  price: '16.90',
+  computed: {
+  }
+}
+/*
+  methods: {
+    selectSubscription(Subscription) {
+       if(this.Subscription) {
+         this.
+        add('highlight');
 
+       }
+    }
+    addSubscription() {
+      this.$store.commit('addItem', this.subscription);
+    },
+  };
+}
+*/
 </script>

@@ -109,6 +109,19 @@
 
 <script>
 export default {
+  props: ['delivery', 'design', 'amount', 'personalizedMessage'],
+  /*
+  computed: {
+
+    total () {
+      let total = 0
+        this.$store.state.giftCards.forEach((giftCard) => {
+        total = total + giftCard.price * giftCard.quantity;
+      return total;
+    }
+};
+*/
+
   methods: {
     goto(refName) {
       const element = this.$refs[refName];
