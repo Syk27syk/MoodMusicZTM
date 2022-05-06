@@ -75,13 +75,18 @@
                     <textarea id="text-area" class="border border-gray-500 rounded-lg">type here</textarea>
                 </div>
                 <div id="drop-down-select" class="flex flex-col gap-y-3 py-5 border border-l-0 border-r-0 border-b-gray-500 text-xl">
-                <label for="selection" class="text-xl font-bold uppercase">Drop down selection</label>
-                <select id="selection">
-                    <option class="text-xl font-bold">Option 1</option>
-                    <option class="text-xl font-bold">Option 2</option>
-                    <option class="text-xl font-bold">Option 3</option>
-                    <option class="text-xl font-bold">Option 4</option>
-                </select>
+                    <label for="selection" class="text-xl font-bold uppercase">Drop down selection</label>
+                    <select id="selection">
+                        <option class="text-xl font-bold">Option 1</option>
+                        <option class="text-xl font-bold">Option 2</option>
+                        <option class="text-xl font-bold">Option 3</option>
+                        <option class="text-xl font-bold">Option 4</option>
+                    </select>
+                </div>
+                <div>
+                    <button id="reset" @click="resetSearchFilters">Reset Search</button>
+                    <button id="reset" @click="submitSearchFilters.prevent">Submit Search</button>
+                    <!--codecademy places the @clicks at the <form> element, not at the buttons. <form @reset="resetForm"> <button type="reset"> Reset </button> </form> .. <script> ... methods: { resetForm: function() {...} } . Also, this is event handling.-->
                 </div>
             </div>
             <div id="mood-sliders" class="flex flex-col gap-y-3 py-5 pb-10 border border-l-0 border-r-0 border-b-gray-500 text-xl bg-gray-100">
@@ -100,6 +105,8 @@
 <script>
 export default ({
   inputField1: '',
+  inputField2: '',
+  inputField3: '',
   radioField1: '',
   radioField2: '',
   checkboxField: [],
@@ -107,10 +114,18 @@ export default ({
 
   methods: {
     /*
-    resetForm: function () {
-      ...
-    }
-    */
+    resetSearchFilters: function () {
+      this.inputField1 = '';
+      this.inputField2 = '';
+      this.inputField3 = '',
+      this.radioField1 = '',
+      this.radioField2 = '',
+      this.checkboxField = [],
+      this.optionField = 'option1',
+    submitSearchFilters: function () {
+      //searchaudiolibraryandreturnresults
+    },
+*/
   }
 })
 </script>

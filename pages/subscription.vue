@@ -57,15 +57,16 @@
         </div>
         <div id="summary" class="w-1/3 m-auto">
           <p v-bind="selectedSubscription">You selected: {{ selectedSubscription }} subscription.</p>
+          <p v-bind="price">1 month free, then RM {{ }} per month</p>
           <input id="tnc" v-model="tncagreed" type="checkbox" name="tnc" />
           <label for="tnc">I agree to <NuxtLink to="/termsOfUse" class="text-blue-500">terms and conditions</NuxtLink> of subscription. </label>
-          <p v-bind="price">1 month free, then RM {{ }} per month</p>
           <div id="cancel-or-buy" class="mx-auto grid grid-cols-2 my-5 justify-center">
-          <button class="m-auto px-5 py-3 bg-black rounded-full text-white" @click="abc">Cancel</button>
-          <button class="m-auto px-5 py-3 bg-black rounded-full text-white" @click="addSubscription">
-            <NuxtLink to="cart">Buy</NuxtLink>
-          </button>
-        </div>
+            <button class="m-auto px-5 py-3 bg-black rounded-full text-white" @click="abc">Cancel</button>
+            <button v-bind="formIsValid" class="m-auto px-5 py-3 bg-black rounded-full text-white" @click="addSubscription">
+              <!-- it's supposed to be v-bind:disabled="!formIsValid"-->
+              <NuxtLink to="cart">Buy</NuxtLink>
+            </button>
+          </div>
         </div>
         <div id="signinmodal">
           <p>Sign In required</p>
@@ -85,20 +86,18 @@ export default {
   selectedSubscription: 'individual',
   price: '16.90',
   tncagreed: false,
-/*
+
   methods: {
-    selectSubscription(Subscription) {
-      if (this.Subscription) {
-        this.Subscription
-          add('highlight');
-      }
+    selectSubscription(selectedSubscription) {
+      selectedSubscription = this.Subscription
+      return selectedSubscription
     }
   }
-
+}
+/*
     addSubscription() {
       this.$store.commit('addItem', this.subscription);
     },
   };
   */
-}
 </script>
