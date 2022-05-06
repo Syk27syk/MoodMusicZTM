@@ -53,6 +53,20 @@
 <script>
 
 export default {
+  data() {
+    return {
+      user: {}
+    };
+  },
+  head() {
+    return {
+      script: [
+        {
+          src: 'https://identity.netlify.com/v1/netlify-identity-widget.js'
+        }
+      ]
+    }
+  },
   computed: {
     giftCardTotal(giftCard) {
       let giftCardTotal = 0;

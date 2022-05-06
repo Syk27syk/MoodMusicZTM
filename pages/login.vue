@@ -28,6 +28,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      user: {}
+    };
+  },
   head() {
     return {
       script: [
