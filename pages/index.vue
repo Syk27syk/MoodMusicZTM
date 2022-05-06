@@ -4,7 +4,6 @@
     <MoodBot />
     <div id="body" class="bg-slate-300 snap-y">
       <div id="hero" class="snap-center flex h-screen w-screen bg-center bg-[url('/whitesmoke.jpg')] bg-cover align-middle text-white text-center">
-        <!--<canvas class="invisible"><img src="" alt="" /></canvas>-->
         <div class="m-auto flex-col">
           <div class="m-auto w-3/4 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
             <h1 class="font-['open_sans'] font-bold text-5xl pt-20 z-10 text-gray-900 drop-shadow-lg opacity-100">Mood Music</h1>
@@ -834,7 +833,6 @@ export default {
     }
   }
 };
-
 /*
 import Vue from 'vue';
 import Vuetify from 'vuetify/lib'
