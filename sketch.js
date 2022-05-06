@@ -33,7 +33,7 @@ function setup() {
 
 function draw() {
   background(0, 50);
-  
+
     // TODO: Iterate through a new for loop to change the properties in order to animate the balls
   for(let i = 0; i< ballCount; i++){
     // Inside the for loop:
@@ -42,7 +42,7 @@ function draw() {
 
     // TODO: Increment speed for y position
       y[i] += ySpeed[i];
-    
+
     // TODO: Reverse x direction if ball hits left or right sides
     if(x[i] < 0 || x[i] > width) {
       xSpeed[i] *= -1;
