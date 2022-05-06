@@ -23,31 +23,27 @@
                     </tr>
                 </tbody>
                 <tfoot>
-                    <tr class="font-oswald font-bold text-2xl bg-gray-100 border-t border-b uppercase">
-                        <td class="py-10" colspan="3">Total</td>
-                        <td class="text-right">text</td>
-                        <td class="text-transparent">text</td>
-                    </tr>
-                    <tr>
-                      <td colspan="3">
-                        <input
-                          id="email"
-                          type="email"
-                          placeholder="Please enter your email"
-                          class="w-full border border-gray-300 text-xl mt-5 py-3 px-2"
-                        />
-                      </td>
-                      <td colspan="2" class="text-right">
-                        <button
-                          class="font-oswald uppercase bg-red-500 text-white text-xl py-3 px-2 ml-5 mt-5"
-                        >
-                        <NuxtLink to="/checkout">
-                          Confirm My Order
-                        </NuxtLink>
-                        </button>
-                      </td>
-                    </tr>
-                </tfoot>
+                  <tr class="font-oswald font-bold text-2xl bg-gray-100 border-t border-b uppercase">
+                    <td class="py-10" colspan="3">Total</td>
+                    <td class="text-right">text</td>
+                    <td class="text-transparent">text</td>
+                  </tr>
+                  <tr>
+                  <td colspan="3">
+                    <input
+                      id="email"
+                      type="email"
+                      placeholder="Please enter your email"
+                      class="w-full border border-gray-300 text-xl mt-5 py-3 px-2"
+                    />
+                  </td>
+                  <td colspan="2" class="text-right">
+                    <button class="font-oswald uppercase bg-red-500 text-white text-xl py-3 px-2 ml-5 mt-5" @click="submitOrder">
+                      <NuxtLink to="/checkout">Confirm My Order</NuxtLink>
+                    </button>
+                  </td>
+                </tr>
+              </tfoot>
             </table>
         </div>
         <Footer />
@@ -77,11 +73,15 @@ export default {
     submitOrder() {
       this.$axios.post('/netlify/functions/email', {
         email: document.getElementById('email').value,
-        orders: this.$store.state.orders,
+        giftCards: this.$store.state.giftCards,
+        subscriptions: this.$store.state.subscriptions,
+        grandtotal: this.$store.state.grandTotal,
       });
       this.$axios.post('/netlify/functions/db', {
         email: document.getElementById('email').value,
-        orders: this.$store.state.orders,
+        giftCards: this.$store.state.giftCards,
+        subscriptions: this.$store.state.subscriptions,
+        grandtotal: this.$store.state.grandTotal,
       });
     }
   },
