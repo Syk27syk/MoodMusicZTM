@@ -44,9 +44,9 @@
             <div id="title block" class="border-bottom">
                 <h5 class="pt-5 text-3xl font-bold text-gray-900 font['nunito_sans']"> Premier </h5>
                 <p class="py-2 text-xl font-bold font-lola text-gray-700">1 month free, then RM69.90/month</p>
-                <p class="py-2 text-xl text-gray-700">Share with up to 5 people. Your existing subscriptions are not eligible for trial</p>
+                <p class="py-2 text-xl text-black">Share with up to 5 people. Your existing subscriptions are not eligible for trial</p>
             </div>
-            <div class="pb-5 text-xl text-gray-700">
+            <div class="pb-5 text-xl text-black">
                 <p>70+ million songs, all ad free</p>
                 <p>70+ million songs, all ad free</p>
                 <p>70+ million songs, all ad free</p>
@@ -55,12 +55,17 @@
             </div>
           </button>
         </div>
-        <div id="summary">
+        <div id="summary" class="w-1/3 m-auto">
           <p v-bind="selectedSubscription">You selected: {{ selectedSubscription }} subscription.</p>
-          <!--<p v-bind="selectedSubscription.price">1 month free, then RM {{ }} per month</p>-->
-          <button>
-            <NuxtLink to="/login">Start Free Trial</NuxtLink>
+          <input id="tnc" v-model="tncagreed" type="checkbox" name="tnc" />
+          <label for="tnc">I agree to <NuxtLink to="/termsOfUse" class="text-blue-500">terms and conditions</NuxtLink> of subscription. </label>
+          <p v-bind="price">1 month free, then RM {{ }} per month</p>
+          <div id="cancel-or-buy" class="mx-auto grid grid-cols-2 my-5 justify-center">
+          <button class="m-auto px-5 py-3 bg-black rounded-full text-white" @click="abc">Cancel</button>
+          <button class="m-auto px-5 py-3 bg-black rounded-full text-white" @click="addSubscription">
+            <NuxtLink to="cart">Buy</NuxtLink>
           </button>
+        </div>
         </div>
         <div id="signinmodal">
           <p>Sign In required</p>
@@ -68,10 +73,6 @@
           <p>ID:<input type="email"></p>
           <p>Password:<input type="password"></p>
           <p>Forgot Mood Music ID or password?</p>
-          <button>Cancel</button>
-          <button>
-            <NuxtLink to="cart">Buy</NuxtLink>
-          </button>
         </div>
       </div>
     </div>
@@ -83,22 +84,21 @@
 export default {
   selectedSubscription: 'individual',
   price: '16.90',
-  computed: {
-  }
-}
+  tncagreed: false,
 /*
   methods: {
     selectSubscription(Subscription) {
-       if(this.Subscription) {
-         this.
-        add('highlight');
-
-       }
+      if (this.Subscription) {
+        this.Subscription
+          add('highlight');
+      }
     }
+  }
+
     addSubscription() {
       this.$store.commit('addItem', this.subscription);
     },
   };
+  */
 }
-*/
 </script>

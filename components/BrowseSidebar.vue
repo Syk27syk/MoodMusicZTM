@@ -96,3 +96,21 @@
         </div>
       </sidebar>
 </template>
+
+<script>
+export default ({
+  inputField1: '',
+  radioField1: '',
+  radioField2: '',
+  checkboxField: [],
+  optionField: '',
+
+  methods: {
+    /*
+    resetForm: function () {
+      ...
+    }
+    */
+  }
+})
+</script>
