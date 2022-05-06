@@ -4,6 +4,24 @@
             <div id="search">
             <div id="search filters" class="border-b-gray-500">
                 <h5 class="text-2xl font-bold uppercase py-5">Search Filters</h5>
+                <div id="simple-search">
+                    <form class="flex items-center">
+                        <label for="simple-search" class="sr-only">Simple Search</label>
+                        <div class="relative w-full">
+                            <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                <img src="" alt="search icon" />
+                            </div>
+                            <input id="simple-search" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search" required>
+                        </div>
+                        <button type="submit" class="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><img src="" alt="search icon" /></button>
+                    </form>
+                    <!--above from https://flowbite.com/docs/forms/search-input/-->
+                    <!-- also see
+                    https://flowbite.com/docs/forms/input-field/
+                    https://flowbite.com/docs/forms/select/
+                    https://flowbite.com/docs/components/sidebar/
+                    -->
+                </div>
                 <div id="input fields" class="flex flex-col gap-y-3 py-5 border border-l-0 border-r-0 border-t-gray-500 border-b-gray-500 text-xl">
                     <legend class="text-xl font-bold uppercase">Text Input Fields</legend>
                     <div>
@@ -91,7 +109,61 @@
             </div>
             <div id="mood-sliders" class="flex flex-col gap-y-3 py-5 pb-10 border border-l-0 border-r-0 border-b-gray-500 text-xl bg-gray-100">
                 <h5 class="text-2xl font-bold uppercase py-5">Mood Sliders </h5>
+                <div id="range-slider-1">
+                    <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Range Slider 1</label>
+                    <input
+                        id="minmax-range"
+                        type="range"
+                        min="0"
+                        max="10"
+                        value="5"
+                        class="w-full h-2 bg-gray-200 rounded-lg appearance-none"
+                    >
+                </div>
+                <div id="range-slider-2">
+                    <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Range Slider 2</label>
+                    <input
+                        id="minmax-range"
+                        type="range"
+                        min="0"
+                        max="10"
+                        value="5"
+                        class="w-full h-2 bg-gray-200 rounded-lg appearance-none"
+                    >
+                </div>
+                <div id="range-slider-3">
+                    <label for="minmax-range" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Range Slider 2</label>
+                    <input
+                        id="minmax-range"
+                        type="range"
+                        min="0"
+                        max="10"
+                        value="5"
+                        class="w-full h-2 bg-gray-200 rounded-lg appearance-none"
+                    >
+                </div>
+                <div id="step-slider-1">
+                    <label for="steps-range" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Step Slider 1</label>
+                    <input
+                        id="steps-range"
+                        type="range"
+                        min="0"
+                        max="5"
+                        value="2.5"
+                        step="0.5"
+                        class="w-full h-2 bg-gray-200 rounded-lg appearance-none">
+                </div>
+                <div id="large-range-slider">
+                    <label for="large-range" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Large Range Slider</label>
+                    <input
+                        id="large-range"
+                        type="range"
+                        value="50"
+                        class="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer range-lg"
+                    >
+                </div>
                 <img src="/moodagentfilters.png" alt="" />
+                <!--https://flowbite.com/docs/forms/range/-->
             </div>
             <div id="controls" class="flex flex-col gap-y-3 py-5 pb-20">
                 <h5 class="text-2xl font-bold uppercase py-5">Controls </h5>
