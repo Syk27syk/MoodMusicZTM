@@ -14,7 +14,7 @@
           </div>
           <p class="my-5 text-2xl"> or </p>
           <button class="text-amber-300 text-3xl font-['nunito_sans'] text-bold text-center px-8 py-5 my-5 border-2 border-gray-100 border-opacity-50 drop-shadow-md">
-            <NuxtLink to="createAccount">Create Account</NuxtLink>
+            <NuxtLink to="/createAccount">Create Account</NuxtLink>
           </button>
           <p class="pt-3 pb-16">
             By signing up, you agree to our <NuxtLink to="/termsOfUse">Terms and Conditions</NuxtLink> and <NuxtLink to="">Privacy Policy</Nuxtlink>

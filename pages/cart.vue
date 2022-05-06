@@ -55,16 +55,20 @@
 </template>
 
 <script>
-/*
+
 export default {
   computed: {
-    total() {
-      let total = 0;
-      this.$store.state.orders.forEach((order) => {
-        total = total + order.price * order.quantity;
+    giftCardTotal(giftCard) {
+      let giftCardTotal = 0;
+      this.$store.state.giftCards.forEach((order) => {
+        giftCardTotal = giftCardTotal + giftCard.price * giftCard.quantity;
       });
-      return total;
+      return giftCardTotal;
     },
+    grandTotal(giftCardTotal, subscription) {
+      const grandTotal = giftCardTotal + subscription.price
+      return grandTotal;
+    }
   },
   methods: {
     removeItem(name) {
@@ -82,5 +86,5 @@ export default {
     }
   },
 };
-*/
+
 </script>
