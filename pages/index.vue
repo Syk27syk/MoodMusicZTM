@@ -11,6 +11,7 @@
             <button class="text-2xl m-auto font-['open_sans'] font-bold bg-[url('/blobbybutton.png')] bg-blue-500 py-5 px-8 mb-10 text-white rounded-full border-2 border-t-white border-l-white border-b-black border-r-black border-opacity-30" @click="goto('subscriptions')">Try 1 Month Free</button>
           </div>
         </div>
+        <!-- debug button <button class="text-2xl m-auto font-['open_sans'] font-bold bg-[url('/blobbybutton.png')] bg-blue-500 py-5 px-8 mb-10 text-white rounded-full border-2 border-t-white border-l-white border-b-black border-r-black border-opacity-30" @click="consoleLog">Debug Button</button> -->
         <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -826,8 +827,12 @@ export default {
 
       window.scrollTo(0, top);
     },
+    consoleLog () {
+      console.log('Hello Debugger');
+    },
     selectTab() {
       const tabIndex = this.element.id;
+      console.log(tabIndex);
       let activeIndex = '';
       if (activeIndex === tabIndex) {
         return activeIndex;

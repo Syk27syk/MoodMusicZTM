@@ -32,6 +32,10 @@ const mutations = {
     })
   },
   removeGiftCard(state, selectedGiftCard) {
+    const index = state.giftCards.findIndex((giftCard) => {
+      return giftCard.giftCardID === selectedGiftCard.giftCardID
+    });
+    state.giftCards.splice(index, 1);
   },
 };
 

@@ -161,7 +161,7 @@
                 <div class="font-normal text-lg">
                     <p> In Stock </p>
                     <p> Free Shipping </p>
-                    <button class="text-blue-500" @click="showDeliveryModal = true"> Get delivery dates </button>
+                    <button class="text-blue-500" @click="openDeliveryModal"> Get delivery dates </button>
                 </div>
                 <button class="font-['open_sans'] bg-blue-500 text-white text-bold uppercase rounded-full border-red-500 px-8 py-3 mx-auto mt-5 mb-10 drop-shadow-xl shadow-black" @click="confirmOrder">
                     Confirm Order
@@ -210,14 +210,14 @@
                 <p class="text-lg text-gray-800 my-2 p-2"> Reach out to our <NuxtLink to="/support" class="text-blue-500">support</NuxtLink> team.  </p>
             </div>
         </div>
-        <div id="delivery-dates-modal">
+        <div id="delivery-dates-modal" class="m-auto px-5 py-5">
             <div v-if="showDeliveryModal" class="overlay invisible" @click="showDeliveryModal = false">
                 placeholder
             </div>
-            <div v-if="showDeliveryModal" class="modal">
-                <button class="close" @click="showDeliveryModal = false">x</button>
-                <h3>Delivery Dates</h3>
-                <p> Delivery date picker UI </p>
+            <div v-if="showDeliveryModal" class="modal relative">
+                <button class="close absolute right-0 top-0" @click="closeDeliveryModal">x</button>
+                <h3 class="text-2xl font-bold text-left my-5 px-5 ">Delivery Dates</h3>
+                <img src="/datepicker.png" alt="" />
             </div>
         </div>
         <Footer />
@@ -238,7 +238,7 @@ export default {
       senderName: 'Shi Yun',
       senderEmail: 'Shiyun.khoo@gmail.com',
       personalizedMessage: 'Hi. I love you.',
-      showDeliveryModal: false,
+      showDeliveryModal: true,
       bookmark: false,
     }
   },
@@ -286,8 +286,8 @@ export default {
       }
       this.$store.state.giftCards.commit('addGiftCard', giftCard);
     },
-    removeGiftCard() {
-      this.$store.state.giftCards.commit('removeGiftCard',);
+    removeGiftCard(giftCardID) {
+      this.$store.state.giftCards.commit('removeGiftCard', giftCardID);
     },
     confirmOrder() {
       this.$axios.post('/netlify/functions/email', {
@@ -296,6 +296,14 @@ export default {
         }, */
         order: this.$store.state.giftCards,
       });
+    },
+    openDeliveryModal() {
+      const showDeliveryModal = true;
+      return showDeliveryModal;
+    },
+    closeDeliveryModal() {
+      const showDeliveryModal = false;
+      return showDeliveryModal;
     },
     goto(refName) {
       const element = this.$refs[refName];
