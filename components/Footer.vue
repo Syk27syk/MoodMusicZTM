@@ -6,12 +6,12 @@
                 <strong>Information</strong>
             </h5>
             <div class="font-alegreya text-light text-lg">
-                <p>FAQ</p>
-                <p>Corporate information</p>
-                <p>Investor relations</p>
-                <p>Media</p>
-                <p>Jobs</p>
-                <p>Contact</p>
+                <p><NuxtLInk to="/faqs">FAQ</NuxtLInk></p>
+                <p><NuxtLink to="/corporateInformation">Corporate information</NuxtLink></p>
+                <p><NuxtLInk to="/investorRelations">Investor relations</NuxtLink></p>
+                <p><NuxtLInk to="/media">Media</NuxtLink></p>
+                <p><NuxtLInk to="/jobs">Jobs</NuxtLInk></p>
+                <p><NuxtLink to="/contact">Contact</NuxtLink></p>
             </div>
             </div>
             <div id="info-phone">
@@ -19,11 +19,11 @@
                 <strong>Support</strong>
             </h5>
             <div class="font-alegreya text-lg">
-                <p>Privacy</p>
-                <p>Cookies</p>
-                <p>Support</p>
-                <p>Legal notice</p>
-                <p>Feedback</p>
+                <p><NuxtLink to="/privacyPolicy">Privacy</NuxtLInk></p>
+                <p><NuxtLInk to="/cookies">Cookies</NuxtLink></p>
+                <p><NuxtLink to="/support">Support</NuxtLInk></p>
+                <p><NuxtLInk to="/legalNotice">Legal notice</NuxtLink></p>
+                <p><NuxtLInk to="/contact">Feedback</NuxtLink></p>
             </div>
             </div>
             <div id="info-follow">
@@ -31,9 +31,9 @@
                 <strong>Account</strong>
             </h5>
             <div id="social-media-icons" class=" font-alegreya text-lg justify-items-center p-3">
-                <p>Manage account</p>
-                <p>Gift cards</p>
-                <p>Newsletter</p>
+                <p><NuxtLInk to ="/login">Manage account</NuxtLInk></p>
+                <p><NuxtLInk to="/giftCards">Gift cards</NuxtLInk></p>
+                <p><NuxtLInk to="/newsletter">Newsletter</NuxtLInk></p>
             </div>
             </div>
             <div id="info-follow">
