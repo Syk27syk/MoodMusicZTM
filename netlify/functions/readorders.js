@@ -12,3 +12,17 @@ exports.handler = async function (event, context) {
   }
 
   const db = getFirestore(app);
+
+  // edit: 
+  const orders = await db.collection("orders").get();
+
+  const results = orders.doc.map((doc) => {
+    return {
+      id: doc.id,
+      data: doc.data(),
+    };
+  });
+    return {
+      statusCode:200,
+      body: JSON.stringify(results),
+    };
