@@ -50,23 +50,37 @@
                 <p class="text-lg text-gray-800 my-2 px-5"> Choose to send by mail and get a collectible sticker </p>
                 <div class="grid grid-cols-2 gap-x-5 m-auto py-5 px-10 ">
                     <div class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
-                        <input id="email" type="radio">
+                        <input id="email" v-model="delivery" type="radio">
                         <label for="email"> Email </label>
                     </div>
                         <div class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
-                        <input id="mail" type="radio" class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
+                        <input id="mail" v-model="delivery" type="radio" class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
                         <label for="mail"> Mail </label>
                     </div>
                 </div>
             </div>
             <div id="design" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
                 <h5 class="text-2xl text-gray-800 font-bold my-2 p-2"> Choose a design </h5>
-                <select v-model="giftCardDesign" class="grid grid-cols-2">
-                    <option class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl"><img src="/mmlogo.png" class="h-48 w-48" alt="" />logo</option>
-                    <option class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl"><img src="/quaverheart.png" class="h-48 w-48" alt="" /></option>
-                    <option class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl"><img src="/brainplug.png" class="h-48 w-48" alt="" /></option>
-                    <option class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl"><img src="/moodbot.png" class="h-48 w-48" alt="" />moodbot</option>
+                <select v-model="design">
+                    <option>Mood Music Logo</option>
+                    <option>Quaver Heart</option>
+                    <option>Brain Plug</option>
+                    <option>Mood Bot</option>
                 </select>
+                <div class="grid grid-cols-2">
+                    <div class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
+                        <img src="/mmlogo.png" class="h-48 w-48" alt="" />
+                    </div>
+                    <div class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
+                        <img src="/quaverheart.png" class="h-48 w-48" alt="" />
+                    </div>
+                    <div class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
+                        <img src="/brainplug.png" class="h-48 w-48" alt="" />
+                    </div>
+                    <div class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
+                        <img src="/moodbot.png" class="h-48 w-48" alt="" />
+                    </div>
+                </div>
             </div>
             <select id="amount" v-model="giftCardAmount" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
                 <h5 class="text-2xl text-gray-800 font-bold my-2 p-2"> Choose an amount </h5>
@@ -80,7 +94,7 @@
             </select>
             <div id="personalized-message" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
                 <h5 class="text-2xl text-gray-800 font-bold my-2 p-2"> Want to add a personalized message?</h5>
-                <input class="flex w-full h-auto text-left text-xl bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Your message here"></input>
+                <input v-model="personalizedMessage" class="flex w-full h-auto text-left text-xl bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Your message here" />
             </div>
             <div id="total" class="text-gray-800 font-bold my-2 p-2 py-5">
                  <h5 class="text-3xl">Total: </h5>
@@ -103,44 +117,69 @@
                 <p class="text-lg text-gray-800 my-2 p-2"> Reach out to our <NuxtLink to="/support" class="text-blue-500">support</NuxtLink> team.  </p>
             </div>
         </div>
+        <div id="delivery-dates-modal">
+            <button @click="showDeliveryModal = true">show</button>
+            <div class="overlay" v-if="showDeliveryModal" @click="showDeliveryModal = false"></div>
+            <div class="modal" v-if="showDeliveryModal">
+                <button class="close" @click="showDeliveryModal = false">x</button>
+                <h3>Delivery Dates</h3>
+                <div>
+                </div>
+            </div>
+        </div>
+        </div>
         <Footer />
     </div>
 </template>
 
 <script>
 export default {
-  props: ['delivery', 'design', 'amount', 'personalizedMessage'],
-  delivery: '',
-  design: '',
-  amount: '',
-  personalizedMessage: '',
-  /*
-  computed: {
+  data () {
+    return {
+      delivery: '',
+      design: '',
+      giftCardAmount: '',
+      personalizedMessage: '',
+      showDeliveryModal: false,
+    }
+  },
 
+  head() {
+    return {
+      script: [
+        {
+          src: 'https://identity.netlify.com/v1/netlify-identity-widget.js',
+        }
+      ],
+      script: [
+        {
+          src: '../path/to/flowbite/dist/datepicker.js',
+        }
+      ]
+    }
+  },
+
+  computed: {
     total () {
-      let total = 0
-        this.$store.state.giftCards.forEach((giftCard) => {
-        total = total + giftCard.price * giftCard.quantity;
+      let total = 0;
+      this.$store.state.giftCards.forEach((     ) => {
+        total = total + giftCardAmount * giftCardQuantity;
+      });
       return total;
     }
-};
-*/
+  },
 
   methods: {
-    data () {
-      return {
-        delivery: '',
-        design: '',
-        personalizedMessage: '',
-      }
-    },
-
     goto(refName) {
       const element = this.$refs[refName];
       const top = element.offsetTop;
 
       window.scrollTo(0, top);
+    },
+    addToCart () {
+
     }
   }
 };
+
 </script>
