@@ -785,7 +785,7 @@
                 </div>
                 -->
               <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-5 pb-16 mr-60">
-                <p class="font-['nunito_sans'] text-blue-500 font-bold text-xl md:text-2xl z-10"><NuxtLink to="/artist"> > Mood Music for Artists</NuxtLink></p>
+                <p class="font-['nunito_sans'] text-blue-500 font-bold text-xl md:text-2xl z-10"><NuxtLink to="/artists"> > Mood Music for Artists</NuxtLink></p>
                 <p class="font-['nunito_sans'] text-blue-500 font-bold text-xl md:text-2xl z-10"> > Mood Music Performance Partners Programme</p>
               </div>
             </div>

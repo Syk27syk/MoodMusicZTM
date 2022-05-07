@@ -10,8 +10,8 @@
         </NuxtLink>
       </button>
       <button class="mx-auto px-5">
-        <NuxtLink to="/artist">
-          Artist
+        <NuxtLink to="/artists">
+          Artists
         </NuxtLink>
       </button>
       <button class="mx-auto px-5">
