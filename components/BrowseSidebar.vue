@@ -55,7 +55,7 @@
                     https://flowbite.com/docs/components/sidebar/
                     -->
                 </div>
-                <div id="search filters" class="border-b-gray-500 my-2">
+                <div id="search filters" class="border-b-gray-500 my-2" @resetSearchFilters="resetSearchFilters" @submitSearchFilters="submitSearchFilters">
                     <h5 class="text-2xl font-bold uppercase py-5">Search Filters</h5>
                     <div id="input fields" class="flex flex-col gap-y-3 py-5 border border-l-0 border-r-0 border-t-gray-500 border-b-gray-500 text-xl">
                         <legend class="text-xl font-bold uppercase">Text Input Fields</legend>
@@ -151,15 +151,15 @@
                     <div id="drop-down-select" class="flex flex-col gap-y-3 py-5 border border-l-0 border-r-0 border-b-gray-500 text-xl">
                         <label for="selection" class="text-xl font-bold uppercase">Drop down selection</label>
                         <select id="selection" v-model="optionField">
-                            <option class="text-xl font-bold">Option 1</option>
-                            <option class="text-xl font-bold">Option 2</option>
-                            <option class="text-xl font-bold">Option 3</option>
-                            <option class="text-xl font-bold">Option 4</option>
+                            <option id="option-1" class="text-xl font-bold">Option 1</option>
+                            <option id="option-2" class="text-xl font-bold">Option 2</option>
+                            <option id="option-3" class="text-xl font-bold">Option 3</option>
+                            <option id="option-4" class="text-xl font-bold">Option 4</option>
                         </select>
                     </div>
                     <div>
-                        <button id="reset" class="py-3 px-5 mx-5 my-10 text-white font-bold bg-blue-500 rounded-xl" @click="resetSearchFilters">Reset Search</button>
-                        <button id="reset" class="py-3 px-5 mx-5 my-10 text-white font-bold bg-blue-500 rounded-xl" @click="submitSearchFilters">Submit Search</button>
+                        <button id="reset" type="reset" class="py-3 px-5 mx-5 my-10 text-white font-bold bg-blue-500 rounded-xl" @click="resetSearchFilters">Reset Search</button>
+                        <button id="reset" type="submit" class="py-3 px-5 mx-5 my-10 text-white font-bold bg-blue-500 rounded-xl" @click="submitSearchFilters">Submit Search</button>
                         <!--codecademy places the @clicks at the <form> element, not at the buttons. <form @reset="resetForm"> <button type="reset"> Reset </button> </form> .. <script> ... methods: { resetForm: function() {...} } . Also, this is event handling.-->
                     </div>
                 </div>
@@ -233,21 +233,20 @@ export default ({
       optionField: '',
     };
   },
-  mounted () {
 
-  },
   methods: {
-    resetSearchFilters: {
-      searchInput: '',
-      inputField1: '',
-      inputField2: '',
-      inputField3: '',
-      radioFieldI: '',
-      radioFieldII: '',
-      checkboxField: [],
-      optionField: 'option1'
+    resetSearchFilters () {
+      this.searchInput = '';
+      this.inputField1 = '';
+      this.inputField2 = '';
+      this.inputField3 = '';
+      this.radioFieldI = '';
+      this.radioFieldII = '';
+      this.checkboxField = [];
+      this.textInput = '';
+      this.optionField = 'option 1'
     },
-    submitSearchFilters: {
+    submitSearchFilters () {
     // searchaudiolibraryandreturnresults
     }
   }
