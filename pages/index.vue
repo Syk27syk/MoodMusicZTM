@@ -15,7 +15,7 @@
       <div id="library" class="snap-center flex h-screen w-screen bg-center bg-[url('/3dbg1.jpg')] bg-cover align-middle text-gray-800 text-center">
         <div class="m-auto flex-col">
             <div class="m-auto">
-                <h1 class="text-5xl pt-20 z-10 text-gray-900 font-['open_sans'] font-bold opacity-100">Unbeatable Music Library</h1>
+                <h1 class="text-4xl md:text-5xl pt-20 z-10 text-gray-900 font-['open_sans'] font-bold opacity-100">Unbeatable Music Library</h1>
                 <div class="mx-auto py-16">
                     <button id="gold-button"><img src="/goldpearl.png" class="w-[48px] h-[48px]" alt="" @click="selectTab" /></button>
                     <button id="pink-button"><img src="/pinkpearl.png" class="w-[48px] h-[48px]" alt="" @click="selectTab" /></button>
@@ -57,18 +57,18 @@
     </div>
       <div id="mooddetection" class="snap-center flex h-screen w-screen bg-center bg-[url('/3dbg2.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
-          <div class="m-auto px-10 h-250 w-3/4 border border-white border-opacity-30 rounded-md bg-white bg-opacity-20 backdrop-blur-lg">
-            <h1 class="text-5xl pt-20 z-10 text-gray-900 font-bold font-['open_sans']">The music app that understands you</h1>
-            <p class="text-2xl mt-5 py-5 z-10 text-gray-800 font-lorafont-bold">Real time music composition and curation, based on your emotional state and context. State of the art AI.</p>
-            <img src="/webcam.jpg" class="m-auto p-5 pb-20 w-3/4" alt="" />
+          <div class="m-automd:m-auto px-3 md:px-5 lg:px-10 h-250 w-full md:w-3/4 md:border md:border-white md:border-opacity-30 md:rounded-md md:bg-white md:bg-opacity-20 md:backdrop-blur-lg">
+            <h1 class="text-4xl md:text-5xl mx-auto pt-5 md:pt-10 lg:pt-20 z-10 text-gray-900 font-bold font-['open_sans']">The music app that understands you</h1>
+            <p class="text-2xl mt-5 py-5 z-10 text-gray-800 font-lora font-bold">Real time music composition and curation, based on your emotional state and context. State of the art AI.</p>
+            <img src="/webcam.jpg" class="m-auto p-2 md:p-5 pb-5 md:pb-10 lg:pb-20 w-full md:w-3/4" alt="" />
           </div>
         </div>
       </div>
       <div id="spatialaudio" class="snap-center flex h-screen w-screen bg-center bg-[url('/3dbg5.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
-          <div class="m-auto h-250 w-250 px-20">
-            <h1 class="text-6xl pt-20 z-10 text-white opacity-100 font-['nunito_sans'] font-bold"> Hear sound all around </h1>
-            <p class="text-3xl mt-5 px-10 py-20 z-10 text-white opacity-100 font-bold font-lora"> Spatial audio with dynamic head tracking for sound that surrounds you with Dolby Atmos technology. </p>
+          <div class="m-auto h-250 w-250 px-5 md:px-10 lg:px-20">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl py-5 md:py-10 lg:pt-20 z-10 text-white opacity-100 font-['nunito_sans'] font-bold"> Hear sound all around </h1>
+            <p class="text-3xl mt-5 px-10 py-5 md:py-10 lg:py-20 z-10 text-white opacity-100 font-bold font-lora"> Spatial audio with dynamic head tracking for sound that surrounds you with Dolby Atmos technology. </p>
             <iframe
               class="m-10 mx-auto min-height-[315px] min-width-[560px] md:h-[315px] md:w-[560px] xl:h-[630px] xl:w-[1120px] 2xl:h-[800px] 2xl:w-[1422px]"
               src="https://www.youtube.com/embed/3TOlN9dLpi8"
@@ -82,13 +82,13 @@
       <div id="3daudiovisual" class="snap-center flex h-screen w-screen bg-center bg-[url('/orbsblack.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
           <div class="m-auto h-250 w-250">
-            <h1 class="text-5xl pt-20 z-10 text-gray-100 font-['open_sans'] selection:font-bold drop-shadow-lg">3D customizable audio visualization</h1>
-            <p class="text-3xl mt-5 py-20 z-10 text-red-500 font-lora font-bold drop-shadow-lg"> See what you hear </p>
+            <h1 class="text-5xl px-3 pt-10 py-10 lg:pt-20 z-10 text-gray-100 font-['open_sans'] selection:font-bold drop-shadow-lg">3D customizable audio visualization</h1>
+            <p class="text-3xl mt-5 pt-10 py-10 lg:py-20 z-10 text-red-500 font-lora font-bold drop-shadow-lg"> See what you hear </p>
           </div>
-          <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-x-5 px-5 mx-5">
-              <div><img src="/fogvisualizer.png" class="hover:scale-110 duration-1000 ease-in-out" alt="3daudiovisualization1" /></div>
-              <div><img src="/meshvisualizer.png" class="hover:scale-110 duration-700 ease-in-out" alt="3daudiovisualization2" /></div>
-              <div><img src="/beetlevisualizer.png" class="hover:scale-110 duration-1000 ease-in-out" alt="3daudiovisualization3" /></div>
+          <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-x-5 gap-y-3 px-5 mx-5">
+              <div><img src="/beetlevisualizer.png" class="m-auto hover:scale-110 duration-1000 ease-in-out" alt="3daudiovisualization3" /></div>
+              <div><img src="/fogvisualizer.png" class="invisible md:visible m-auto hover:scale-110 duration-1000 ease-in-out" alt="3daudiovisualization1" /></div>
+              <div><img src="/meshvisualizer.png" class="invisible md:visible m-auto hover:scale-110 duration-700 ease-in-out" alt="3daudiovisualization2" /></div>
             </div>
         </div>
       </div>
@@ -506,18 +506,18 @@
             <h1 class="text-5xl pt-20 z-10 text-gray-900 font-bold">Mobile Apps</h1>
             <p class="text-2xl mt-5 pb-12 z-10 text-gray-800 font-bold">Access our services wherever you are.</p>
             <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-5 pb-16">
-              <button id="android-store" class="m-auto w-2/3 drop-shadow-lg"><img src="/android-app.png" alt="" /></button>
-              <button id="apple-app-store" class="m-auto w-2/3 drop-shadow-lg"><img src="/apple-app.png" alt="" /></button>
-              <button id="google-play" class="m-auto w-2/3 drop-shadow-lg"><img src="/google-play.png" alt="" /></button>
-              <button id="microsoft-store" class="m-auto w-2/3 drop-shadow-lg"><img src="/microsoft-store.png" alt="" /></button>
+              <button id="android-store" class="m-auto md:w-2/3 drop-shadow-lg"><img src="/android-app.png" alt="" /></button>
+              <button id="apple-app-store" class="m-auto md:w-2/3 drop-shadow-lg"><img src="/apple-app.png" alt="" /></button>
+              <button id="google-play" class="m-auto md:w-2/3 drop-shadow-lg"><img src="/google-play.png" alt="" /></button>
+              <button id="microsoft-store" class="m-auto md:w-2/3 drop-shadow-lg"><img src="/microsoft-store.png" alt="" /></button>
             </div>
           </div>
         </div>
       </div>
     <div id="faqs" class="snap-center flex h-screen w-screen bg-center bg-[url('/faqsbg.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
-          <div class="m-auto h-250 w-250">
-            <h1 class="text-5xl py-20 z-10 text-gray-900 font-bold">Questions? Answers.</h1>
+          <div class="m-auto w-11/12">
+            <h1 class="text-4xl lg:text-5xl py-5 md:py-10 lg:py-20 z-10 text-gray-900 font-bold">Questions? Answers.</h1>
             <div id="faqs-accordion" class="text-left m-5 md:px-24">
                 <div class="container relative py-3">
                   <h5 class="text-3xl font-bold py-2">
@@ -563,33 +563,33 @@
       <div id="philanthropy" class="snap-center flex h-screen w-screen bg-center bg-[url('/paperhearts.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
           <div class="m-auto h-250 w-250">
-            <h1 class="text-5xl pt-20 z-10 text-gray-900 font-bold opacity-100">Donate Now</h1>
-            <p class="text-3xl mt-5 py-10 z-10 text-gray-900 font-bold opacity-100">You can help.</p>
+            <h1 class="text-5xl pt-10 md:pt-16 lg:pt-20 z-10 text-gray-900 font-bold opacity-100">Donate Now</h1>
+            <p class="text-3xl mt-5 py-3 md:py-6 lg:py-10 z-10 text-gray-900 font-bold opacity-100">You can help.</p>
           </div>
-          <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-x-3 gap-y-5 px-16 py-5 my-10 w-3/4 mx-auto items-center border-t-gray-800 border-b-gray-800">
+          <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-x-3 gap-y-3 md:gap-y-5 px-10 md:px-12 lg:px-16 py-5 my-3 md:my-6 lg:my-10 w-3/4 mx-auto items-center border-t-gray-800 border-b-gray-800">
             <div class="flex flex-col m-auto">
-              <img src="/unicef.png" class="m-auto p-5 w-3/4 h-3/4 border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-lg rounded-2xl" alt="" />
-              <p class="text-2xl text-blue-500 font-bold py-5"> > Donate to UNICEF</p>
+              <img src="/unicef.png" class="m-auto p-5 w-5/6 md:w-11/12 border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-sm md:backdrop-blur-lg rounded-2xl" alt="" />
+              <p class="text-xl md:text-2xl text-blue-500 font-bold py-5"><nobr> > Donate to UNICEF</nobr></p>
             </div>
             <div class="flex flex-col m-auto">
-              <img src="/oxfam.png" class="m-auto p-5 w-3/4 h-3/4 border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-lg rounded-2xl" alt="" />
-              <p class="text-2xl text-blue-500 font-bold py-5"> > Donate to OXFAM</p>
+              <img src="/oxfam.png" class="m-auto p-5 w-5/6 md:w-11/12 h-3/4 border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-sm md:backdrop-blur-lg rounded-2xl" alt="" />
+              <p class="text-xl md:text-2xl text-blue-500 font-bold py-5"><nobr> > Donate to OXFAM</nobr></p>
             </div>
             <div class="flex flex-col m-auto">
-              <img src="/spca.png" class="m-auto p-5  w-3/4 h-3/4 border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-lg rounded-2xl" alt="" />
-              <p class="text-2xl text-blue-500 font-bold py-5"> > Donate to SPCA</p>
+              <img src="/spca.png" class="m-auto p-5 w-5/6 md:w-11/12 h-3/4 border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-sm md:backdrop-blur-lg rounded-2xl" alt="" />
+              <p class="text-xl md:text-2xl text-blue-500 font-bold py-5"><nobr> > Donate to SPCA</nobr></p>
             </div>
           </div>
         </div>
       </div>
       <div id="artists" class="snap-center flex h-screen w-screen bg-center bg-[url('/3dbg7.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
-          <div class="relative m-auto h-250 w-3/4 border border-white border-opacity-30 rounded-2xl px-20 bg-white bg-opacity-20 backdrop-blur-lg">
+          <div class="relative m-auto h-250 w-11/12 md:w-3/4 border border-[#bcac80] border-6 md:border-1 md:border-white md:border-opacity-30 rounded-2xl px-5 md:px-12 lg:px-20 md:bg-white bg-opacity-10 md:bg-opacity-20 backdrop-blur-sm md:backdrop-blur-lg">
             <div>
-              <h1 class="text-5xl pt-20 z-10 text-gray-900 font-bold">Artists</h1>
+              <h1 class="text-5xl pt-8 md:pt-12 lg:pt-20 z-10 text-gray-900 font-bold">Artists</h1>
               <div>
-                <p class="text-2xl mt-5 mx-24 md:mr-10 lg:mr-60 pt-20 z-10 text-gray-800 text-left font-bold">Mood Music supports artists with tools to create, release and measure music across a global stage.</p>
-                <p class="text-2xl mt-5 mx-24 mr-72 pb-20 z-10 text-gray-800 fext-left font-bold">Discover all the ways to showcase content on Apple Music — including MusicKit, RSS feeds, widgets, brand guidelines, badge art and more.</p>
+                <p class="text-xl md:text-2xl mt-5 mx-3 md:mx-12 lg:mx-24 md:mr-10 lg:mr-60 pt-5 md:pt-10 lg:pt-20 z-10 text-gray-800 text-left font-bold">Mood Music supports artists with tools to create, release and measure music across a global stage.</p>
+                <p class="text-xl md:text-2xl mt-5 mx-3 md:mx-12 lg:mx-24 mr-12 md:mr-36 lg:mr-72 pb-20 z-10 text-gray-800 fext-left font-bold">Discover all the ways to showcase content on Apple Music<span class="invisible md:visible"> — including MusicKit, RSS feeds, widgets, brand guidelines, badge art and more</span>.</p>
               </div>
                   <!--
                   <div>
@@ -630,11 +630,11 @@
                 </div>
                 -->
               <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-5 pb-16 mr-60">
-                <p class="font-['nunito_sans'] text-blue-500 font-bold text-2xl"><NuxtLink to="/artist"> > Mood Music for Artists</NuxtLink></p>
-                <p class="font-['nunito_sans'] text-blue-500 font-bold text-2xl"> > Mood Music Performance Partners Programme</p>
+                <p class="font-['nunito_sans'] text-blue-500 font-bold text-xl md:text-2xl z-10"><NuxtLink to="/artist"> > Mood Music for Artists</NuxtLink></p>
+                <p class="font-['nunito_sans'] text-blue-500 font-bold text-xl md:text-2xl z-10"> > Mood Music Performance Partners Programme</p>
               </div>
             </div>
-            <img src="/glamoursinger.png" class="float-right -mt-10 mx-5 absolute bottom-0 right-0" alt="" />
+            <img src="/glamoursinger.png" class="float-right -mt-10 mx-5 absolute bottom-0 sm:-right-5 md:right-0 z-0 lg:z-20" alt="" />
           </div>
         </div>
       </div>
