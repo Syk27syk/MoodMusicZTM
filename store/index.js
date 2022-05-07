@@ -17,6 +17,7 @@ const mutations = {
     })
   },
   removeSubscription(state, selectedSubscription) {
+    state.subscriptions = '';
   },
   addGiftCard(state, giftCard) {
     state.giftCards.push({
