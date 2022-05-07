@@ -18,7 +18,18 @@ const mutations = {
   },
   removeSubscription(state, selectedSubscription) {
   },
-  addGiftCard(state, selectedGiftCard) {
+  addGiftCard(state, giftCard) {
+    state.giftCards.push({
+      delivery: giftCard.delivery,
+      design: giftCard.design,
+      giftCardAmount: giftCard.giftCardAmount,
+      recipientName: giftCard.recipientName,
+      recipientEmail: giftCard.recipientEmail,
+      recipientAddress: giftCard.recipientAddress,
+      senderName: giftCard.senderName,
+      senderEmail: giftCard.senderEmail,
+      personalizedMessage: giftCard.personalizedMessage,
+    })
   },
   removeGiftCard(state, selectedGiftCard) {
   },
