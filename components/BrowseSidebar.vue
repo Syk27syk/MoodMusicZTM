@@ -128,7 +128,7 @@
                     </div>
                     </div>
                     <div id="checkboxes" class="flex flex-col gap-y-3 py-5 border border-l-0 border-r-0 border-b-gray-500 text-xl">
-                    <fieldset>
+                    <fieldset class="flex flex-col gap-y-3 py-5">
                         <legend class="text-xl font-bold uppercase">Select All Relevant Fields</legend>
                         <div>
                         <input id="checkbox1" v-model="checkboxField" type="checkbox" value="checkbox1">
@@ -220,16 +220,22 @@
 
 <script>
 export default ({
-  searchInput: '',
-  inputField1: '',
-  inputField2: '',
-  inputField3: '',
-  radioFieldI: '',
-  radioFieldII: '',
-  checkboxField: [],
-  textInput: '',
-  optionField: '',
+  data () {
+    return {
+      searchInput: '',
+      inputField1: '',
+      inputField2: '',
+      inputField3: '',
+      radioFieldI: '',
+      radioFieldII: '',
+      checkboxField: [],
+      textInput: '',
+      optionField: '',
+    };
+  },
+  mounted () {
 
+  },
   methods: {
     resetSearchFilters: {
       searchInput: '',
@@ -242,7 +248,7 @@ export default ({
       optionField: 'option1'
     },
     submitSearchFilters: {
-      // searchaudiolibraryandreturnresults
+    // searchaudiolibraryandreturnresults
     }
   }
 })
