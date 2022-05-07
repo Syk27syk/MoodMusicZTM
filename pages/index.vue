@@ -17,75 +17,21 @@
           <div class="m-auto">
             <h1 class="text-5xl pt-20 z-10 text-gray-900 font-['open_sans'] font-bold opacity-100">Unbeatable Music Library</h1>
             <div class="mx-auto py-16">
-              <button><img src="/goldpearl.png" class="w-[48px] h-[48px]" alt="" @click="selectTab" /></button>
-              <button><img src="/pinkpearl.png" class="w-[48px] h-[48px]" alt="" @click="selectTab" /></button>
-              <button><img src="/graypearl.png" class="w-[48px] h-[48px]" alt="" @click="selectTab" /></button>
+              <button id="gold-button"><img src="/goldpearl.png" class="w-[48px] h-[48px]" alt="" @click="tabFunction" /></button>
+              <button id="pink-button"><img src="/pinkpearl.png" class="w-[48px] h-[48px]" alt="" @click="tabFunction" /></button>
+              <button id="gray-button"><img src="/graypearl.png" class="w-[48px] h-[48px]" alt="" @click="tabFunction" /></button>
               <!--<button><img src="/greenpearl.png" class="w-[48px] h-[48px]" alt="" @click="isShow = !isShow" /></button>-->
             </div>
-            <div v-if="tabSelected===goldpearl" class="mx-auto my-5 py-10 px-20">
-              <h5 class="text-2xl mt-5 py-5 z-10 text-gray-900 font-bold opacity-100">Play over 90 million songs and 30,000 playlists. </h5>
-              <img src="" alt="" />
-              <p class="text-lg text-left mx-20">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </div>
-            <div v-if="tabSelected===pinkpearl" class="mx-auto my-5 p-10">
-              <h5 class="text-2xl mt-5 py-5 z-10 text-gray-900 font-bold opacity-100">Download your favourite tracks, play them offline.</h5>
-              <img src="" alt="" />
-              <p class="text-lg text-left mx-20">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </div>
-            <div v-if="tabSelected===graypearl" class="mx-auto my-5 p-10">
-              <h5 class="text-2xl mt-5 py-5 z-10 text-gray-900 font-bold opacity-100">Get curated playlists and live radio.</h5>
-              <img src="" alt="" />
-              <p class="text-lg text-left mx-20">>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </div>
-            <div v-show="isShow" class="mx-auto my-5 p-10">
-              <h5 class="text-2xl mt-5 py-20 z-10 text-gray-900 font-boldopacity-100">Listen across your devices.</h5>
-              <img src="" alt="" />
-              <p class="text-lg text-left mx-20">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <div id="tab-content" class="mx-auto my-5 py-10 px-20">
+              <h5 id="tab-title" class="text-2xl mt-5 py-5 z-10 text-gray-900 font-bold opacity-100">{{ tabtitle }} </h5>
+              <img id="tab-image" src="" alt="" />
+              <p id="tab-text" class="text-lg text-left mx-20">
+                  {{ tabtext }}
               </p>
             </div>
           </div>
         </div>
       </div>
-      <!--
-https://flowbite.com/docs/components/tabs/# interactive tabs
-<div class="mb-4 border-b border-gray-200 dark:border-gray-700">
-    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
-        <li class="mr-2" role="presentation">
-            <button class="inline-block p-4 rounded-t-lg border-b-2" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
-        </li>
-        <li class="mr-2" role="presentation">
-            <button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Dashboard</button>
-        </li>
-        <li class="mr-2" role="presentation">
-            <button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Settings</button>
-        </li>
-        <li role="presentation">
-            <button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab" aria-controls="contacts" aria-selected="false">Contacts</button>
-        </li>
-    </ul>
-</div>
-<div id="myTabContent">
-    <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Profile tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-    </div>
-    <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-        <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-    </div>
-    <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
-        <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-    </div>
-    <div class="hidden p-4 bg-gray-50 rounded-lg dark:bg-gray-800" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
-        <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-    </div>
-</div>
-      -->
       <div id="mooddetection" class="snap-center flex h-screen w-screen bg-center bg-[url('/3dbg2.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
           <div class="m-auto px-10 h-250 w-3/4 border border-white border-opacity-30 rounded-md bg-white bg-opacity-20 backdrop-blur-lg">
@@ -822,9 +768,6 @@ export default {
   },
 
   methods: {
-    selectTab () {
-
-    },
     goto(refName) {
       const element = this.$refs[refName];
       const top = element.offsetTop;
