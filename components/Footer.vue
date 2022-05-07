@@ -31,7 +31,7 @@
                 <strong>Account</strong>
             </h5>
             <div id="social-media-icons" class=" font-alegreya text-lg justify-items-center p-3">
-                <p><NuxtLInk to ="/login">Manage account</NuxtLInk></p>
+                <p><NuxtLInk to="/login">Manage account</NuxtLInk></p>
                 <p><NuxtLInk to="/giftCards">Gift cards</NuxtLInk></p>
                 <p><NuxtLInk to="/newsletter">Newsletter</NuxtLInk></p>
             </div>
@@ -41,10 +41,10 @@
                 <strong>Follow Us</strong>
             </h5>
             <div id="social-media-icons" class="font-alegreya grid grid-cols-2 gap-5 justify-items-center p-3">
-                <a href=""><img src="facebook.png" alt="" class="h-16 w-16" /></a>
-                <a href=""><img src="instagram.png" alt="" class="h-16 w-16" /></a>
-                <a href=""><img src="twitter.png" alt="" class="h-16 w-16" /></a>
-                <a href=""><img src="youtube.png" alt="" class="h-16 w-16" /></a>
+                <a href="https://www.facebook.com"><img src="facebook.png" alt="" class="h-16 w-16" /></a>
+                <a href="https://www.instagram.com"><img src="instagram.png" alt="" class="h-16 w-16" /></a>
+                <a href="https://twitter.com"><img src="twitter.png" alt="" class="h-16 w-16" /></a>
+                <a href="https://www.youtube.com"><img src="youtube.png" alt="" class="h-16 w-16" /></a>
             </div>
             </div>
         </div>
