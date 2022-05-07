@@ -3,7 +3,9 @@
         <Header />
         <MoodBot />
         <div id="body">
-            <h1 class="text-5xl text-gray-900 mx-auto text-center py-20 px-5 font-['nunito_sans'] border border-b-gray-300"> Mood Music Support </h1>
+            <v-parallax src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
+                <h1 class="text-5xl text-gray-900 mx-auto text-center py-20 px-5 font-['nunito_sans'] border border-b-gray-300"> Mood Music Support </h1>
+            </v-parallax>
             <div class="w-3/4 mx-auto px-20">
                 <div id="password-and-account" class="my-10 mx-auto py-5 text-center border border-l-0 border-r-0 border-t-0 border-b-gray-300 text-blue-500 font-['nunito_sans']">
                     <svg

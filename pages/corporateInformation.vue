@@ -45,7 +45,7 @@
             </div>
             <div class="flex md:h-screen bg-gray-500 bg-cover align-middle text-white text-center">
               <div class="m-auto h-250 w-250">
-                <h1 class="text-5xl pt-20 z-10 text-gray-900">Sustainability Reports</h1>
+                <h1 class="text-5xl pt-20 z-10 text-gray-900 font-bold">Sustainability Reports</h1>
                 <p class="text-2xl mt-5 mx-10 pt-8 lg:pt-16 px-5 lg:px-10 z-10  text-left text-gray-900 font-bold">Lowering emissions isn’t something we do on the side. It’s an integrated part of everyday business.</p>
                 <p class="text-2xl mt-5 mx-10 pb-8 lg:pb-16 px-5 lg:px-10 z-10  text-left text-blue-500 font-bold">Learn how we’re taking action.</p>
                 <img src="/sustainability.jpg" class="p-10 mb-16" alt="" />
@@ -55,14 +55,14 @@
           <div class="grid lg:grid-cols-2 md:grid-cols1">
             <div class="flex md:h-screen bg-[url('/bluewave.jpg')] bg-cover align-middle text-white text-center">
               <div class="m-auto h-250 w-250">
-                <h1 class="text-5xl pt-20 z-10 text-gray-100 font-bold">Time to Play Fair</h1>
+                <h1 class="text-5xl pt-20 z-10 px-5 text-gray-100 font-bold">Time to Play Fair</h1>
                 <p class="text-2xl mt-5 mx-10 py-10 lg:py-20 z-10 text-gray-100 font-bold ">When competition is fair, both consumers and companies win. Learn about our efforts to even the playing field for all developers.</p>
                 <img src="/fairplay2.png" alt="" />
               </div>
             </div>
             <div class="flex md:h-screen bg-gray-100 hover:bg-gray-900 text-gray-900 hover:text-gray-100 bg-cover align-middle text-center">
               <div class="m-auto h-250 w-250">
-                <h1 class="text-5xl pt-12 lg:pt-20 z-10 font-bold">Mood Music Loud &#38; Clear</h1>
+                <h1 class="text-5xl pt-12 px-5 lg:pt-20 z-10 font-bold">Mood Music Loud &#38; Clear</h1>
                 <p class="mt-5 px-10 py-10 lg:py-20 z-10 text-2xl font-bold">Artists deserve clarity about the economics of music streaming. This site sheds light on the global streaming economy and royalty system.</p>
                 <img src="/globalstreamingeconomy.jpg" class="p-10 mb-16" alt="" />
               </div>

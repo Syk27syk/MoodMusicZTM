@@ -110,6 +110,10 @@
 <script>
 export default {
   props: ['delivery', 'design', 'amount', 'personalizedMessage'],
+  delivery: '',
+  design: '',
+  amount: '',
+  personalizedMessage: '',
   /*
   computed: {
 
