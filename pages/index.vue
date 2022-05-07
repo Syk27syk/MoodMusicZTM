@@ -2,7 +2,7 @@
   <div>
     <Header />
     <MoodBot />
-    <div id="body" class="bg-slate-300 snap-y">
+    <div id="body" class="bg-slate-100 snap-y">
       <div id="hero" class="relative snap-center flex h-screen w-screen bg-center bg-[url('/whitesmoke.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
           <div class="m-auto w-3/4 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
@@ -78,9 +78,9 @@
         </svg>
       </button>
     </div>
-    <div id="mooddetection" class="relativesnap-center flex h-screen w-screen bg-center bg-[url('/3dbg2.jpg')] bg-cover align-middle text-white text-center">
+    <div id="mooddetection" class="relative snap-center flex h-screen w-screen bg-center bg-[url('/3dbg2.jpg')] bg-cover align-middle text-white text-center">
       <div class="m-auto flex-col">
-          <div class="m-automd:m-auto px-3 md:px-5 lg:px-10 h-250 w-full md:w-3/4 md:border md:border-white md:border-opacity-30 md:rounded-md md:bg-white md:bg-opacity-20 md:backdrop-blur-lg">
+          <div class="m-auto md:m-auto px-3 md:px-5 lg:px-10 h-250 w-full md:w-3/4 md:border md:border-white md:border-opacity-30 md:rounded-md md:bg-white md:bg-opacity-20 md:backdrop-blur-lg">
             <h1 class="text-4xl md:text-5xl mx-auto pt-5 md:pt-10 lg:pt-20 z-10 text-gray-900 font-bold font-['open_sans']">The music app that understands you</h1>
             <p class="text-2xl mt-5 py-5 z-10 text-gray-800 font-lora font-bold">Real time music composition and curation, based on your emotional state and context. State of the art AI.</p>
             <img src="/webcam.jpg" class="m-auto p-2 md:p-5 pb-5 md:pb-10 lg:pb-20 w-full md:w-3/4" alt="" />
@@ -150,15 +150,16 @@
       </div>
       <div id="logos" class="snap-center flex h-screen w-screen bg-center bg-[url('/geotunnelblack.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
-          <div id="our-partners" class="m-auto h-250 w-250 px-5 md:px-10 lg:px-20 py-5 md:py-12 lg:py-24">
-            <h1 class="text-5xl pt-5 md:pt-10 lg:pt-20 z-10 font-lora font-italic text-[#645215] opacity-100 shadow-white">Our Partners </h1>
+          <div id="our-partners" class="m-auto px-5 py-5 md:py-10">
+            <h1 class="text-5xl pt-5 md:pt-10 lg:pt-16 z-10 font-lora font-italic text-[#645215] opacity-100 shadow-white">Our Partners </h1>
           </div>
-          <div id="company-logos" class="flex pb-5 md:pb-12 lg:pb-36 px-5 md:px-16 lg:px-36">
-            <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 lg:gap-12 md:gap-5 -gap-10">
+          <div id="company-logos" class="flex w-5/6 m-auto">
+            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 lg:gap-10">
               <Logo
                 v-for="l in logos"
                 :key="l.name"
                 :logo="l"
+                class="h-[90px] w-[90px] md:h-[120px] md:w-[120px] xl:h-[150px] xl:w-[150px]"
               />
             </div>
             <!--
@@ -391,26 +392,26 @@
       </div>
       <div id="subcription" ref="subscriptions" class="snap-center flex h-screen w-screen bg-center bg-[url('/goldmarble.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
-          <div id="subscription-title" class="m-auto h-250 w-250 px-20">
-            <h1 class="text-5xl pt-12 z-10 text-white opacity-100">Choose the plan that's right for you</h1>
-            <p class="text-3xl my-5 py-5 z-10 text-white opacity-100">No commitment. Cancel at any time.</p>
+          <div id="subscription-title" class="m-auto px-5 md:px-10 lg:px-20">
+            <h1 class="text-5xl pt-12 md:pt-6 lg:pt-10 z-10 text-white opacity-100">Choose the plan that's right for you</h1>
+            <p class="text-3xl my-5 md:my-3 lg:my-4 py-5 z-10 text-white opacity-100">No commitment. Cancel at any time.</p>
           </div>
-          <div id="plans" class="grid grid-cols-1 md:grid-cols-3 gap-5 my-5 mx-auto justify-center px-5">
-            <div class="w-1/2 md:w-3/4 border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-lg rounded-full">
+          <div id="plans" class="grid grid-cols-1 md:grid-cols-3 gap-5 my-5 md:my-3 mx-auto justify-center px-5">
+            <div class="w-1/2 md:w-3/4 mx-auto border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-lg rounded-2xl">
               <p class="text-xl font-bold py-2 md:py-3 lg:py-5 uppercase">Student</p>
               <p class="text-xl font-bold">RM6.90/month</p>
               <button class="text-lg lg:text-xl font-bold bg-black hover:bg-white text-red-500 border-none rounded-full px-8 py-1 md:py-2 lg:py-3 my-5 uppercase">
                 <NuxtLink to="/subscription">Try it free</NuxtLink>
               </button>
             </div>
-            <div class="w-1/2 md:w-3/4 border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-lg rounded-full">
+            <div class="w-1/2 md:w-3/4 mx-auto border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-lg rounded-2xl">
               <p class="text-xl font-bold py-2 md:py-3 lg:py-5 uppercase">Individual</p>
               <p class="text-xl font-bold">RM14.90/month</p>
               <button class="text-lg lg:text-xl font-bold bg-black hover:bg-white text-red-500 border-none rounded-full px-8 py-1 md:py-2 my-5 uppercase">
                 <NuxtLink to="/subscription">Try it free</NuxtLink>
               </button>
             </div>
-            <div class="w-1/2 md:w-3/4 border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-lg rounded-full">
+            <div class="w-1/2 md:w-3/4 mx-auto border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-lg rounded-2xl">
               <p class="text-xl font-bold py-2 md:py-3 lg:py-5 uppercase">Family</p>
               <p class="text-xl font-bold">RM22.90/month</p>
               <button class="text-lg lg:text-xl font-bold bg-black hover:bg-white text-red-500 border-none rounded-full px-8 py-1 md:py-2 my-5 uppercase">
@@ -418,114 +419,114 @@
               </button>
             </div>
           </div>
-          <table id="information-table" class="invisible md:visible text-lg font-['nunito_sans'] pb-10 mx-5">
+          <table id="information-table" class="invisible md:visible text-lg font-['nunito_sans'] pb-10 lg:mx-5">
             <tr>
               <th class="invisible text-left">text</th>
               <th class="px-5 uppercase py-5">Student/Individual<sup>3</sup></th>
               <th class="px-5 uppercase">Family</th>
             </tr>
             <tr>
-              <td>90 million songs</td>
+              <td><nobr>90 million songs</nobr></td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
               <tr>
-              <td>More than 30,000 expert-curated playlists</td>
+              <td><nobr>More than 30,000 expert-curated playlists</nobr></td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
               <tr>
-              <td>Free trial with no commitment<sup>5</sup></td>
+              <td><nobr>Free trial with no commitment<sup>5</sup></nobr></td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Stream ad-free music</td>
+              <td><nobr>Stream ad-free music</nobr></td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Original programmes, concerts and exclusives</td>
+              <td><nobr>Original programmes, concerts and exclusives</nobr></td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Live and on-demand radio stations hosted by artists</td>
+              <td><nobr>Live and on-demand radio stations hosted by artists</nobr></td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Available on Apple devices</td>
+              <td><nobr>Available on Apple devices</nobr></td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Available on other supported devices</td>
+              <td><nobr>Available on other supported devices</nobr></td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Stream ad-free music</td>
+              <td><nobr>Stream ad-free music</nobr></td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Live and on-demand radio stations hosted by artists</td>
+              <td><nobr>Live and on-demand radio stations hosted by artists</nobr></td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Available on supported devices</td>
+              <td><nobr>Available on supported devices</nobr></td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Stream ad-free music</td>
+              <td><nobr>Stream ad-free music</nobr></td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Spatial audio with Dolby Atmos</td>
+              <td><nobr>Spatial audio with Dolby Atmos</nobr></td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Full catalogue in lossless audio</td>
+              <td><nobr>Full catalogue in lossless audio</nobr></td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Lyrics view</td>
+              <td><nobr>Lyrics view</nobr></td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Download 100,000 songs to your library</td>
+              <td><nobr>Download 100,000 songs to your library</nobr></td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Access your entire library from any device and listen online and off</td>
+              <td><nobr>Access your entire library from any device and listen online and off</nobr></td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>See what your friends are listening to</td>
+              <td><nobr>See what your friends are listening to</nobr></td>
               <td>✔️</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Unlimited access for up to six people</td>
+              <td><nobr>Unlimited access for up to six people</nobr></td>
               <td class="invisible">text</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Personal music library for each family member</td>
+              <td><nobr>Personal music library for each family member</nobr></td>
               <td class="invisible">text</td>
               <td>✔️</td>
             </tr>
             <tr>
-              <td>Personalized music recommendations for each family member</td>
+              <td><nobr>Personalized music recommendations for each family member</nobr></td>
               <td class="invisible">text</td>
               <td>✔️</td>
             </tr>
