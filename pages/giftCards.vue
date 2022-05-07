@@ -127,6 +127,14 @@ export default {
 */
 
   methods: {
+    data () {
+      return {
+        delivery: '',
+        design: '',
+        personalizedMessage: '',
+      }
+    },
+
     goto(refName) {
       const element = this.$refs[refName];
       const top = element.offsetTop;
