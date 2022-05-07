@@ -44,7 +44,7 @@
             </div>
           <p class="text-2xl font-bold text-blue-500 my-10"> > Search full FAQs page </p>
         </div>
-      </div>
+    </div>
 </template>
 
 <script>
