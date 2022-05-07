@@ -2,7 +2,8 @@ const state = () => ({
   subscriptions: '',
   giftCards: [
   ],
-  termsAndConditions: false
+  termsAndConditions: false,
+  searchFields: [],
 })
 
 const mutations = {
