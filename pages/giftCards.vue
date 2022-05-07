@@ -131,8 +131,20 @@
                     Add Gift Card
                 </button>
             </div>
-            <div id="total" class="text-gray-800 font-bold my-2 p-2 py-5">
-                 <h5 class="text-3xl">Total: </h5>
+            <div id="orders" class="text-gray-800 font-bold my-2 p-2 py-5">
+                <h5 class="text-3xl py-5">Orders </h5>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Delivery</td>
+                            <td>Design</td>
+                            <td>Amount</td>
+                            <td>Recipient</td>
+                            <td>Quantity</td>
+                        </tr>
+                    </thead>
+                </table>
+                 <h5 class="text-3xl py-5">Total: </h5>
                 <h5 class="text-xl pt-5 pb-3">Delivery: </h5>
                 <div class="font-normal text-lg">
                     <p> In Stock </p>
@@ -217,15 +229,13 @@ export default {
   },
 
   computed: {
-    /*
     total () {
       let total = 0;
-      this.$store.state.giftCards.forEach(() => {
-        total = total + giftCardAmount * giftCardQuantity;
+      this.$store.state.giftCards.forEach((giftCard) => {
+        total = total + this.giftCardAmount * this.giftCardQuantity;
       });
       return total;
     }
-    */
   },
 
   methods: {
@@ -240,9 +250,8 @@ export default {
         senderName: this.senderName,
         senderEmail: this.senderEmail,
         personalizedMessage: this.personalizedMessage,
-        showDeliveryModal: this.showDeliveryModal,
       }
-      this.$store.giftCards.commit('addGiftCard', giftCard);
+      this.$store.state.giftCards.commit('addGiftCard', giftCard);
     },
     addToCart() {
     },
