@@ -3,16 +3,22 @@
         <Header />
         <MoodBot />
         <BrowseSidebar />
-        <h1 class="text-black text-6xl flex m-5 p-5">Website Under Construction</h1>
-        <div>
-            <div>
-                <div>
-                    <h5>Welcome!</h5>
-                    <p> You are logged in! </p>
-                    <button> Log out </button>
-                    <button> Open Player </button>
+        <div id="background" class="flex flex-col bg-white text-black text-center font-['nunito_sans']">
+            <div id="welcome">
+                <h5 class="uppercase"> playlists </h5>
+                <p> You are logged in. </p>
+                <button> Log out </button>
+                <button> Open Player </button>
+            </div>
+            <div id="playlist-main" class="m-auto h-250 w-250 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
+                <div id="status bar" class="flex flex-row m-auto">
+                    <button id="back"><img src="" class="m-auto" alt="" /></button>
+                    <p class="font-['nunito_sans'] font-bold text-2xl text-center text-black py-5 m-auto">Playing Now</p>
+                    <button id="favourite"><img src="/fav.png" class="h-20 m-auto" alt="" /></button>
                 </div>
-                <div>
+            </div>
+            <div id="playlists" class="mx-auto my-auto text-left text-black">
+                <div id="playlist 1">
                     <h6>Playlist 1 Name </h6>
                     <p> tags </p>
                     <div>
