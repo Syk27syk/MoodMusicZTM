@@ -5,8 +5,9 @@
 const nodemailer = require('nodemailer');
 
 exports.handler = async function(event, context) {
+  //change this: changed
   const body = JSON.parse(event.body);
-  const customerEmail = body.email;
+  const senderEmail = body.senderEmail;
   //change this: 
   const orders = body.orders;
 
@@ -21,7 +22,7 @@ exports.handler = async function(event, context) {
 };
    //
 
-// construct email object ot send with node mailer
+// construct email object to send with node mailer
 const email = {
   from: 'Shiyun.khoo@gmail.com',
   to: customerEmail,
@@ -29,7 +30,7 @@ const email = {
   text: emailContent,
   };
 
- // construct a mailer
+ // construct a mailer. leave this unchanged. 
 const mailer = nodemailercreateTransport ({
   host: 'smtp.sendgrid.net',
   port: 465,
@@ -40,6 +41,7 @@ const mailer = nodemailercreateTransport ({
   }
 });
 
+//this should be unchanged too, but there is an error. 
 try {
     await mailer.sendMail(email);
     return {
