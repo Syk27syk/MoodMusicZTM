@@ -43,8 +43,24 @@
             <p class="text-sm py-2 px-5">Issued by Apple Value Services, LLC (AVS). ©2020 Apple Inc. All rights reserved.</p>
             <p class="text-sm py-2 px-5">We approximate your location from your internet IP address by matching it to a geographic region or from the location entered during your previous visit to Apple.</p>
         </div>
-        <div id="gift-card-form" ref="division" class="bg-white px-10 py-10">
-            <h3 class="text-5xl text-gray-800 font-bold font['open_sans'] py-10 px-10 m-auto"> Buy Mood Music Gift Card </h3>
+        <div id="gift-card-form" ref="division" class="relative bg-white px-10 py-10">
+            <div class="py-10 m-auto">
+                <h3 class="text-5xl text-gray-800 font-bold font['open_sans'] px-10 mr-10">Buy Mood Music Gift Card </h3>
+                <button class="absolute right-5 top-10 m-12">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-10 w-10"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                    >
+                    <path
+                        fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                    />
+                    </svg>
+                </button>
+            </div>
             <div id="delivery" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
                 <h5 class="text-2xl text-gray-800 font-bold my-2 p-2 px-5"> How would you like to send it? </h5>
                 <p class="text-lg text-gray-800 my-2 px-5"> Choose to send by mail and get a collectible sticker </p>
@@ -53,15 +69,15 @@
                         <input id="email" v-model="delivery" type="radio">
                         <label for="email"> Email </label>
                     </div>
-                        <div class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
-                        <input id="mail" v-model="delivery" type="radio" class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
+                    <div class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
+                        <input id="mail" v-model="delivery" type="radio">
                         <label for="mail"> Mail </label>
                     </div>
                 </div>
             </div>
             <div id="design" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
                 <h5 class="text-2xl text-gray-800 font-bold my-2 p-2"> Choose a design </h5>
-                <select v-model="design">
+                <select v-model="design" class="mx-5">
                     <option>Mood Music Logo</option>
                     <option>Quaver Heart</option>
                     <option>Brain Plug</option>
@@ -82,19 +98,38 @@
                     </div>
                 </div>
             </div>
-            <select id="amount" v-model="giftCardAmount" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
+            <div>
                 <h5 class="text-2xl text-gray-800 font-bold my-2 p-2"> Choose an amount </h5>
+                <select id="amount" v-model="giftCardAmount" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
                     <option class="m-auto text-center font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">$15</option>
                     <option class="m-auto text-center font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">$30</option>
                     <option class="m-auto text-center font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">$60</option>
                     <p class="m-auto text-center font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
                         Other Amount
-                        <input class="flex w-full h-auto bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Amount in US dollars"></input>
+                        <input class="flex w-full h-auto bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Amount in US dollars">
+                        </input>
                     </p>
-            </select>
+                </select>
+            </div>
+            <div id="personalized-message" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
+                <h5 class="text-2xl text-gray-800 font-bold my-2 p-2"> Who's it for?</h5>
+                <input v-model="recipientName" class="flex w-full h-auto text-left text-xl bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Recipient Name" />
+                <input v-model="recipientEmail" class="flex w-full h-auto text-left text-xl bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Recipient Email Address" />
+                <input v-model="recipientAddress" class="flex w-full h-auto text-left text-xl bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Recipient Physical Address" />
+            </div>
+            <div id="personalized-message" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
+                <h5 class="text-2xl text-gray-800 font-bold my-2 p-2"> Who's it from?</h5>
+                <input v-model="senderName" class="flex w-full h-auto text-left text-xl bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Sender Name" />
+                <input v-model="senderEmail" class="flex w-full h-auto text-left text-xl bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Sender Email Address" />
+            </div>
             <div id="personalized-message" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
                 <h5 class="text-2xl text-gray-800 font-bold my-2 p-2"> Want to add a personalized message?</h5>
                 <input v-model="personalizedMessage" class="flex w-full h-auto text-left text-xl bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Your message here" />
+            </div>
+            <div class="mx-auto my-10 border-2 border-b-gray-800 border-t-0 border-l-0 border-r-0">
+                <button class="font-['open_sans'] bg-blue-500 text-white text-bold uppercase rounded-full border-red-500 px-8 py-3 mx-auto justify-center mt-5 mb-10 drop-shadow-xl shadow-black" @click="addGiftcard">
+                    Add Gift Card
+                </button>
             </div>
             <div id="total" class="text-gray-800 font-bold my-2 p-2 py-5">
                  <h5 class="text-3xl">Total: </h5>
@@ -102,15 +137,31 @@
                 <div class="font-normal text-lg">
                     <p> In Stock </p>
                     <p> Free Shipping </p>
-                    <p class="text-blue-500"> Get delivery dates </p>
+                    <button class="text-blue-500" @click="showDeliveryModal = true"> Get delivery dates </button>
                 </div>
-                <button class="font-['open_sans'] bg-blue-500 text-white text-bold uppercase rounded-full border-red-500 px-8 py-3 mx-10 mt-5 mb-10 drop-shadow-xl shadow-black">
+                <button class="font-['open_sans'] bg-blue-500 text-white text-bold uppercase rounded-full border-red-500 px-8 py-3 mx-auto mt-5 mb-10 drop-shadow-xl shadow-black" @click="addtoCart">
                     <NuxtLink to="/cart">Add to Cart</NuxtLink>
                 </button>
             </div>
             <div id="bookmark">
                 <h5 class="text-2xl text-gray-800 font-bold my-2 p-2"> Still deciding?</h5>
-                <p class="text-lg text-gray-800 my-2 p-2"> Add this item to a list and easily come back to it later. </p>
+                <div class="flex flex-row">
+                    <p class="text-lg text-gray-800 my-2 mr-10 p-2"> Add this item to a list and easily come back to it later. </p>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 my-auto"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+                    />
+                    </svg>
+                </div>
             </div>
             <div id="support">
                 <h5 class="text-2xl text-gray-800 font-bold my-2 p-2"> Need Some Help?</h5>
@@ -118,15 +169,14 @@
             </div>
         </div>
         <div id="delivery-dates-modal">
-            <button @click="showDeliveryModal = true">show</button>
-            <div class="overlay" v-if="showDeliveryModal" @click="showDeliveryModal = false"></div>
-            <div class="modal" v-if="showDeliveryModal">
+            <div v-if="showDeliveryModal" class="overlay invisible" @click="showDeliveryModal = false">
+                placeholder
+            </div>
+            <div v-if="showDeliveryModal" class="modal">
                 <button class="close" @click="showDeliveryModal = false">x</button>
                 <h3>Delivery Dates</h3>
-                <div>
-                </div>
+                <p> Delivery date picker UI </p>
             </div>
-        </div>
         </div>
         <Footer />
     </div>
@@ -136,10 +186,15 @@
 export default {
   data () {
     return {
-      delivery: '',
-      design: '',
-      giftCardAmount: '',
-      personalizedMessage: '',
+      delivery: 'email',
+      design: 'Mood Bot',
+      giftCardAmount: '$15',
+      recipientName: 'Shi Min',
+      recipientEmail: 'Shimin.khoo@gmail.com',
+      recipientAddress: 'changkat sungai ara',
+      senderName: 'Shi Yun',
+      senderEmail: 'Shiyun.khoo@gmail.com',
+      personalizedMessage: 'Hi. I love you.',
       showDeliveryModal: false,
     }
   },
@@ -151,34 +206,52 @@ export default {
           src: 'https://identity.netlify.com/v1/netlify-identity-widget.js',
         }
       ],
+      /*
       script: [
         {
           src: '../path/to/flowbite/dist/datepicker.js',
         }
       ]
+      */
     }
   },
 
   computed: {
+    /*
     total () {
       let total = 0;
-      this.$store.state.giftCards.forEach((     ) => {
+      this.$store.state.giftCards.forEach(() => {
         total = total + giftCardAmount * giftCardQuantity;
       });
       return total;
     }
+    */
   },
 
   methods: {
+    addGiftCard() {
+      const giftCard = {
+        delivery: this.delivery,
+        design: this.design,
+        giftCardAmount: this.giftCardAmount,
+        recipientName: this.recipientName,
+        recipientEmail: this.recipientEmail,
+        recipientAddress: this.recipientAddress,
+        senderName: this.senderName,
+        senderEmail: this.senderEmail,
+        personalizedMessage: this.personalizedMessage,
+        showDeliveryModal: this.showDeliveryModal,
+      }
+      this.$store.giftCards.commit('addGiftCard', giftCard);
+    },
+    addToCart() {
+    },
     goto(refName) {
       const element = this.$refs[refName];
       const top = element.offsetTop;
 
       window.scrollTo(0, top);
     },
-    addToCart () {
-
-    }
   }
 };
 
