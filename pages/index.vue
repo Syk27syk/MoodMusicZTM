@@ -548,60 +548,62 @@
           <div id="promotions-title">
             <h1 class="m-auto text-7xl pt-5 md:pt-10 lg:pt-20 z-10 text-gray-900 font-bold opacity-100 drop-shadow-lg shadow-[#BCAC80]">Promotions</h1>
           </div>
-          <div id="promotion-panels" class="2xl:flex mx-auto px-3 md:px-5">
-            <div class="flex xl:flex-row md:flex-col my-3 md:my-6 lg:my-10 mx-auto">
-              <div id="free-6-months" class="m-auto bg-black bg-opacity-30 backdrop-blur-lg h-full border-gray-900 border-opacity-10 rounded-xlur-lg rounded-lg">
-                <div class="m-auto p-10">
-                  <img src="/freetrial.png" class="py-12" alt="" />
-                  <h5 class="uppercase text-gray-900 drop-shadow-lg text-3xl md:text-4xl lg:text-5xl font-bold font-['nunito_sans']">6-month free trial</h5>
-                  <p class="px-12 py-5 text-2xl text-gray-200 font-lora">
-                    Get 6 months of Mood Music free with eligible audio devices.
-                  </p>
-                      <div class="grid grid-cols-2 font-['nunito_sans'] text-blue-500 font-bold text-2xl">
+          <div id="promotion-panels" class="2xl:flex mx-auto px-3 lg:px-5">
+            <div class="flex xl:flex-row flex-col my-3 md:my-6 lg:my-10 mx-auto">
+              <div id="free-6-months" class="m-auto my-3 flex flex-row md:flex-col bg-black bg-opacity-30 backdrop-blur-lg h-full border-gray-900 border-opacity-10 rounded-xlur-lg rounded-lg">
+                <div class="m-auto flex flex-row lg:flex-col p-3 lg:p-10">
+                  <img src="/freetrial.png" class="m-auto py-5 lg:py-12 w-1/2 lg:w-full" alt="" />
+                  <div class="flex flex-col m-auto">
+                    <h5 class="uppercase text-gray-900 drop-shadow-lg text-3xl md:text-4xl lg:text-5xl font-bold font-['nunito_sans']">6-month free trial</h5>
+                    <p class="px-5 lg:px-12 py-2 lg:py-5 text-lg lg:text-2xl text-gray-200 font-lora">
+                      Get 6 months of Mood Music free with eligible audio devices.
+                    </p>
+                      <div class="grid grid-cols-2 font-['nunito_sans'] text-blue-500 font-bold text-lg lg:text-2xl">
                         <button>
-                            <NuxtLink to="/subscription"> > Try it free</NuxtLink>
+                          <NuxtLink to="/subscription"><nobr> > Try it free</nobr></NuxtLink>
                         </button>
                         <button>
-                          > Learn more
+                          <nobr> > Learn more</nobr>
                         </button>
                       </div>
+                  </div>
                 </div>
               </div>
               <div class="flex flex-col">
-                <div id="student-plan" class="flex lg:flex-row sm:flex-col m-10 bg-black bg-opacity-30 backdrop-blur-lg border-gray-900 border-opacity-10 rounded-xl">
+                <div id="student-plan" class="flex flex-row m-3 md:m-5 lg:m-10 bg-black bg-opacity-30 backdrop-blur-lg border-gray-900 border-opacity-10 rounded-xl">
                   <div class="flex flex-col m-auto p-10">
-                    <h5 class="uppercase text-gray-900 drop-shadow-lg text-5xl font-bold font-['nunito_sans']">Free for Students</h5>
-                    <p class="px-12 py-5 text-2xl text-gray-200 font-lora">
+                    <h5 class="uppercase text-gray-900 drop-shadow-lg lg:text-5xl md:text-4xl text-3xl font-bold font-['nunito_sans']">Free for Students</h5>
+                    <p class="px-5 md:px-8 lg:px-12 py-2 lg:py-5 text-lg lg:text-2xl text-gray-200 font-lora">
                       Mood Music's student plan comes with Apple TV+ for free.
                     </p>
-                    <div class="grid grid-cols-2 font-['nunito_sans'] text-blue-500 font-bold text-2xl">
+                    <div class="grid grid-cols-2 font-['nunito_sans'] text-blue-500 font-bold text-lg lg:text-2xl">
                       <button>
-                          <NuxtLink to="/subscription"> > Try it free</NuxtLink>
+                          <NuxtLink to="/subscription"><nobr> > Try it free</nobr></NuxtLink>
                       </button>
                       <button>
-                        > Learn more
+                        <nobr> > Learn more</nobr>
                       </button>
                     </div>
                   </div>
-                  <div>
-                    <img src="/studentpromotion.png" class="drop-shadow-lg" alt="" />
+                  <div class="my-auto mx-auto">
+                    <img src="/studentpromotion.png" class="my-auto mx-auto h-full bottom-0 drop-shadow-lg" alt="" />
                   </div>
                 </div>
-                <div id="subscription-bundle" class="flex lg:flex-row sm:flex-col m-10 bg-black bg-opacity-30 backdrop-blur-lg border-gray-900 border-opacity-10 rounded-xl">
-                  <div>
-                    <img src="/bundlepromotion.png" class="my-auto drop-shadow-lg" alt="" />
+                <div id="subscription-bundle" class="flex flex-row m-5 lg:m-10 bg-black bg-opacity-30 backdrop-blur-lg border-gray-900 border-opacity-10 rounded-xl">
+                  <div class="my-auto mx-auto">
+                    <img src="/bundlepromotion.png" class="my-auto mx-auto drop-shadow-lg" alt="" />
                   </div>
-                  <div class="flex flex-col m-auto p-10">
-                    <h5 class="uppercase text-gray-900 drop-shadow-lg text-5xl font-bold font-['nunito_sans']">All In One</h5>
-                    <p class="px-12 py-5 text-2xl text-gray-200 font-lora">
+                  <div class="flex flex-col m-auto p-3 md:p-5 lg:p-10">
+                    <h5 class="uppercase text-gray-900 drop-shadow-lg text-3xl md:text-4xl lg:text-5xl font-bold font-['nunito_sans']">All In One</h5>
+                    <p class="px-5 md:px-8 lg:px-12 py-2 lg:py-5 text-lg lg:text-2xl text-gray-200 font-lora">
                       Bundle up to 5 services and enjoy more for less.
                     </p>
-                    <div class="grid grid-cols-2 px-12 font-['nunito_sans'] text-blue-500 font-bold text-2xl">
+                    <div class="grid grid-cols-1 md:grid-cols-2 px-5 md:px-8 lg:px-12 font-['nunito_sans'] text-blue-500 font-bold text-lg lg:text-2xl">
                       <button>
-                          <NuxtLink to="/subscription"> > Try it free</NuxtLink>
+                          <NuxtLink to="/subscription"><nobr>  > Try it free</nobr></NuxtLink>
                       </button>
                       <button>
-                        > Learn more
+                        <nobr>> Learn more</nobr>
                       </button>
                     </div>
                   </div>
