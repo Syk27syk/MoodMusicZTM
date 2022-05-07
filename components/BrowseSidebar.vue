@@ -247,8 +247,8 @@ export default ({
       this.optionField = 'option 1'
     },
     submitSearchFilters () {
-    // searchaudiolibraryandreturnresults
-    }
-  }
-})
+      this.$store.commit('searchFields', [this.searchInput, this.inputField1, this.inputfield2, this.inputField3, this.radioFieldI, this.radioFieldII, this.checkboxField, this.textInput, this.optionField]);
+    },
+  },
+});
 </script>
