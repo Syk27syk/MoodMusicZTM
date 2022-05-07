@@ -163,8 +163,8 @@
                     <p> Free Shipping </p>
                     <button class="text-blue-500" @click="showDeliveryModal = true"> Get delivery dates </button>
                 </div>
-                <button class="font-['open_sans'] bg-blue-500 text-white text-bold uppercase rounded-full border-red-500 px-8 py-3 mx-auto mt-5 mb-10 drop-shadow-xl shadow-black" @click="addtoCart">
-                    <NuxtLink to="/cart">Add to Cart</NuxtLink>
+                <button class="font-['open_sans'] bg-blue-500 text-white text-bold uppercase rounded-full border-red-500 px-8 py-3 mx-auto mt-5 mb-10 drop-shadow-xl shadow-black" @click="confirmOrder">
+                    Confirm Order
                 </button>
             </div>
             <div id="bookmark">
@@ -228,6 +228,7 @@
 export default {
   data () {
     return {
+      giftCardID: '1576996323453',
       delivery: 'email',
       design: 'Mood Bot',
       giftCardAmount: '$15',
@@ -272,6 +273,7 @@ export default {
   methods: {
     addGiftCard() {
       const giftCard = {
+        giftCardID: Date.now,
         delivery: this.delivery,
         design: this.design,
         giftCardAmount: this.giftCardAmount,
@@ -287,7 +289,7 @@ export default {
     removeGiftCard() {
       this.$store.state.giftCards.commit('removeGiftCard',);
     },
-    addToCart() {
+    confirmOrder() {
     },
     goto(refName) {
       const element = this.$refs[refName];
