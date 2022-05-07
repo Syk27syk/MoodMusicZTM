@@ -53,22 +53,22 @@ export default ({
 
   methods: {
     selectTab() {
-      let tabIndex = this.element.id;
+      const tabIndex = this.element.id;
       let activeIndex = '';
       if (activeIndex === tabIndex) {
         return activeIndex;
       } else {
         switch (tabIndex) {
-          case 'gold':
+          case 'gold-button':
             activeIndex = 'gold-button';
             return activeIndex;
-          case 'pink':
+          case 'pink-button':
             activeIndex = 'pink-button';
             return activeIndex;
-          case 'gray':
+          case 'gray-button':
             activeIndex = 'gray-button';
             return activeIndex;
-          case 'green':
+          case 'green-button':
             activeIndex = 'green-button';
             return activeIndex;
           default:
