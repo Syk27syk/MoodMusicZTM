@@ -106,8 +106,7 @@
                     <option class="m-auto text-center font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">$60</option>
                     <p class="m-auto text-center font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
                         Other Amount
-                        <input class="flex w-full h-auto bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Amount in US dollars">
-                        </input>
+                        <input class="flex w-full h-auto bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Amount in US dollars" />
                     </p>
                 </select>
             </div>
@@ -132,20 +131,33 @@
                 </button>
             </div>
             <div id="orders" class="text-gray-800 font-bold my-2 p-2 py-5">
-                <h5 class="text-3xl py-5">Orders </h5>
-                <table>
+                <h5 class="text-2xl py-5">Gift Card Orders </h5>
+                <table class="table-auto mx-auto w-11/12">
                     <thead>
-                        <tr>
+                        <tr class="uppercase text-xl font-['open_sans'] text-center">
+                            <td>Recipient</td>
                             <td>Delivery</td>
                             <td>Design</td>
                             <td>Amount</td>
-                            <td>Recipient</td>
                             <td>Quantity</td>
+                            <td>Total</td>
+                            <td>Remove</td>
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr v-for="giftCard in $store.state.giftCards" :key="giftCard.rcipientName">
+                            <td>{{ giftCard.recipientName }}</td>
+                            <td>{{ giftCard.delivery }}</td>
+                            <td>{{ giftCard.design }}</td>
+                            <td>{{ giftCard.amount }}</td>
+                            <td>{{ giftCard.quantity }}</td>
+                            <td>{{ giftCard.amount * giftCard.Quantity }}</td>
+                            <td><button> x </button></td>
+                        </tr>
+                    </tbody>
                 </table>
                  <h5 class="text-3xl py-5">Total: </h5>
-                <h5 class="text-xl pt-5 pb-3">Delivery: </h5>
+                <h5 class="text-xl pt-5 pb-3">Mail delivery: </h5>
                 <div class="font-normal text-lg">
                     <p> In Stock </p>
                     <p> Free Shipping </p>
@@ -160,12 +172,30 @@
                 <div class="flex flex-row">
                     <p class="text-lg text-gray-800 my-2 mr-10 p-2"> Add this item to a list and easily come back to it later. </p>
                     <svg
+                        v-if="bookmark===false"
                         xmlns="http://www.w3.org/2000/svg"
                         class="h-6 w-6 my-auto"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         stroke-width="2"
+                        @click="bookmark=true"
+                    >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+                    />
+                    </svg>
+                    <svg
+                        v-if="bookmark===true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 my-auto"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        @click="bookmark=false"
                     >
                     <path
                         stroke-linecap="round"
@@ -208,6 +238,7 @@ export default {
       senderEmail: 'Shiyun.khoo@gmail.com',
       personalizedMessage: 'Hi. I love you.',
       showDeliveryModal: false,
+      bookmark: false,
     }
   },
 
@@ -252,6 +283,9 @@ export default {
         personalizedMessage: this.personalizedMessage,
       }
       this.$store.state.giftCards.commit('addGiftCard', giftCard);
+    },
+    removeGiftCard() {
+      this.$store.state.giftCards.commit('removeGiftCard',);
     },
     addToCart() {
     },

@@ -1,9 +1,11 @@
 const state = () => ({
   subscriptions: '',
   giftCards: [
+    { delivery: 'email', design: 'Mood Bot', giftCardAmount: '$15', recipientName: 'Shi Min', recipientEmail: 'Shimin.khoo@gmail.com', recipientAddress: 'changkat sungai ara', senderName: 'Shi Yun', senderEmail: 'Shiyun.khoo@gmail.com', personalizedMessage: 'Hi. I love you.' },
+    { delivery: 'email', design: 'Mood Music Logo', giftCardAmount: '$15', recipientName: 'Shi Min', recipientEmail: 'Shimin.khoo@gmail.com', recipientAddress: 'changkat sungai ara', senderName: 'Shi Yun', senderEmail: 'Shiyun.khoo@gmail.com', personalizedMessage: 'Hi. I love you.' },
+    { delivery: 'email', design: 'Brain Plug', giftCardAmount: '$15', recipientName: 'Shi Min', recipientEmail: 'Shimin.khoo@gmail.com', recipientAddress: 'changkat sungai ara', senderName: 'Shi Yun', senderEmail: 'Shiyun.khoo@gmail.com', personalizedMessage: 'Hi. I love you.' },
+    { delivery: 'email', design: 'Quaver Heart', giftCardAmount: '$15', recipientName: 'Shi Min', recipientEmail: 'Shimin.khoo@gmail.com', recipientAddress: 'changkat sungai ara', senderName: 'Shi Yun', senderEmail: 'Shiyun.khoo@gmail.com', personalizedMessage: 'Hi. I love you.' }
   ],
-  termsAndConditions: false,
-  searchFields: [],
 })
 
 const mutations = {
