@@ -3,7 +3,7 @@
     <Header />
     <MoodBot />
     <div id="body" class="bg-slate-300 snap-y">
-      <div id="hero" class="snap-center flex h-screen w-screen bg-center bg-[url('/whitesmoke.jpg')] bg-cover align-middle text-white text-center">
+      <div id="hero" class="relative snap-center flex h-screen w-screen bg-center bg-[url('/whitesmoke.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
           <div class="m-auto w-3/4 border border-white border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
             <h1 class="font-['open_sans'] font-bold text-5xl pt-20 z-10 text-gray-900 drop-shadow-lg opacity-100">Mood Music</h1>
@@ -11,8 +11,19 @@
             <button class="text-2xl m-auto font-['open_sans'] font-bold bg-[url('/blobbybutton.png')] bg-blue-500 py-5 px-8 mb-10 text-white rounded-full border-2 border-t-white border-l-white border-b-black border-r-black border-opacity-30" @click="goto('subscriptions')">Try 1 Month Free</button>
           </div>
         </div>
+        <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mx-auto"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
       </div>
-      <div id="library" class="snap-center flex h-screen w-screen bg-center bg-[url('/3dbg1.jpg')] bg-cover align-middle text-gray-800 text-center">
+      <div id="library" class="relative snap-center flex h-screen w-screen bg-center bg-[url('/3dbg1.jpg')] bg-cover align-middle text-gray-800 text-center">
         <div class="m-auto flex-col">
             <div class="m-auto">
                 <h1 class="text-4xl md:text-5xl pt-20 z-10 text-gray-900 font-['open_sans'] font-bold opacity-100">Unbeatable Music Library</h1>
@@ -54,30 +65,63 @@
                 </div>
             </div>
         </div>
+      <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 mx-auto"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
     </div>
-      <div id="mooddetection" class="snap-center flex h-screen w-screen bg-center bg-[url('/3dbg2.jpg')] bg-cover align-middle text-white text-center">
-        <div class="m-auto flex-col">
+    <div id="mooddetection" class="relativesnap-center flex h-screen w-screen bg-center bg-[url('/3dbg2.jpg')] bg-cover align-middle text-white text-center">
+      <div class="m-auto flex-col">
           <div class="m-automd:m-auto px-3 md:px-5 lg:px-10 h-250 w-full md:w-3/4 md:border md:border-white md:border-opacity-30 md:rounded-md md:bg-white md:bg-opacity-20 md:backdrop-blur-lg">
             <h1 class="text-4xl md:text-5xl mx-auto pt-5 md:pt-10 lg:pt-20 z-10 text-gray-900 font-bold font-['open_sans']">The music app that understands you</h1>
             <p class="text-2xl mt-5 py-5 z-10 text-gray-800 font-lora font-bold">Real time music composition and curation, based on your emotional state and context. State of the art AI.</p>
             <img src="/webcam.jpg" class="m-auto p-2 md:p-5 pb-5 md:pb-10 lg:pb-20 w-full md:w-3/4" alt="" />
           </div>
         </div>
+        <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mx-auto"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
       </div>
       <div id="spatialaudio" class="snap-center flex h-screen w-screen bg-center bg-[url('/3dbg5.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
           <div class="m-auto h-250 w-250 px-5 md:px-10 lg:px-20">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl py-5 md:py-10 lg:pt-20 z-10 text-white opacity-100 font-['nunito_sans'] font-bold"> Hear sound all around </h1>
-            <p class="text-3xl mt-5 px-10 py-5 md:py-10 lg:py-20 z-10 text-white opacity-100 font-bold font-lora"> Spatial audio with dynamic head tracking for sound that surrounds you with Dolby Atmos technology. </p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl py-5 md:py-10 lg:pt-16 z-10 text-white opacity-100 font-['nunito_sans'] font-bold"> Hear sound all around </h1>
+            <p class="text-3xl mt-5 px-10 py-5 md:py-10 lg:py-16 z-10 text-white opacity-100 font-bold font-lora"> Spatial audio with dynamic head tracking for sound that surrounds you with Dolby Atmos technology. </p>
             <iframe
-              class="m-10 mx-auto min-height-[315px] min-width-[560px] md:h-[315px] md:w-[560px] xl:h-[630px] xl:w-[1120px] 2xl:h-[800px] 2xl:w-[1422px]"
+              class="z-0 m-10 mx-auto min-height-[315px] min-width-[560px] md:h-[315px] md:w-[560px] xl:h-[630px] xl:w-[1120px]"
               src="https://www.youtube.com/embed/3TOlN9dLpi8"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen />
-            </div>
           </div>
+        </div>
+        <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mx-auto"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
       </div>
       <div id="3daudiovisual" class="snap-center flex h-screen w-screen bg-center bg-[url('/orbsblack.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
@@ -85,20 +129,31 @@
             <h1 class="text-5xl px-3 pt-10 py-10 lg:pt-20 z-10 text-gray-100 font-['open_sans'] selection:font-bold drop-shadow-lg">3D customizable audio visualization</h1>
             <p class="text-3xl mt-5 pt-10 py-10 lg:py-20 z-10 text-red-500 font-lora font-bold drop-shadow-lg"> See what you hear </p>
           </div>
-          <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-x-5 gap-y-3 px-5 mx-5">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-x-5 gap-y-3 px-5 mx-5">
               <div><img src="/beetlevisualizer.png" class="m-auto hover:scale-110 duration-1000 ease-in-out" alt="3daudiovisualization3" /></div>
               <div><img src="/fogvisualizer.png" class="invisible md:visible m-auto hover:scale-110 duration-1000 ease-in-out" alt="3daudiovisualization1" /></div>
               <div><img src="/meshvisualizer.png" class="invisible md:visible m-auto hover:scale-110 duration-700 ease-in-out" alt="3daudiovisualization2" /></div>
             </div>
         </div>
+        <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mx-auto"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
       </div>
       <div id="logos" class="snap-center flex h-screen w-screen bg-center bg-[url('/geotunnelblack.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
-          <div id="our-partners" class="m-auto h-250 w-250 px-20 py-24">
-            <h1 class="text-5xl pt-20 z-10 font-lora font-italic text-[#645215] opacity-100 shadow-white">Our Partners </h1>
+          <div id="our-partners" class="m-auto h-250 w-250 px-5 md:px-10 lg:px-20 py-5 md:py-12 lg:py-24">
+            <h1 class="text-5xl pt-5 md:pt-10 lg:pt-20 z-10 font-lora font-italic text-[#645215] opacity-100 shadow-white">Our Partners </h1>
           </div>
-          <div id="company-logos" class="flex pb-36 px-36">
-            <div class="grid sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 lg:gap-12 md:gap-5 sm:gap-3">
+          <div id="company-logos" class="flex pb-5 md:pb-12 lg:pb-36 px-5 md:px-16 lg:px-36">
+            <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 lg:gap-12 md:gap-5 -gap-10">
               <Logo
                 v-for="l in logos"
                 :key="l.name"
@@ -125,6 +180,17 @@
           -->
           </div>
         </div>
+        <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mx-auto"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
       </div>
       <div id="3dcarousel" class="snap-center flex h-screen w-screen bg-center bg-[url('/smokering.jpg')] bg-cover align-middle text-white text-center">
       <!--https://flowbite.com/docs/components/carousel/-->
@@ -288,6 +354,17 @@
             -->
           </div>
         </div>
+        <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mx-auto"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
       </div>
       <div id="subcription" ref="subscriptions" class="snap-center flex h-screen w-screen bg-center bg-[url('/goldmarble.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
@@ -295,30 +372,30 @@
             <h1 class="text-5xl pt-12 z-10 text-white opacity-100">Choose the plan that's right for you</h1>
             <p class="text-3xl my-5 py-5 z-10 text-white opacity-100">No commitment. Cancel at any time.</p>
           </div>
-          <div id="plans" class="grid grid-cols-3 gap-x-5 my-5 mx-5">
-            <div class="border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-lg rounded-full">
-              <p class="text-xl font-bold py-5 uppercase">Student</p>
+          <div id="plans" class="grid grid-cols-1 md:grid-cols-3 gap-5 my-5 mx-auto justify-center px-5">
+            <div class="w-1/2 md:w-3/4 border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-lg rounded-full">
+              <p class="text-xl font-bold py-2 md:py-3 lg:py-5 uppercase">Student</p>
               <p class="text-xl font-bold">RM6.90/month</p>
-              <button class="text-xl font-bold bg-black hover:bg-white text-red-500 border-none rounded-full px-8 py-3 my-5 uppercase">
+              <button class="text-lg lg:text-xl font-bold bg-black hover:bg-white text-red-500 border-none rounded-full px-8 py-1 md:py-2 lg:py-3 my-5 uppercase">
                 <NuxtLink to="/subscription">Try it free</NuxtLink>
               </button>
             </div>
-            <div class="border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-lg rounded-full">
-              <p class="text-xl font-bold py-5 uppercase">Individual</p>
+            <div class="w-1/2 md:w-3/4 border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-lg rounded-full">
+              <p class="text-xl font-bold py-2 md:py-3 lg:py-5 uppercase">Individual</p>
               <p class="text-xl font-bold">RM14.90/month</p>
-              <button class="text-xl font-bold bg-black hover:bg-white text-red-500 border-none rounded-full px-8 py-3 my-5 uppercase">
+              <button class="text-lg lg:text-xl font-bold bg-black hover:bg-white text-red-500 border-none rounded-full px-8 py-1 md:py-2 my-5 uppercase">
                 <NuxtLink to="/subscription">Try it free</NuxtLink>
               </button>
             </div>
-            <div class="border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-lg rounded-full">
-              <p class="text-xl font-bold py-5 uppercase">Family</p>
+            <div class="w-1/2 md:w-3/4 border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-lg rounded-full">
+              <p class="text-xl font-bold py-2 md:py-3 lg:py-5 uppercase">Family</p>
               <p class="text-xl font-bold">RM22.90/month</p>
-              <button class="text-xl font-bold bg-black hover:bg-white text-red-500 border-none rounded-full px-8 py-3 my-5 uppercase">
+              <button class="text-lg lg:text-xl font-bold bg-black hover:bg-white text-red-500 border-none rounded-full px-8 py-1 md:py-2 my-5 uppercase">
                 <NuxtLink to="/subscription">Try it free</NuxtLink>
               </button>
             </div>
           </div>
-          <table id="information-table" class="text-lg font-['nunito_sans'] pb-10 mx-5">
+          <table id="information-table" class="invisible md:visible text-lg font-['nunito_sans'] pb-10 mx-5">
             <tr>
               <th class="invisible text-left">text</th>
               <th class="px-5 uppercase py-5">Student/Individual<sup>3</sup></th>
@@ -431,18 +508,29 @@
             </tr>
           </table>
         </div>
+        <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mx-auto"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
       </div>
       <div id="promotions" class="snap-center flex h-screen w-screen bg-center bg-[url('/goldblueswirl.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
           <div id="promotions-title">
-            <h1 class="m-auto text-7xl pt-20 z-10 text-gray-900 font-bold opacity-100 drop-shadow-lg shadow-[#BCAC80]">Promotions</h1>
+            <h1 class="m-auto text-7xl pt-5 md:pt-10 lg:pt-20 z-10 text-gray-900 font-bold opacity-100 drop-shadow-lg shadow-[#BCAC80]">Promotions</h1>
           </div>
-          <div id="promotion-panels" class="2xl:flex">
-            <div class="flex xl:flex-row md:flex-col m-10 ">
+          <div id="promotion-panels" class="2xl:flex mx-auto px-3 md:px-5">
+            <div class="flex xl:flex-row md:flex-col my-3 md:my-6 lg:my-10 mx-auto">
               <div id="free-6-months" class="m-auto bg-black bg-opacity-30 backdrop-blur-lg h-full border-gray-900 border-opacity-10 rounded-xlur-lg rounded-lg">
                 <div class="m-auto p-10">
                   <img src="/freetrial.png" class="py-12" alt="" />
-                  <h5 class="uppercase text-gray-900 drop-shadow-lg text-5xl font-bold font-['nunito_sans']">6-month free trial</h5>
+                  <h5 class="uppercase text-gray-900 drop-shadow-lg text-3xl md:text-4xl lg:text-5xl font-bold font-['nunito_sans']">6-month free trial</h5>
                   <p class="px-12 py-5 text-2xl text-gray-200 font-lora">
                     Get 6 months of Mood Music free with eligible audio devices.
                   </p>
@@ -478,7 +566,7 @@
                 </div>
                 <div id="subscription-bundle" class="flex lg:flex-row sm:flex-col m-10 bg-black bg-opacity-30 backdrop-blur-lg border-gray-900 border-opacity-10 rounded-xl">
                   <div>
-                    <img src="/bundlepromotion.png" class="drop-shadow-lg" alt="" />
+                    <img src="/bundlepromotion.png" class="my-auto drop-shadow-lg" alt="" />
                   </div>
                   <div class="flex flex-col m-auto p-10">
                     <h5 class="uppercase text-gray-900 drop-shadow-lg text-5xl font-bold font-['nunito_sans']">All In One</h5>
@@ -499,6 +587,17 @@
             </div>
           </div>
         </div>
+        <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mx-auto"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
       </div>
       <div id="mobileapps" class="snap-center flex h-screen w-screen bg-center bg-[url('/goldcubes.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
@@ -513,52 +612,74 @@
             </div>
           </div>
         </div>
-      </div>
+        <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mx-auto"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+    </div>
     <div id="faqs" class="snap-center flex h-screen w-screen bg-center bg-[url('/faqsbg.jpg')] bg-cover align-middle text-white text-center">
-        <div class="m-auto flex-col">
-          <div class="m-auto w-11/12">
-            <h1 class="text-4xl lg:text-5xl py-5 md:py-10 lg:py-20 z-10 text-gray-900 font-bold">Questions? Answers.</h1>
-            <div id="faqs-accordion" class="text-left m-5 md:px-24">
-                <div class="container relative py-3">
-                  <h5 class="text-3xl font-bold py-2">
-                    <span class="justify-left">What is Mood Music?</span>
-                    <button class="absolute right-0 px-8 font-bold" @click="active1 = !active1"> + </button>
-                  </h5>
-                  <p v-if="active1" class="py-2">
-                    Mood Music is a streaming service that allows you to listen to over 90 million songs. Its great features include the ability to download your favourite tracks and play them offline, lyrics in real time, listening across all your favourite devices, new music personalised just for you, curated playlists from our editors and many more. All this in addition to exclusive and original content.
-                  </p>
-                </div>
-                <div class="container relative py-3">
-                  <h5 class="text-3xl font-bold py-2">
-                    <span class="justify-left">How can I listen to Mood Music?</span>
-                    <button class="absolute right-0 px-8 font-bold" @click="active2 = !active2"> + </button>
-                  </h5>
-                  <p v-if="active2" class="py-2">
-                    Apple Music is already on your iPhone, iPad, Apple Watch, Apple TV and Mac — and you can listen with CarPlay or online at music.apple.com/my. Apple Music is also available on Windows, Android and other devices.
-                  </p>
-                </div>
-                <div class="container relative py-3">
-                  <h5 class="text-3xl font-bold py-2">
-                    <span class="justify-left">What does it cost?</span>
-                    <button class="absolute right-0 px-8 font-bold" @click="active3 = !active3"> + </button>
-                  </h5>
-                  <p v-if="active3" class="py-2">
-                    That all depends on which offer you choose. (1) Students can choose the Apple Music Student Plan at RM 6.90 per month. (2) An individual monthly subscription is just RM 14.90 per month after your free trial. (3) The Apple Music Family Plan, which allows you to share your account with up to five people and gives each member a personal account, is just RM 22.90 per month. (4) The Apple Music Individual Plan and the Apple Music Family Plan are also included in Apple One, which bundles up to four other Apple services into a single monthly subscription. Apple One plans start at RM 19.90 per month.
-                  </p>
-                </div>
-                <div class="container relative py-3">
-                  <h5 class="text-3xl font-bold py-2">
-                    <span class="justify-left">What is Dolby Atmos music?</span>
-                    <button class="absolute right-0 px-8 font-bold" @click="active4 = !active4"> + </button>
-                  </h5>
-                  <p v-if="active4" class="py-2">
-                    Dolby Atmos is an innovative audio technology that envelops you in an immersive listening experience. While music mixed in stereo is limited to left and right channels, music created in Dolby Atmos is freed from channels, allowing artists to place individual sounds all around you. Artists can also decide the volume, size and vibrancy of each instrument to reveal nuanced details in the music.
-                  </p>
-                </div>
+      <div class="m-auto flex-col">
+        <div class="m-auto w-11/12">
+          <h1 class="text-4xl lg:text-5xl py-5 md:py-10 lg:py-20 z-10 text-gray-900 font-bold">Questions? Answers.</h1>
+          <div id="faqs-accordion" class="text-left m-5 md:px-24">
+              <div class="container relative py-3">
+                <h5 class="text-3xl font-bold py-2">
+                  <span class="justify-left">What is Mood Music?</span>
+                  <button class="absolute right-0 px-8 font-bold" @click="active1 = !active1"> + </button>
+                </h5>
+                <p v-if="active1" class="py-2">
+                  Mood Music is a streaming service that allows you to listen to over 90 million songs. Its great features include the ability to download your favourite tracks and play them offline, lyrics in real time, listening across all your favourite devices, new music personalised just for you, curated playlists from our editors and many more. All this in addition to exclusive and original content.
+                </p>
+              </div>
+              <div class="container relative py-3">
+                <h5 class="text-3xl font-bold py-2">
+                  <span class="justify-left">How can I listen to Mood Music?</span>
+                  <button class="absolute right-0 px-8 font-bold" @click="active2 = !active2"> + </button>
+                </h5>
+                <p v-if="active2" class="py-2">
+                  Apple Music is already on your iPhone, iPad, Apple Watch, Apple TV and Mac — and you can listen with CarPlay or online at music.apple.com/my. Apple Music is also available on Windows, Android and other devices.
+                </p>
+              </div>
+              <div class="container relative py-3">
+                <h5 class="text-3xl font-bold py-2">
+                  <span class="justify-left">What does it cost?</span>
+                  <button class="absolute right-0 px-8 font-bold" @click="active3 = !active3"> + </button>
+                </h5>
+                <p v-if="active3" class="py-2">
+                  That all depends on which offer you choose. (1) Students can choose the Apple Music Student Plan at RM 6.90 per month. (2) An individual monthly subscription is just RM 14.90 per month after your free trial. (3) The Apple Music Family Plan, which allows you to share your account with up to five people and gives each member a personal account, is just RM 22.90 per month. (4) The Apple Music Individual Plan and the Apple Music Family Plan are also included in Apple One, which bundles up to four other Apple services into a single monthly subscription. Apple One plans start at RM 19.90 per month.
+                </p>
+              </div>
+              <div class="container relative py-3">
+                <h5 class="text-3xl font-bold py-2">
+                  <span class="justify-left">What is Dolby Atmos music?</span>
+                  <button class="absolute right-0 px-8 font-bold" @click="active4 = !active4"> + </button>
+                </h5>
+                <p v-if="active4" class="py-2">
+                  Dolby Atmos is an innovative audio technology that envelops you in an immersive listening experience. While music mixed in stereo is limited to left and right channels, music created in Dolby Atmos is freed from channels, allowing artists to place individual sounds all around you. Artists can also decide the volume, size and vibrancy of each instrument to reveal nuanced details in the music.
+                </p>
               </div>
             </div>
-          <p class="text-2xl font-bold text-blue-500 my-10"> > Search full FAQs page </p>
-        </div>
+          </div>
+        <p class="text-2xl font-bold text-blue-500 my-10"> > Search full FAQs page </p>
+      </div>
+      <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mx-auto"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
     </div>
       <div id="philanthropy" class="snap-center flex h-screen w-screen bg-center bg-[url('/paperhearts.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
@@ -581,6 +702,17 @@
             </div>
           </div>
         </div>
+        <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mx-auto"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
       </div>
       <div id="artists" class="snap-center flex h-screen w-screen bg-center bg-[url('/3dbg7.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
@@ -674,7 +806,9 @@ export default {
       active1: true,
       active2: false,
       active3: false,
-      active4: false
+      active4: false,
+      tabIndex: '',
+      activeIndex: ''
     };
   },
 
