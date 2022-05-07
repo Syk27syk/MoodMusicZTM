@@ -53,11 +53,8 @@ export default ({
 
   methods: {
     selectTab() {
-      let tabIndex = () => {
-      
-      }
-      let activeIndex = () => {
-      }
+      let tabIndex = this.element.id;
+      let activeIndex = '';
       if (activeIndex === tabIndex) {
         return activeIndex;
       } else {
@@ -82,51 +79,4 @@ export default ({
     }
   }
 })
-
-/*      var vm = new Vue({
-        el: '#tab-content',
-        addActiveTab () {
-          let tab =  [
-            []
-          ];
-          tabs.forEach(tab => {
-              tab.classList.remove('active');
-          });
-          event.target.classList.add('active');
-        },
-        changeTab () {
-          let tabContent = document.getElementById('tab-content');
-          tabs.forEach(tab => {
-            let tabValue = tab.dataset['value'];
-            const appendText = (id) => {
-              tabContent.innerText  = `${id} Content`;
-            }
-            if () {
-              switch (tabValue) {
-                case 'gold':
-                  appendTitle('Play over 90 million songs and 30,000 playlists.');
-                  appendText('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-                  break;
-                case 'pink':
-                  appendTitle('Download your favourite tracks, play them offline.');
-                  appendText('Commodo viverra maecenas accumsan lacus vel facilisis. Egestas congue quisque egestas diam in arcu cursus euismod quis. Eget mi proin sed libero enim. Amet consectetur adipiscing elit duis. Sapien pellentesque habitant morbi tristique senectus et. Quis hendrerit dolor magna eget est lorem.');
-                  break;
-                case 'gray':
-                  appendTitle('Listen across your devices.');
-                  appendText('Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue. Morbi non arcu risus quis varius quam quisque id. Libero enim sed faucibus turpis in eu mi. At quis risus sed vulputate odio. Aliquam ultrices sagittis orci a. Ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget gravida.');
-                  break;
-                case 'green':
-                  appendTitle('Get curated playlists and live radio.');
-                  appendText('Quis hendrerit dolor magna eget est lorem ipsum. Et ligula ullamcorper malesuada proin libero nunc consequat. In aliquam sem fringilla ut. Vitae tempus quam pellentesque nec nam aliquam. Quisque sagittis purus sit amet volutpat consequat mauris nunc. Tellus rutrum tellus pellentesque eu tincidunt tortor. Dictum at tempor commodo ullamcorper. Fames ac turpis egestas sed tempus.');
-                  break;
-                default:
-                  appendTitle('Play over 90 million songs and 30,000 playlists.');
-                  appendText('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-                  break;
-              }
-            }
-          }
-        }
-        displayContent () {
-*/
 </script>
