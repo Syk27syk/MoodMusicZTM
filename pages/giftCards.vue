@@ -290,6 +290,12 @@ export default {
       this.$store.state.giftCards.commit('removeGiftCard',);
     },
     confirmOrder() {
+      this.$axios.post('/netlify/functions/email', {
+        /*
+        email: this.$store.state.giftCards((forEach) => {
+        }, */
+        order: this.$store.state.giftCards,
+      });
     },
     goto(refName) {
       const element = this.$refs[refName];
