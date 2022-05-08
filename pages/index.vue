@@ -394,7 +394,7 @@
         <div class="m-auto flex-col">
           <div id="subscription-title" class="m-auto px-5 md:px-10 lg:px-20">
             <h1 class="text-5xl pt-12 md:pt-6 lg:pt-10 z-10 text-white opacity-100">Choose the plan that's right for you</h1>
-            <p class="text-3xl my-5 md:my-3 lg:my-4 py-5 z-10 text-white opacity-100">No commitment. Cancel at any time.</p>
+            <p class="text-3xl my-5 md:my-3 lg:my-4 py-5 z-10 text-white font-lora opacity-100">No commitment. Cancel at any time.</p>
           </div>
           <div id="plans" class="grid grid-cols-1 md:grid-cols-3 gap-5 my-5 md:my-3 mx-auto justify-center px-5">
             <div class="w-1/2 md:w-3/4 mx-auto border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-lg rounded-2xl">
@@ -547,7 +547,7 @@
       <div id="promotions" class="snap-center flex h-screen w-screen bg-center bg-[url('/goldblueswirl.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
           <div id="promotions-title">
-            <h1 class="m-auto text-7xl pt-5 md:pt-10 lg:pt-20 z-10 text-gray-900 font-bold opacity-100 drop-shadow-lg shadow-[#BCAC80]">Promotions</h1>
+            <h1 class="m-auto text-6xl pt-5 md:pt-10 lg:pt-20 z-10 text-gray-900 font-bold opacity-100 drop-shadow-lg shadow-[#BCAC80]">Promotions</h1>
           </div>
           <div id="promotion-panels" class="2xl:flex mx-auto px-3 lg:px-5">
             <div class="flex xl:flex-row flex-col my-3 md:my-6 lg:my-10 mx-auto">
@@ -715,15 +715,15 @@
           </div>
           <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-x-3 gap-y-3 md:gap-y-5 px-10 md:px-12 lg:px-16 py-5 my-3 md:my-6 lg:my-10 w-3/4 mx-auto items-center border-t-gray-800 border-b-gray-800">
             <div class="flex flex-col m-auto">
-              <img src="/unicef.png" class="m-auto p-5 w-5/6 md:w-11/12 border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-sm md:backdrop-blur-lg rounded-2xl" alt="" />
+              <img src="/unicef.png" class="m-auto p-5 w-[275px] lg:w-11/12 border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-sm md:backdrop-blur-lg rounded-2xl" alt="" />
               <p class="text-xl md:text-2xl text-blue-500 font-bold py-5"><nobr> > Donate to UNICEF</nobr></p>
             </div>
             <div class="flex flex-col m-auto">
-              <img src="/oxfam.png" class="m-auto p-5 w-5/6 md:w-11/12 h-3/4 border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-sm md:backdrop-blur-lg rounded-2xl" alt="" />
+              <img src="/oxfam.png" class="m-auto p-5 w-[275px] lg:w-11/12 h-3/4 border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-sm md:backdrop-blur-lg rounded-2xl" alt="" />
               <p class="text-xl md:text-2xl text-blue-500 font-bold py-5"><nobr> > Donate to OXFAM</nobr></p>
             </div>
             <div class="flex flex-col m-auto">
-              <img src="/spca.png" class="m-auto p-5 w-5/6 md:w-11/12 h-3/4 border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-sm md:backdrop-blur-lg rounded-2xl" alt="" />
+              <img src="/spca.png" class="m-auto p-5 w-[275px] lg:w-11/12 h-3/4 border border-white border-opacity-10 bg-white bg-opacity-30 backdrop-blur-sm md:backdrop-blur-lg rounded-2xl" alt="" />
               <p class="text-xl md:text-2xl text-blue-500 font-bold py-5"><nobr> > Donate to SPCA</nobr></p>
             </div>
           </div>
