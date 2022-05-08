@@ -3,7 +3,7 @@ export default {
   head: {
     title: 'Mood Music',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'en, fr, zh-Hans',
     },
     meta: [
       { charset: 'utf-8' },
