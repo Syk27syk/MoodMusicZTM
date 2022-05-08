@@ -470,16 +470,6 @@
               <td>✔️</td>
             </tr>
             <tr>
-              <td><nobr>Available on Apple devices</nobr></td>
-              <td>✔️</td>
-              <td>✔️</td>
-            </tr>
-            <tr>
-              <td><nobr>Available on other supported devices</nobr></td>
-              <td>✔️</td>
-              <td>✔️</td>
-            </tr>
-            <tr>
               <td><nobr>Stream ad-free music</nobr></td>
               <td>✔️</td>
               <td>✔️</td>

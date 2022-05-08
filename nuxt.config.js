@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'ztm-template',
+    title: 'Mood Music',
     htmlAttrs: {
       lang: 'en'
     },

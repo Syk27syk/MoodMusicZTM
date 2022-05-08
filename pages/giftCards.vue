@@ -228,17 +228,17 @@
 export default {
   data () {
     return {
-      giftCardID: '1576996323453',
-      delivery: 'email',
-      design: 'Mood Bot',
-      giftCardAmount: '$15',
-      recipientName: 'Shi Min',
-      recipientEmail: 'Shimin.khoo@gmail.com',
-      recipientAddress: 'changkat sungai ara',
-      senderName: 'Shi Yun',
-      senderEmail: 'Shiyun.khoo@gmail.com',
-      personalizedMessage: 'Hi. I love you.',
-      showDeliveryModal: true,
+      giftCardID: '',
+      delivery: '',
+      design: '',
+      giftCardAmount: '',
+      recipientName: '',
+      recipientEmail: '',
+      recipientAddress: '',
+      senderName: '',
+      senderEmail: '',
+      personalizedMessage: '',
+      showDeliveryModal: false,
       bookmark: false,
     }
   },
