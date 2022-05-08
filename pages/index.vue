@@ -12,6 +12,7 @@
           </div>
         </div>
         <!-- debug button <button class="text-2xl m-auto font-['open_sans'] font-bold bg-[url('/blobbybutton.png')] bg-blue-500 py-5 px-8 mb-10 text-white rounded-full border-2 border-t-white border-l-white border-b-black border-r-black border-opacity-30" @click="consoleLog">Debug Button</button> -->
+        <!--
         <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -23,6 +24,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
+        -->
       </div>
       <div id="library" class="relative snap-center flex h-screen w-screen bg-center bg-[url('/3dbg1.jpg')] bg-cover align-middle text-gray-800 text-center">
         <div class="m-auto flex-col">
@@ -35,14 +37,15 @@
                      <button id="green-button"><img src="/greenpearl.png" class="w-[48px] h-[48px]" alt="" @click="selectTab" /></button>
                 </div>
                 <div>
-                    <div v-if="activeIndex === 'gold-button'" class="mx-auto my-5 py-10 px-20">
+                    <div class="mx-auto my-5 py-10 px-20">
                     <h5 class="text-2xl mt-5 py-5 z-10 text-gray-900 font-bold opacity-100">Play over 90 million songs and 30,000 playlists. </h5>
                     <img src="" alt="" />
                     <p class="text-lg text-left mx-20">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                     </div>
-                        <div v-if="activeIndex === 'pink-button'" class="mx-auto my-5 p-10">
+                    <!--
+                    <div v-if="activeIndex === 'pink-button'" class="mx-auto my-5 p-10">
                         <h5 class="text-2xl mt-5 py-5 z-10 text-gray-900 font-bold opacity-100">Download your favourite tracks, play them offline.</h5>
                         <img src="" alt="" />
                         <p class="text-lg text-left mx-20">
@@ -63,9 +66,11 @@
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
                     </div>
+                    -->
                 </div>
             </div>
         </div>
+      <!--
       <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -77,6 +82,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
       </button>
+      -->
     </div>
     <div id="mooddetection" class="relative snap-center flex h-screen w-screen bg-center bg-[url('/3dbg2.jpg')] bg-cover align-middle text-white text-center">
       <div class="m-auto flex-col">
@@ -86,6 +92,7 @@
             <img src="/webcam.jpg" class="m-auto p-2 md:p-5 pb-5 md:pb-10 lg:pb-20 w-full md:w-3/4" alt="" />
           </div>
         </div>
+        <!--
         <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -97,6 +104,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
+        -->
       </div>
       <div id="spatialaudio" class="snap-center flex h-screen w-screen bg-center bg-[url('/3dbg5.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
@@ -112,6 +120,7 @@
               allowfullscreen />
           </div>
         </div>
+        <!--
         <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -123,6 +132,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
+        -->
       </div>
       <div id="3daudiovisual" class="snap-center flex h-screen w-screen bg-center bg-[url('/orbsblack.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
@@ -182,6 +192,7 @@
           -->
           </div>
         </div>
+        <!--
         <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -193,6 +204,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
+        -->
       </div>
       <div id="3dcarousel" class="snap-center flex h-screen w-screen bg-center bg-[url('/smokering.jpg')] bg-cover align-middle text-white text-center">
       <!--https://flowbite.com/docs/components/carousel/-->
@@ -378,6 +390,7 @@
             -->
           </div>
         </div>
+        <!--
         <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -389,6 +402,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
+        -->
       </div>
       <div id="subcription" ref="subscriptions" class="snap-center flex h-screen w-screen bg-center bg-[url('/goldmarble.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
@@ -532,6 +546,7 @@
             </tr>
           </table>
         </div>
+        <!--
         <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -543,6 +558,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
+        -->
       </div>
       <div id="promotions" class="snap-center flex h-screen w-screen bg-center bg-[url('/goldblueswirl.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
@@ -613,6 +629,7 @@
             </div>
           </div>
         </div>
+        <!--
         <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -624,6 +641,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
+        -->
       </div>
       <div id="mobileapps" class="snap-center flex h-screen w-screen bg-center bg-[url('/goldcubes.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
@@ -638,6 +656,7 @@
             </div>
           </div>
         </div>
+        <!--
         <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -649,6 +668,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
+        -->
     </div>
     <div id="faqs" class="snap-center flex h-screen w-screen bg-center bg-[url('/faqsbg.jpg')] bg-cover align-middle text-white text-center">
       <div class="m-auto flex-col">
@@ -695,6 +715,7 @@
           </div>
         <p class="text-2xl font-bold text-blue-500 my-10"> > Search full FAQs page </p>
       </div>
+      <!--
       <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -706,6 +727,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
+        -->
     </div>
       <div id="philanthropy" class="snap-center flex h-screen w-screen bg-center bg-[url('/paperhearts.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
@@ -728,6 +750,7 @@
             </div>
           </div>
         </div>
+        <!--
         <button class="mx-auto my-3 md:my-5 lg:my-10 w-screen absolute bottom-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -739,6 +762,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
+        -->
       </div>
       <div id="artists" class="snap-center flex h-screen w-screen bg-center bg-[url('/3dbg7.jpg')] bg-cover align-middle text-white text-center">
         <div class="m-auto flex-col">
