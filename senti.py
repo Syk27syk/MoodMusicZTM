@@ -24,3 +24,4 @@ def analyze():
   analyzer = SentimentIntensityAnalyzer()
   score = analyzer.polarity_scores(s)
   return score
+  
