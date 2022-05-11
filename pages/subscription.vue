@@ -18,7 +18,7 @@
             :key="s.name"
             :subscription="s"
           />
-          <button id="individual" v-bind:style="{border: selectedIndividualBorder}" class="m-auto py-5 px-8 my-10 bg-white bg-opacity-30 hover:bg-opacity-100 border-white border-opacity-10 rounded-3xl" @click="selectIndividual">
+          <button id="individual" :style="{border: selectedIndividualBorder}" class="m-auto py-5 px-8 my-10 bg-white bg-opacity-30 hover:bg-opacity-100 border-white border-opacity-10 rounded-3xl" @click="selectIndividual">
             <div id="title block" class="border-bottom">
                 <h5 class="pt-5 text-3xl font-bold text-gray-900 font['nunito_sans']"> Individual </h5>
                 <p class="py-2 text-xl font-bold font-lola text-gray-700">1 month free, then RM19.90/month</p>
@@ -32,7 +32,7 @@
                 <p>70+ million songs, all ad free</p>
             </div>
           </button>
-          <button id="family" v-bind:style="{border: selectedFamilyBorder}" class="m-auto py-5 px-8 my-10 bg-white bg-opacity-30 hover:bg-opacity-100 border-white border-opacity10 rounded-3xl" @click="selectFamily">
+          <button id="family" :style="{border: selectedFamilyBorder}" class="m-auto py-5 px-8 my-10 bg-white bg-opacity-30 hover:bg-opacity-100 border-white border-opacity10 rounded-3xl" @click="selectFamily">
             <div id="title block" class="border-bottom">
                 <h5 class="pt-5 text-3xl font-bold text-gray-900 font['nunito_sans']"> Family </h5>
                 <p class="py-2 text-xl font-bold font-lola text-gray-700">1 month free, then RM33.90month</p>
@@ -45,7 +45,7 @@
                 <p>70+ million songs, all ad free</p>
             </div>
           </button>
-          <button id="premier" v-bind:style="{border: selectedPremierBorder}" class="m-auto my-10 py-5 px-8 bg-white bg-opacity-30 hover:bg-opacity-100 border-white border-opacity10 rounded-3xl" @click="selectPremier">
+          <button id="premier" :style="{border: selectedPremierBorder}" class="m-auto my-10 py-5 px-8 bg-white bg-opacity-30 hover:bg-opacity-100 border-white border-opacity10 rounded-3xl" @click="selectPremier">
             <div id="title block" class="border-bottom">
                 <h5 class="pt-5 text-3xl font-bold text-gray-900 font['nunito_sans']"> Premier </h5>
                 <p class="py-2 text-xl font-bold font-lola text-gray-700">1 month free, then RM69.90/month</p>
@@ -99,25 +99,25 @@ export default {
   data() {
     return {
       selectedSubscription: '',
-      selectedIndividualBorder: function () {
-      if (selectedSubscription === 'individual') {
-          return 'border-8 border-yellow-300 rounded-3xl',
+      selectedIndividualBorder () {
+        if (this.selectedSubscription === 'individual') {
+          return 'border-8 border-yellow-300 rounded-3xl';
         } else {
-          return 'border-white border-opacity-10 rounded-3xl',
+          return 'border-white border-opacity-10 rounded-3xl';
         }
       },
-      selectedFamilyBorder: function () {
-      if (selectedSubscription === 'family') {
-          return 'border-8 border-yellow-300 rounded-3xl',
+      selectedFamilyBorder () {
+        if (this.selectedSubscription === 'family') {
+          return 'border-8 border-yellow-300 rounded-3xl';
         } else {
-          return 'border-white border-opacity-10 rounded-3xl',
+          return 'border-white border-opacity-10 rounded-3xl';
         }
       },
-    selectedPremierBorder: function () {
-      if (selectedSubscription === 'premier') {
-          return 'border-8 border-yellow-300 rounded-3xl',
+      selectedPremierBorder () {
+        if (this.selectedSubscription === 'premier') {
+          return 'border-8 border-yellow-300 rounded-3xl';
         } else {
-          return 'border-white border-opacity-10 rounded-3xl',
+          return 'border-white border-opacity-10 rounded-3xl';
         }
       },
       tncagreed: false,
