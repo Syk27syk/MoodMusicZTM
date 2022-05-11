@@ -28,34 +28,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>text</td>
-                    </tr>
+                  <tr
+                    v-for="order in $store.state.order"
+                    :key="order.giftCardID"
+                    class=""
+                    >
+                    <td> {{ order.giftCardID }} </td>
+                    <td> {{ order.delivery }} </td>
+                    <td> {{ order.design }} </td>
+                    <td> {{ order.giftCardAmount }} </td>
+                    <td> {{ order.recipientName }} </td>
+                    <td> {{ order.recipientEmail }} </td>
+                    <td> {{ order.recipientAddress }} </td>
+                    <td> {{ order.personalizedMessage }} </td>
+                    <td> {{ order.senderName }} </td>
+                    <td> {{ order.senderEmail }} </td>
+                  </tr>
                 </tbody>
-                <tfoot>
-                    <tr class="font-oswald font-bold text-2xl bg-gray-100 border-t border-b uppercase">
-                        <td class="py-10" colspan="3">Total</td>
-                        <td class="text-right">text</td>
-                        <td class="text-transparent">text</td>
-                    </tr>
-                    <tr>
-                      <td colspan="3">
-                        <input
-                          id="email"
-                          type="email"
-                          placeholder="Please enter your email"
-                          class="w-full border border-gray-300 text-xl mt-5 py-3 px-2"
-                        />
-                      </td>
-                      <td colspan="2" class="text-right">
-                        <button
-                          class="font-oswald uppercase bg-red-500 text-white text-xl py-3 px-2 ml-5 mt-5"
-                        >
-                          Confirm My Order
-                        </button>
-                      </td>
-                    </tr>
-                </tfoot>
             </table>
         </div>
         <Footer />
@@ -63,15 +52,14 @@
 </template>
 
 <script>
-/*
 export default {
   data() {
     return {
-      orders: [],
+      order: [],
       user: {}
     };
   },
-
+  /*
   head() {
     return {
       script: [
@@ -81,7 +69,13 @@ export default {
       ]
     }
   },
-
+*/
+  mounted () {
+    this.$axios.get('/netlify/functions/readorders').then((response) => {
+      this.order = response.data;
+    });
+  }
+/*
   mounted() {
     this.user = window.netlifyIdentity.currentUser();
     if (this.user) {
@@ -115,7 +109,6 @@ export default {
       this.orders = [];
     }
   }
-
+  */
 }
-*/
 </script>

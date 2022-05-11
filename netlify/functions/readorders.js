@@ -1,3 +1,4 @@
+// Firebase authentication
 const admin = require('firebase-admin');
 const { initializeApp, cert } = require('firebase-admin/app');
 const { getFirestore } = require('firebase-admin/firestore');
@@ -13,10 +14,10 @@ exports.handler = async function (event, context) {
 
   const db = getFirestore(app);
 
-  // edit: 
-  const orders = await db.collection("orders").get();
+  // edit: not sure about "order" in await db.collection("order")
+  const order = await db.collection("order").get();
 
-  const results = orders.doc.map((doc) => {
+  const results = order.doc.map((doc) => {
     return {
       id: doc.id,
       data: doc.data(),
