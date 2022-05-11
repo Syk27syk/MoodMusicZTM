@@ -31,6 +31,7 @@ exports.handler = async function (event, context) {
       }),
     };
   } catch (error) {
-    console.log('Error adding document', error);
+    // edited: original -- console.log("Error adding document", error)
+    alert('Error adding document to database', error);
   }
 };
