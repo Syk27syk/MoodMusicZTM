@@ -1,4 +1,5 @@
 const state = () => ({
+  test: 0,
   subscriptions: '',
   giftCards: [
     { giftCardID: '1576996323453', delivery: 'email', design: 'Mood Bot', giftCardAmount: '$15', recipientName: 'Shi Min', recipientEmail: 'Shimin.khoo@gmail.com', recipientAddress: 'changkat sungai ara', senderName: 'Shi Yun', senderEmail: 'Shiyun.khoo@gmail.com', personalizedMessage: 'Hi. I love you.' },
@@ -9,6 +10,9 @@ const state = () => ({
 })
 
 const mutations = {
+  incrementTest (state) {
+    state.test++
+  },
   addSubscription(state, selectedSubscription) {
     state.subscriptions.push({
       name: selectedSubscription.name,
@@ -21,6 +25,7 @@ const mutations = {
   },
   addGiftCard(state, giftCard) {
     state.giftCards.push({
+      giftCardID: giftCard.giftCardID,
       delivery: giftCard.delivery,
       design: giftCard.design,
       giftCardAmount: giftCard.giftCardAmount,
@@ -32,11 +37,12 @@ const mutations = {
       personalizedMessage: giftCard.personalizedMessage,
     })
   },
-  removeGiftCard(state, selectedGiftCard) {
-    const index = state.giftCards.findIndex((giftCard) => {
-      return giftCard.giftCardID === selectedGiftCard.giftCardID
-    });
-    state.giftCards.splice(index, 1);
+  removeGiftCard(state, giftCard) {
+    for (let index = 0; index < state.giftCards.length; index++) {
+      if (state.giftCard.giftCardID === giftCard.giftCardID) {
+        state.giftCards.splice(giftCard);
+      }
+    }
   },
 };
 

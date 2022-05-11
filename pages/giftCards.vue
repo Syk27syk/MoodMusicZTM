@@ -65,14 +65,14 @@
                 <h5 class="text-2xl text-gray-800 font-bold my-2 p-2 px-5"> How would you like to send it? </h5>
                 <p class="text-lg text-gray-800 my-2 px-5"> Choose to send by mail and get a collectible sticker </p>
                 <div class="grid grid-cols-2 gap-x-5 m-auto py-5 px-10 ">
-                    <div class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
+                    <button class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
                         <input id="email" v-model="delivery" type="radio">
                         <label for="email"> Email </label>
-                    </div>
-                    <div class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
+                    </button>
+                    <button class="m-auto font-bold text-lg text-gray-800 my-2 border border-gray-800 py-5 px-10 rounded-xl">
                         <input id="mail" v-model="delivery" type="radio">
                         <label for="mail"> Mail </label>
-                    </div>
+                    </button>
                 </div>
             </div>
             <div id="design" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
@@ -110,16 +110,11 @@
                     </p>
                 </select>
             </div>
-            <div id="personalized-message" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
+            <div id="recipient" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
                 <h5 class="text-2xl text-gray-800 font-bold my-2 p-2"> Who's it for?</h5>
                 <input v-model="recipientName" class="flex w-full h-auto text-left text-xl bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Recipient Name" />
                 <input v-model="recipientEmail" class="flex w-full h-auto text-left text-xl bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Recipient Email Address" />
                 <input v-model="recipientAddress" class="flex w-full h-auto text-left text-xl bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Recipient Physical Address" />
-            </div>
-            <div id="personalized-message" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
-                <h5 class="text-2xl text-gray-800 font-bold my-2 p-2"> Who's it from?</h5>
-                <input v-model="senderName" class="flex w-full h-auto text-left text-xl bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Sender Name" />
-                <input v-model="senderEmail" class="flex w-full h-auto text-left text-xl bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Sender Email Address" />
             </div>
             <div id="personalized-message" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
                 <h5 class="text-2xl text-gray-800 font-bold my-2 p-2"> Want to add a personalized message?</h5>
@@ -152,7 +147,7 @@
                             <td>{{ giftCard.giftCardAmount }}</td>
                             <td>{{ giftCard.quantity }}</td>
                             <td>{{ giftCard.amount * giftCard.Quantity }}</td>
-                            <td><button> x </button></td>
+                            <td><button @click="removeGiftCard"> x </button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -162,6 +157,11 @@
                     <p> In Stock </p>
                     <p> Free Shipping </p>
                     <button class="text-blue-500" @click="openDeliveryModal"> Get delivery dates </button>
+                </div>
+                <div id="sender" class="border border-gray-500 border-t-0 border-r-0 border-l-0 p-5">
+                    <h5 class="text-2xl text-gray-800 font-bold my-2 p-2"> Sender Details</h5>
+                    <input v-model="senderName" class="flex w-full h-auto text-left text-xl bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Sender Name" />
+                    <input v-model="senderEmail" class="flex w-full h-auto text-left text-xl bg-gray-100 border border-gray-500 rounded-xl mx-2 my-2" placeholder="Sender Email Address" />
                 </div>
                 <button class="font-['open_sans'] bg-blue-500 text-white text-bold uppercase rounded-full border-red-500 px-8 py-3 mx-auto mt-5 mb-10 drop-shadow-xl shadow-black" @click="confirmOrder">
                     Confirm Order
@@ -220,6 +220,9 @@
                 <img src="/datepicker.png" alt="" />
             </div>
         </div>
+        <button class="font-['open_sans'] bg-blue-500 text-white text-bold uppercase rounded-full border-red-500 px-8 py-3 mx-10 mt-5 mb-10 drop-shadow-xl shadow-black" @click="addCount">
+            Debug Button
+        </button>
         <Footer />
     </div>
 </template>
@@ -235,9 +238,9 @@ export default {
       recipientName: '',
       recipientEmail: '',
       recipientAddress: '',
+      personalizedMessage: '',
       senderName: '',
       senderEmail: '',
-      personalizedMessage: '',
       showDeliveryModal: false,
       bookmark: false,
     }
@@ -271,29 +274,34 @@ export default {
   },
 
   methods: {
+    c() {
+      console.log('hello')
+    },
+    addCount() {
+      this.$store.state.test.commit('incrementTest');
+    },
     addGiftCard() {
       const giftCard = {
         giftCardID: Date.now,
+        /*
         delivery: this.delivery,
         design: this.design,
         giftCardAmount: this.giftCardAmount,
         recipientName: this.recipientName,
         recipientEmail: this.recipientEmail,
         recipientAddress: this.recipientAddress,
-        senderName: this.senderName,
-        senderEmail: this.senderEmail,
         personalizedMessage: this.personalizedMessage,
+        */
       }
       this.$store.state.giftCards.commit('addGiftCard', giftCard);
     },
-    removeGiftCard(giftCardID) {
-      this.$store.state.giftCards.commit('removeGiftCard', giftCardID);
+    removeGiftCard(giftCard) {
+      this.$store.giftCards.commit('removeGiftCard', giftCard.giftCardID);
     },
     confirmOrder() {
       this.$axios.post('/netlify/functions/email', {
-        /*
-        email: this.$store.state.giftCards((forEach) => {
-        }, */
+        // fix this:
+        email: this.$store.state.senderEmail,
         order: this.$store.state.giftCards,
       });
     },
