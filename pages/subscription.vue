@@ -174,11 +174,11 @@ export default {
     },
     submitOrder() {
       this.$axios.post('/netlify/functions/email', {
-        // email:
+        // email: get email from logged in user's email
         subscription: this.selectedSubscription,
       });
       this.$axios.post('/netlify/functions/db', {
-        // email:
+        // email: get email from logged in user's email
         subscription: this.selectedSubscription,
       });
     },
