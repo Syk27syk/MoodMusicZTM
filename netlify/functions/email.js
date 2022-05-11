@@ -26,7 +26,7 @@ exports.handler = async function(event, context) {
     Personalized message: ${order.giftCard.personalizedMessage}`
     total = total + (order.giftCard.giftCardAmount);
   })
-  emailContent = emailContent + `\n TotalAmount: ${total.toFixed(2)}`;
+  emailContent = emailContent + `\n TotalAmount: ${total.toFixed(2)}` + "You may track your order here: /link";
 };
    //
 
