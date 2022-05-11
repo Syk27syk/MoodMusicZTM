@@ -2,21 +2,21 @@
     <div>
         <Header />
         <MoodBot />
-        <!--
-        <div v-if="user === null" id="login" class="text-center mt-20">
-            <p> This page is limited to authorized users only. </p>
-            <button class="font-oswald uppercase bg-red-500 text-white text-center py-3 px-8 mt-5" @click="login">
-                Log in
-            </button>
+        <div id="authentication">
+          <div v-if="user === null" id="login" class="text-center mt-20">
+              <p> This page is limited to authorized users only. </p>
+              <button class="font-oswald uppercase bg-red-500 text-white text-center py-3 px-8 mt-5" @click="login">
+                  Log in
+              </button>
+          </div>
+          <div v-if="user" id="logout" class="text-center mt-20">
+              <p> This page is limited to authorized users only </p>
+              <button class="font-oswald uppercase bg-red-500 text-white text-center py-3 px-8" @click="logout">
+                  Log out
+              </button>
+          </div>
         </div>
-        <div v-if="user" id="logout" class="text-center mt-20">
-            <p> This page is limited to authorized users only </p>
-            <button class="font-oswald uppercase bg-red-500 text-white text-center py-3 px-8" @click="logout">
-                Log out
-            </button>
-        </div>
-        -->
-        <div>
+        <div id="orders">
            <table class="table-auto w-2/3 mt-20 mx-auto">
                 <thead class="text-3xl font-oswald text-black uppercase">
                     <tr>
@@ -59,7 +59,7 @@ export default {
       user: {}
     };
   },
-  /*
+
   head() {
     return {
       script: [
@@ -69,13 +69,13 @@ export default {
       ]
     }
   },
-*/
+/*
   mounted () {
     this.$axios.get('/netlify/functions/readorders').then((response) => {
       this.order = response.data;
     });
   }
-/*
+*/
   mounted() {
     this.user = window.netlifyIdentity.currentUser();
     if (this.user) {
@@ -91,7 +91,7 @@ export default {
         },
       })
         .then((response) => {
-          this.orders = response.data;
+          this.order = response.data;
         });
     },
 
