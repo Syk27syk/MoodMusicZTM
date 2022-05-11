@@ -8,15 +8,23 @@ exports.handler = async function(event, context) {
   //change this: changed
   const body = JSON.parse(event.body);
   const senderEmail = body.senderEmail;
-  //change this: 
-  const orders = body.orders;
+  //change this: changed
+  const order = body.order;
 
   const total = 0;
-  let emailcontent = "We have received a new order: \n\n";
-  //change this:
-  orders.forEach(order => {
-    emailContent = emailContent +`${order.name} - ${order.quantity} pcs - ${order.price * order.quantity}\n`;
-    total = total + (order.price * order.quantity);
+  let emailcontent = `Dear + ${order.senderName} \n\n Thank you for shopping with us! \n\n Here is a summary of your order: \n\n`
+  //change this: chnaged
+  order.forEach(giftCard => {
+    emailContent = emailContent 
+    +`Gift Card ID: ${order.giftCard.giftCardID}; 
+    Delivery method: ${order.giftCard.delivery}; 
+    Design: ${order.giftCard.design};
+    Amount: ${order.giftCard.giftCardAmount};
+    Recipient name: ${order.giftCard.recipientName};
+    Recipient email: ${order.giftCard.recipientEmail};
+    Recipient address: ${order.giftCard.recipientAddress};
+    Personalized message: ${order.giftCard.personalizedMessage}`
+    total = total + (order.giftCard.giftCardAmount);
   })
   emailContent = emailContent + `\n TotalAmount: ${total.toFixed(2)}`;
 };
@@ -25,7 +33,9 @@ exports.handler = async function(event, context) {
 // construct email object to send with node mailer
 const email = {
   from: 'Shiyun.khoo@gmail.com',
-  to: customerEmail,
+  //
+  to: senderEmail,
+  //
   subject: "New Order Received",
   text: emailContent,
   };
@@ -41,7 +51,7 @@ const mailer = nodemailercreateTransport ({
   }
 });
 
-//this should be unchanged too, but there is an error. 
+// this should be unchanged too, but there is an error. 
 try {
     await mailer.sendMail(email);
     return {

@@ -245,8 +245,8 @@ export default {
       recipientEmail: '',
       recipientAddress: '',
       personalizedMessage: '',
-      senderName: 'Kuki',
-      senderEmail: 'Pehrsan',
+      senderName: 'Kuki Pehrsan',
+      senderEmail: 'Shiyun.khoo@gmail.com',
       showDeliveryModal: false,
       bookmark: false,
     }
