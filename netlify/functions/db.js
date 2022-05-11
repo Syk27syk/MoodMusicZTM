@@ -13,17 +13,17 @@ exports.handler = async function (event, context) {
 
   const db = getFirestore(app);
 
-  // edit this:
+  // edit this: edited. not sure about ('order') after await db.collection
   try {
     const body = JSON.parse(event.body);
-    const customerEmail = body.email;
-    const orders = body.orders;
+    const senderEmail = body.senderEmail;
+    const order = body.order;
 
-    const response = await db.collection('orders').add({
-      customerEmail,
-      orders,
+    const response = await db.collection('order').add({
+      senderEmail,
+      order,
     });
-
+    //
     return {
       statusCode: 200,
       body: JSON.stringify({

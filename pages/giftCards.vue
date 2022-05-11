@@ -306,7 +306,16 @@ export default {
       this.$store.state.giftCards.commit('removeGiftCard', giftCard.giftCardID);
     },
     confirmOrder() {
-      this.$axios.post('/netlify/functions/email', {
+      this.$axios
+        .post('/netlify/functions/email', {
+          name: this.senderName,
+          email: this.senderEmail,
+          order: this.$store.state.giftCards,
+        })
+        .then(function (response) {
+          alert('Your order has been submitted');
+        });
+      this.$axios.post('/.netlify/functions/db', {
         name: this.senderName,
         email: this.senderEmail,
         order: this.$store.state.giftCards,
