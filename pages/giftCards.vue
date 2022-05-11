@@ -281,13 +281,13 @@ export default {
 
   methods: {
     c() {
-      console.log('hello')
+      alert('hello')
     },
     addCount() {
       this.$store.state.test.commit('incrementTest');
     },
     printSender() {
-      console.log(`${this.senderName} ${this.senderEmail}`)
+      alert(`${this.senderName} ${this.senderEmail}`)
     },
     addGiftCard() {
       const giftCard = {
