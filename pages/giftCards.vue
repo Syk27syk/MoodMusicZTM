@@ -220,9 +220,12 @@
                 <img src="/datepicker.png" alt="" />
             </div>
         </div>
-        <button class="font-['open_sans'] bg-blue-500 text-white text-bold uppercase rounded-full border-red-500 px-8 py-3 mx-10 mt-5 mb-10 drop-shadow-xl shadow-black" @click="addCount">
-            Debug Button
-        </button>
+        <div id="debug">
+            <button class="font-['open_sans'] bg-blue-500 text-white text-bold uppercase rounded-full border-red-500 px-8 py-3 mx-10 mt-5 mb-10 drop-shadow-xl shadow-black" @click="addCount">
+                Debug Button
+            </button>
+            <p class="font-['open_sans'] text-white text-bold bg-gray-500 px-5 py-3 uppercasemy-5 mx-8"> Test Count: {{ $store.state.test }} </p>
+        </div>
         <Footer />
     </div>
 </template>
