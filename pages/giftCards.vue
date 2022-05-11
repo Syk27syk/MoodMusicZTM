@@ -224,6 +224,9 @@
             <button class="font-['open_sans'] bg-blue-500 text-white text-bold uppercase rounded-full border-red-500 px-8 py-3 mx-10 mt-5 mb-10 drop-shadow-xl shadow-black" @click="addCount">
                 Debug Button
             </button>
+            <button class="font-['open_sans'] bg-blue-500 text-white text-bold uppercase rounded-full border-red-500 px-8 py-3 mx-10 mt-5 mb-10 drop-shadow-xl shadow-black" @click="printSender">
+                Debug Button 2
+            </button>
             <p class="font-['open_sans'] text-white text-bold bg-gray-500 px-5 py-3 uppercasemy-5 mx-8"> Test Count: {{ $store.state.test }} </p>
         </div>
         <Footer />
@@ -242,8 +245,8 @@ export default {
       recipientEmail: '',
       recipientAddress: '',
       personalizedMessage: '',
-      senderName: '',
-      senderEmail: '',
+      senderName: 'Kuki',
+      senderEmail: 'Pehrsan',
       showDeliveryModal: false,
       bookmark: false,
     }
@@ -283,10 +286,12 @@ export default {
     addCount() {
       this.$store.state.test.commit('incrementTest');
     },
+    printSender() {
+      console.log(`${this.senderName} ${this.senderEmail}`)
+    },
     addGiftCard() {
       const giftCard = {
         giftCardID: Date.now,
-        /*
         delivery: this.delivery,
         design: this.design,
         giftCardAmount: this.giftCardAmount,
@@ -294,17 +299,16 @@ export default {
         recipientEmail: this.recipientEmail,
         recipientAddress: this.recipientAddress,
         personalizedMessage: this.personalizedMessage,
-        */
       }
       this.$store.state.giftCards.commit('addGiftCard', giftCard);
     },
     removeGiftCard(giftCard) {
-      this.$store.giftCards.commit('removeGiftCard', giftCard.giftCardID);
+      this.$store.state.giftCards.commit('removeGiftCard', giftCard.giftCardID);
     },
     confirmOrder() {
       this.$axios.post('/netlify/functions/email', {
-        // fix this:
-        email: this.$store.state.senderEmail,
+        name: this.senderName,
+        email: this.senderEmail,
         order: this.$store.state.giftCards,
       });
     },

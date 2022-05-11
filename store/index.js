@@ -32,8 +32,6 @@ const mutations = {
       recipientName: giftCard.recipientName,
       recipientEmail: giftCard.recipientEmail,
       recipientAddress: giftCard.recipientAddress,
-      senderName: giftCard.senderName,
-      senderEmail: giftCard.senderEmail,
       personalizedMessage: giftCard.personalizedMessage,
     })
   },
