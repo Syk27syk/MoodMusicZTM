@@ -6,7 +6,7 @@
       <div class="m-auto w-10/12 border border-gray-300 border-opacity-30 rounded-md px-20 bg-white bg-opacity-20 backdrop-blur-lg">
         <p class="text-5xl text-gray-900 font-bold font-['nunito_sans'] py-10">Mood Music</p>
         <div id="visualizer" class="width height border rounded-md ">
-            <img src="" alt="" />
+          <img src="" alt="" />
         </div>
         <ul class="flex-col gap-3 my-5 md:mx-12 text-xl font-bold text-gray-200">
           <li>Enjoy millions of new hits and old favourites of any genre.</li>
@@ -18,7 +18,7 @@
             :key="s.name"
             :subscription="s"
           />
-          <button id="individual" class="m-auto py-5 px-8 my-10 bg-white bg-opacity-30 hover:bg-opacity-100 border-white border-opacity10 rounded-3xl" @click="select">
+          <button id="individual" class="m-auto py-5 px-8 my-10 bg-white bg-opacity-30 hover:bg-opacity-100 border-white border-opacity10 rounded-3xl" @click="selectIndividual">
             <div id="title block" class="border-bottom">
                 <h5 class="pt-5 text-3xl font-bold text-gray-900 font['nunito_sans']"> Individual </h5>
                 <p class="py-2 text-xl font-bold font-lola text-gray-700">1 month free, then RM19.90/month</p>
@@ -32,7 +32,7 @@
                 <p>70+ million songs, all ad free</p>
             </div>
           </button>
-          <button id="family" class="m-auto py-5 px-8 my-10 bg-white bg-opacity-30 hover:bg-opacity-100 border-white border-opacity10 rounded-3xl" @click="select">
+          <button id="family" class="m-auto py-5 px-8 my-10 bg-white bg-opacity-30 hover:bg-opacity-100 border-white border-opacity10 rounded-3xl" @click="selectFamily">
             <div id="title block" class="border-bottom">
                 <h5 class="pt-5 text-3xl font-bold text-gray-900 font['nunito_sans']"> Family </h5>
                 <p class="py-2 text-xl font-bold font-lola text-gray-700">1 month free, then RM33.90month</p>
@@ -45,7 +45,7 @@
                 <p>70+ million songs, all ad free</p>
             </div>
           </button>
-          <button id="premier" class="m-auto my-10 py-5 px-8 bg-white bg-opacity-30 hover:bg-opacity-100 border-white border-opacity10 rounded-3xl" @click="selectComponent">
+          <button id="premier" class="m-auto my-10 py-5 px-8 bg-white bg-opacity-30 hover:bg-opacity-100 border-white border-opacity10 rounded-3xl" @click="selectPremier">
             <div id="title block" class="border-bottom">
                 <h5 class="pt-5 text-3xl font-bold text-gray-900 font['nunito_sans']"> Premier </h5>
                 <p class="py-2 text-xl font-bold font-lola text-gray-700">1 month free, then RM69.90/month</p>
@@ -115,42 +115,52 @@ export default {
   mounted() {
     this.user = window.netlifyIdentity.currentUser();
     if (this.user) {
-      this.readOrders();
+      // this.readOrders();
     }
   },
   methods: {
+    selectIndividual () {
+      this.selectedSubscription = 'individual';
+    },
+    selectFamily () {
+      this.selectedSubscription = 'family';
+    },
+    selectPremier () {
+      this.selectedSubscription = 'premier';
+    },
+    /*
     selectSubscription() {
-      this.$store.commit('addSubscription', this.subscription);
+      this.$store.subscriptions.commit('addSubscription', this.subscription);
     },
     removeSubscription() {
-      this.$store.commit('removeSubscription', this.subscription);
+      this.$store.subscriptions.commit('removeSubscription', this.subscription);
     },
     agreeTerms() {
       this.$store.commit('agreeTermsSubscription', true)
     },
-    submitOrder() {
-      this.$axios.post('/netlify/functions/email', {
-        email: document.getElementById('email').value,
-        orders: this.$store.state.orders,
-      });
-      this.$axios.post('/netlify/functions/db', {
-        email: document.getElementById('email').value,
-        orders: this.$store.state.orders,
-      });
-    },
+    */
     login() {
       window.netlifyIdentity.open()
       window.netlifyIdentity.on('login', (user) => {
         this.user = user;
-        this.readOrders();
+        //
       })
     },
-
     logout() {
       window.netlifyIdentity.logout();
       this.user = null;
-      this.orders = [];
-    }
+      //
+    },
+    submitOrder() {
+      this.$axios.post('/netlify/functions/email', {
+        // email:
+        subscription: this.selectedSubscription,
+      });
+      this.$axios.post('/netlify/functions/db', {
+        // email:
+        subscription: this.selectedSubscription,
+      });
+    },
   }
 };
 </script>

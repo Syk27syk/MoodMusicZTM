@@ -14,9 +14,18 @@
 
 <script>
 export default ({
-  props: ['subscription'],
+  data () {
+    return {
+      props: ['subscription'],
+    }
+  },
 
-  /*
+  methods: {
+    select () {
+    }
+  }
+});
+/*
     function getBenefits(benefits) {
          for (benefit in benefits) {
             return this.benefit
@@ -38,5 +47,5 @@ export default ({
     return arr;
 }
 */
-})
+
 </script>

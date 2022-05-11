@@ -69,7 +69,7 @@ export default {
       ]
     }
   },
-/*
+  /*
   mounted () {
     this.$axios.get('/netlify/functions/readorders').then((response) => {
       this.order = response.data;
@@ -109,6 +109,5 @@ export default {
       this.orders = [];
     }
   }
-  */
 }
 </script>
